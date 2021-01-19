@@ -2,6 +2,20 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## File Structure
+
+src/screens - This folder will consist different pages of our application like Landing Page, Sign Up Page, etc.
+
+src/components - This folder will consist of reusable components like buttons, footer, etc.
+
+## Style Guide
+
+All files will be named in camelCase i.e. landingPage.js, loginPage.js, etc.
+All variables will be declared in camelCase i.e. var userName, var password, etc.
+All constants will be in uppercase i.e. const PASSWORD, etc.
+
+Name your Branch like firstname/date i.e. shubham/19-jan-2021
+
 ## Available Scripts
 
 In the project directory, you can run:
