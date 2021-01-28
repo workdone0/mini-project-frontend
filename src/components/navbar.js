@@ -1,30 +1,53 @@
-import React from "react";
-import Button from "react-bootstrap/Button";
+import React, { Component } from "react";
+import {
+MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
+MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
+} from "mdbreact";
+import { BrowserRouter as Router } from 'react-router-dom';
 
-class Navbar extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      i: 0,
-    };
-  }
+class NavbarPage extends Component {
+state = {
+  isOpen: false
+};
 
-  add = () => {
-    this.setState({
-      i: this.state.i + 1,
-    });
-  };
+toggleCollapse = () => {
+  this.setState({ isOpen: !this.state.isOpen });
+}
 
-  render() {
-    return (
-      <div>
-        <h1>{this.state.i}</h1>
-        <Button variant="primary" size="lg" onClick={this.add} block>
-          Block level button
-        </Button>
-      </div>
+render() {
+  return (
+    <Router >
+      
+      <MDBNavbar color="indigo" dark expand="md" >
+        <MDBNavbarBrand >
+          <strong className="white-text">Ayushi</strong>
+        </MDBNavbarBrand>
+        <MDBNavbarToggler onClick={this.toggleCollapse} />
+        <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+         
+          <MDBNavbarNav right>
+            <MDBNavItem active>
+            <MDBNavLink to="#!">Home</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem >
+              <MDBNavLink to="#!">Notice Board</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="#!">About Us</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="#!">Contact Us</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="#!">Login/Signup</MDBNavLink>
+            </MDBNavItem>
+          </MDBNavbarNav>
+        </MDBCollapse>
+      </MDBNavbar>
+      
+    </Router>
     );
   }
 }
 
-export default Navbar;
+export default NavbarPage;

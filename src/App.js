@@ -1,10 +1,10 @@
 import React from "react";
-import LandingPage from "./screens/landingPage";
+import NavbarPage from './components/navbar';
 
 
 class App extends React.Component {
   render() {
-    return <LandingPage />;
+    return <NavbarPage />;
   }
 }
 
