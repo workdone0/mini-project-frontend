@@ -10,6 +10,7 @@ class LandingPage extends React.Component {
     return (
       
       <div class="Container">
+        
        
     
         <NavbarPage/><BackgroundImagePage/>
