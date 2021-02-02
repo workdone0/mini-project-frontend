@@ -9,11 +9,15 @@ class LandingPage extends React.Component {
   render() {
     return (
       
-      <div class="Container">
-        
+      <div class="Container-fluid">
+        <div class="col-md">
+        <NavbarPage/>
+        </div>
+        <div class='col'>
+        <BackgroundImagePage/>
+       </div>
        
     
-        <NavbarPage/><BackgroundImagePage/>
         
              
              
