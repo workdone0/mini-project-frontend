@@ -1,0 +1,29 @@
+.brand-container {
+  text-align: center;
+}
+
+.brand-name {
+  font-size: 35px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.brand-name span {
+  color: #ea2c62;
+}
+
+.nav-link {
+  text-align: center;
+  padding-top: 1.2%;
+}
+
+.nav-link-text {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+.main-container-nav {
+  background-color: #000000;
+  padding: 1%;
+  height: 20vh;
+}
