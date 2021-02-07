@@ -22,8 +22,8 @@ const BackgroundImagePage = () => {
           <br></br>
           <br></br>
           <br></br>
-          <div class="row" >
-          <div class="col" style={{paddingLeft:"10%",margin:"3%"}}><h1>WELCOME SMITAN'S</h1>
+          <div class="row row-cols-1 row-cols-sm-2" >
+          <div class="col mx-auto" style={{paddingLeft:"10%",margin:"3%"}}><h1>WELCOME SMITAN'S</h1>
                            <h2>TakeEasy</h2>
                            We are here to make your task easy and fast.<br></br>
                            We are here to make your task easy and fast.<br></br>
@@ -32,12 +32,10 @@ const BackgroundImagePage = () => {
                            <br></br>
                            <ButtonPage/>
           </div>
-          <div class="col">
-            <img src={img} style={{width:"130%",borderRadius:"50%",marginLeft:"30%",marginTop:"10%"}}></img>
+          <div class="col p-5 mx-auto">
+            <img src={img} style={{width:"100%", maxWidhth:"30vw",height:"auto"}}></img>
           </div>
-          <div class="col">
-            
-          </div>
+         
          
          
           
