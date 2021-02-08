@@ -19,7 +19,7 @@ class Navbar extends React.Component {
     return (
       <div>
         <h1>{this.state.i}</h1>
-        <Button variant="primary" size="lg" onClick={this.add} block>
+        <Button variant="dark" size="lg" onClick={this.add} block>
           Block level button
         </Button>
       </div>

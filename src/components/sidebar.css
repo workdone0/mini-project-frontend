@@ -1,0 +1,10 @@
+.sidebar-collapse {
+  position: fixed;
+  height: 100vh;
+  width: 30vh;
+  background-color: black;
+  padding: 2rem;
+  top: 10%;
+  left: 0%;
+  transition: 0.5s;
+}
