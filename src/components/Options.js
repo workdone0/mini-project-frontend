@@ -12,11 +12,11 @@ class Options extends Component {
       "Register Hostel Complaint",
     ];
     const description = [
-        "Do Club meets and Workshops easily!",
-        "Get Medical Assistance hassle free on the time when you are Available!",
-        "Have an event to Organise? Take no worries as everything you need is here!",
-        "Gone are the days of old Complaint Folders!",
-      ];
+      "Do Club meets and Workshops easily!",
+      "Get Medical Assistance hassle free on the time when you are Available!",
+      "Have an event to Organise? Take no worries as everything you need is here!",
+      "Gone are the days of old Complaint Folders!",
+    ];
     return (
       <div>
         <h1 className="mx-auto">Our Services</h1>
@@ -24,7 +24,7 @@ class Options extends Component {
           {titles.map((title, index) => {
             return (
               <Col span={6}>
-                <OptionsCard title={title} description={description[index]}/>
+                <OptionsCard title={title} description={description[index]} />
               </Col>
             );
           })}
