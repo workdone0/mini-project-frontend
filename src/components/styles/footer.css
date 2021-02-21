@@ -1,0 +1,16 @@
+footer{
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+    font-family: 'georgia';
+    font-size:18px;
+    margin-bottom:10px;
+}
+footer span a{
+    color: crimson;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
