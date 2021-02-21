@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 
-export default class OptionsCard extends Component {
+class OptionsCard extends Component {
   render() {
     return (
       <div>
-        <h1 style={{ color: `${this.props.color}` }}>{this.props.title}</h1>
+        <h1>{this.props.title}</h1>
+        <p>{this.props.description}</p>
       </div>
     );
   }
 }
 
-export default MainOptionsCard;
+export default OptionsCard;
