@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
 import Typewriter from "typewriter-effect";
+import page1 from "../assets/page1.png";
 
 import "./styles/carousel.css";
 
@@ -24,7 +25,8 @@ class Carousel extends Component {
             </span>
           </h2>
         </Col>
-        <Col span={12} className="carousel-right"></Col>
+        <Col span={12} className="carousel-right"><img className="landing-page-carousel-image"src={page1} ></img></Col>
+        
       </Row>
     );
   }
