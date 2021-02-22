@@ -27,6 +27,7 @@
 }
 .title::after{
     position: absolute;
+    bottom: -8px;
     left: 50%;
     font-size: 20px;
     color: crimson;
