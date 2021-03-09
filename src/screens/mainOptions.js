@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Navbar from "../components/navbar";
-import Options from "../components/options";
+import Options from "../components/Options";
 
 class MainOptions extends Component {
   render() {
