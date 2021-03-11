@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./screens/home";
 import Login from "./screens/login";
 import MainOptions from "./screens/mainOptions";
+import Conference from "./screens/conference";
 
 class App extends Component {
   render() {
@@ -18,6 +19,9 @@ class App extends Component {
           </Route>
           <Route path="/MainOptions">
             <MainOptions />
+          </Route>
+          <Route exact path="/Conference">
+            <Conference />
           </Route>
         </Switch>
       </Router>
