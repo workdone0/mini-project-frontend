@@ -1,11 +1,26 @@
+import { Row, Button } from "antd";
 import React, { Component } from "react";
+import "../assets/complaint.png";
+import "../assets/conference.png";
+import "../assets/hospital.png";
+import "../assets/event.png";
+
+import "./styles/optionsCard.css";
 
 class OptionsCard extends Component {
   render() {
     return (
-      <div>
-        <h1>{this.props.title}</h1>
-        <p>{this.props.description}</p>
+      <div className="card">
+        <img className="options-card-image" src={this.props.image}></img>
+        <div className="card-body">
+          <Row justify="center"><h2>{this.props.title}</h2></Row>
+          <Row justify="center"><p>{this.props.description}</p></Row>
+          <Row justify="center">
+            <Button type="primary" size="large">
+              Download
+            </Button>
+          </Row>
+        </div>
       </div>
     );
   }
