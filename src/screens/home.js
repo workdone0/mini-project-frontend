@@ -6,6 +6,7 @@ import NoticeBoard from "../components/noticeBoard";
 import Service from "../components/service";
 import Contact  from "../components/contact";
 import Footers  from "../components/footer";
+import FooterIcon from "../components/footerIcons";
 
 class Home extends Component {
   render() {
@@ -16,6 +17,7 @@ class Home extends Component {
         <NoticeBoard />
         <Service />
         <Contact/>
+        <FooterIcon />
         <Footers/>
       </div>
     );
