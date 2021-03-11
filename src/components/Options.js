@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
 
-import OptionsCard from "./OptionsCard";
+import OptionsCard from "./optionsCard";
 
 class Options extends Component {
   render() {
