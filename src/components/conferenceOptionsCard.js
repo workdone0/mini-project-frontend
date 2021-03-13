@@ -14,10 +14,10 @@ class ConferenceOptionsCard extends Component {
           <Row justify="center"><h2>{this.props.title}</h2></Row>
           <Row justify="center"><p>{this.props.description}</p></Row>
           <Row justify="space-between">
-            <Button  style={{backgroundImage:"linear-gradient(to right, lightblue,#ea2c62)"}}  size="large">
+            <Button style={{backgroundImage:"linear-gradient(130deg, #f54295, #f58442)", borderColor:"white"}} size="large">
               Availability
             </Button>
-            <Button type="primary" style={{backgroundImage:"linear-gradient(to right, lightblue,#ea2c62)"}}  size="large">
+            <Button type="primary" style={{backgroundImage:"linear-gradient(130deg, #f54295, #f58442)", borderColor:"white"}} size="large">
               Book Here!
             </Button>
           </Row>

@@ -1,9 +1,9 @@
 .footer {
   background: #111;
-  margin-top:30px;
+  margin-top: 30px;
 }
 .f-icon {
-  padding: 15px;
+  padding: 15px 15px 0px 15px;
   display: inline-flex;
 }
 .footer-icons {

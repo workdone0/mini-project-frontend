@@ -16,8 +16,8 @@ class OptionsCard extends Component {
           <Row justify="center"><h2>{this.props.title}</h2></Row>
           <Row justify="center"><p>{this.props.description}</p></Row>
           <Row justify="center">
-            <Button type="primary" size="large">
-              Download
+            <Button type="primary" size="large" style={{backgroundImage:"linear-gradient(130deg, #f54295, #f58442)", borderColor:"white"}}>
+              Let's Go!
             </Button>
           </Row>
         </div>

@@ -8,30 +8,30 @@ class Navbar extends Component {
     return (
       <Row className="main-container-nav">
         <Col span={8} className="brand-container">
-          <h3 className="brand-name">
+          <div className="brand-name">
             Take<span>Easy</span>
-          </h3>
+          </div>
         </Col>
         <Col span={16}>
-          <Row>
+          <Row align="middle">
             <Col span={3} />
             <Col span={3} className="nav-link">
-              <p className="nav-link-text">Home</p>
+              <div className="nav-link-text">Home</div>
             </Col>
             <Col span={3} className="nav-link">
-              <p className="nav-link-text">Notice Board</p>
+              <div className="nav-link-text">Notice Board</div>
             </Col>
             <Col span={3} className="nav-link">
-              <p className="nav-link-text">Services</p>
+              <div className="nav-link-text">Services</div>
             </Col>
             <Col span={3} className="nav-link">
-              <p className="nav-link-text">About US</p>
+              <div className="nav-link-text">About US</div>
             </Col>
             <Col span={3} className="nav-link">
-              <p className="nav-link-text">Contact</p>
+              <div className="nav-link-text">Contact</div>
             </Col>
             <Col span={3} className="nav-link">
-              <p className="nav-link-text">Login/Signup</p>
+              <div className="nav-link-text">Login/Signup</div>
             </Col>
             <Col span={3} />
           </Row>

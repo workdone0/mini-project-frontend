@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Footers from "../components/footer";
 import FooterIcon from "../components/footerIcons";
 
 import Navbar from "../components/navbar";
@@ -11,6 +12,7 @@ class MainOptions extends Component {
         <Navbar />
         <Options />
         <FooterIcon />
+        <Footers />
       </div>
     );
   }

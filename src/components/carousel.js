@@ -9,10 +9,11 @@ class Carousel extends Component {
   render() {
     return (
       <Row className="main-container-carousel">
-        <Col span={12} className="carousel-left">
-          <h3 className="hello-text-carousel">Hello SMITAN's</h3>
-          <h1 className="brand-name-carousel">TakeItEasy</h1>
-          <h2 className="typewriter-text">
+        <Col span={10} className="carousel-left">
+          <Row><div className="hello-text-carousel"><span>W</span>elcome&nbsp; SMITIAN's&nbsp; at</div></Row>
+          <Row><div className="brand-name-carousel">Take<span>Easy</span></div></Row>
+          <Row>
+          <div className="typewriter-text">
             It's&nbsp;&nbsp;
             <span>
               <Typewriter
@@ -21,11 +22,12 @@ class Carousel extends Component {
                   autoStart: true,
                   loop: true,
                 }}
-              />
+              />  
             </span>
-          </h2>
+          </div>
+          </Row>
         </Col>
-        <Col span={12} className="carousel-right"><img className="landing-page-carousel-image"src={page1} ></img></Col>
+        <Col span={14} className="carousel-right"><img className="landing-page-carousel-image"src={page1} ></img></Col>
         
       </Row>
     );
