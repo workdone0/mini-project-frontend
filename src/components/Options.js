@@ -21,20 +21,21 @@ class Options extends Component {
       "Have an event to Organise? Take no worries as everything you need is here!",
       "Gone are the days of old Complaint Folders!",
     ];
-    const image = [
-      conference,
-      hospital,
-      event,
-      complaint,
-    ];
+    const image = [conference, hospital, event, complaint];
     return (
       <div>
-        <Row justify="center"><h1 style={{margin: "20px 0px"}}>Our Services</h1></Row>
+        <Row justify="center">
+          <h1 style={{ margin: "20px 0px" }}>Our Services</h1>
+        </Row>
         <Row>
           {titles.map((title, index) => {
             return (
               <Col span={6}>
-                <OptionsCard title={title} description={description[index]} image={image[index]} />
+                <OptionsCard
+                  title={title}
+                  description={description[index]}
+                  image={image[index]}
+                />
               </Col>
             );
           })}

@@ -38,7 +38,7 @@ class Login extends React.Component {
       this.props.setCurrentUser(response.data.user);
       this.setState({
         loading: false,
-        loginStatus: false, //later to be made true to redirect properly
+        loginStatus: true, //later to be made true to redirect properly
       });
     } else {
       console.log("Login Failed");
@@ -49,7 +49,7 @@ class Login extends React.Component {
   };
   render() {
     if (this.state.loginStatus) {
-      return <Redirect to="/mainoptions" />;
+      return <Redirect to="/" />;
     }
     return (
       <Row className="login-main-container">
