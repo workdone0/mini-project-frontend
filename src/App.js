@@ -5,6 +5,7 @@ import Home from "./screens/home";
 import Login from "./screens/login";
 import MainOptions from "./screens/mainOptions";
 import Conference from "./screens/conference";
+import Form from "./screens/form";
 
 class App extends Component {
   render() {
@@ -22,6 +23,9 @@ class App extends Component {
           </Route>
           <Route exact path="/Conference">
             <Conference />
+          </Route>
+          <Route exact path="/form">
+            <Form/>
           </Route>
         </Switch>
       </Router>
