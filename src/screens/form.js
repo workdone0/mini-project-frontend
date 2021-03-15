@@ -22,13 +22,16 @@ export class form extends Component {
                <label>Reason:</label>
               <select value={this.state.reason} onChange={this.handleReasonChange}>
                   <option value="Club purposes">Club Purposes</option>
+                  <option value="College Fests">College Fests</option>
                   <option value="Seminars">Seminars</option>
+                  <option value="Teacher's">Staff Meetings</option>
                   <option value="Workshops">Workshops</option>
+                  <option value="Others">Others</option>
               </select>
               </div>
 
               <div>
-               <label>time:</label>
+               <label>Timings:</label>
               <select value={this.state.reason} onChange={this.handleReasonChange}>
                   <option value="">5:00-6:00 PM</option>
                   <option value="">6:00-7:00 PM</option>
