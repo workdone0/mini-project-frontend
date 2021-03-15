@@ -10,7 +10,7 @@ class Carousel extends Component {
     return (
       <Row className="main-container-carousel">
         <Col span={10} className="carousel-left">
-          <Row><div className="hello-text-carousel"><span>W</span>elcome&nbsp; SMITIAN's&nbsp; at</div></Row>
+          <Row><div className="hello-text-carousel">Welcome SMITIAN's at</div></Row>
           <Row><div className="brand-name-carousel">Take<span>Easy</span></div></Row>
           <Row>
           <div className="typewriter-text">

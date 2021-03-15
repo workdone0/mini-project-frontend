@@ -16,7 +16,7 @@ class ConferenceOptions extends Component {
       "Multipurpose Hall",
     ];
     const description = [
-      "Capacity:50 Air-Conditioned:No Projector:Yes",
+      "Capacity:50  Air-Conditioned:No Projector:Yes",
       "Capacity:50 Air-Conditioned:No Projector:Yes",
       "Capacity:50 Air-Conditioned:No Projector:Yes",
       "Capacity:50 Air-Conditioned:No Projector:Yes",

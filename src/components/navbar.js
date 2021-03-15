@@ -101,6 +101,7 @@ class Navbar extends Component {
                 </Col>
                 <Col span={3} className="nav-link">
                   <div className="nav-link-text">About US</div>
+                  
                 </Col>
                 <Col span={3} className="nav-link">
                   <div className="nav-link-text">Contact</div>
