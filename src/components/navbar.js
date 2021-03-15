@@ -26,6 +26,11 @@ class Navbar extends Component {
     });
   };
 
+  servicesClicked = () => {
+    const anchor = document.getElementById("home-services");
+    anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   render() {
     const menu = (
       <Menu>
@@ -96,12 +101,15 @@ class Navbar extends Component {
                 <Col span={3} className="nav-link">
                   <div className="nav-link-text">Notice Board</div>
                 </Col>
+
                 <Col span={3} className="nav-link">
-                  <div className="nav-link-text">Services</div>
+                  <div className="nav-link-text">
+                    <a onClick={this.servicesClicked}>Services</a>
+                  </div>
                 </Col>
+
                 <Col span={3} className="nav-link">
                   <div className="nav-link-text">About US</div>
-                  
                 </Col>
                 <Col span={3} className="nav-link">
                   <div className="nav-link-text">Contact</div>

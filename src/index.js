@@ -7,6 +7,7 @@ import { CookiesProvider } from "react-cookie";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "antd/dist/antd.css";
 
 ReactDOM.render(
