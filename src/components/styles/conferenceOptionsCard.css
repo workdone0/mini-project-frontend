@@ -1,19 +1,10 @@
-.card {
+.conference-card {
     margin: 20px;
 
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-  .options-card-image {
-    height: auto;
-    width: 100%;
-    object-fit: contain;
-  }
-  .card-body {
+  .conference-card-body {
     padding: 20px;
   }
   
-  .conference-button
-  {
-    background-color:#ea2c62;
-  }

@@ -10,9 +10,9 @@ import "./styles/optionsCard.css";
 class OptionsCard extends Component {
   render() {
     return (
-      <div className="card">
+      <div className="options-card">
         <img className="options-card-image" src={this.props.image}></img>
-        <div className="card-body">
+        <div className="options-card-body">
           <Row justify="center"><h2>{this.props.title}</h2></Row>
           <Row justify="center"><p>{this.props.description}</p></Row>
           <Row justify="center">

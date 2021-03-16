@@ -8,9 +8,9 @@ import "./styles/conferenceOptionsCard.css";
 class ConferenceOptionsCard extends Component {
   render() {
     return (
-      <div className="card">
+      <div className="conference-card">
         
-        <div className="card-body">
+        <div className="conference-card-body">
           <Row justify="center"><h2>{this.props.title}</h2></Row>
           <Row><p>{this.props.description.split(" ").map((d)=>{
             return(
