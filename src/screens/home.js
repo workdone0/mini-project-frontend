@@ -15,7 +15,7 @@ class Home extends Component {
       <div>
         <Navbar />
         <Carousel />
-        <NoticeBoard />
+        {/* <NoticeBoard /> */}
         <Service />
         <About />
         <Contact />

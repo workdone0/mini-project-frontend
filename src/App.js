@@ -5,7 +5,7 @@ import Home from "./screens/home";
 import Login from "./screens/login";
 import MainOptions from "./screens/mainOptions";
 import Conference from "./screens/conference";
-import Demo from "./screens/form";
+import ConferenceBookingForm from "./screens/conferenceBookingForm";
 
 class App extends Component {
   render() {
@@ -24,8 +24,8 @@ class App extends Component {
           <Route exact path="/Conference">
             <Conference />
           </Route>
-          <Route exact path="/form">
-            <Demo/>
+          <Route exact path="/bookconference">
+            <ConferenceBookingForm />
           </Route>
         </Switch>
       </Router>

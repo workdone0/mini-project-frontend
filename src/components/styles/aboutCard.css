@@ -1,8 +1,8 @@
-.card {
+.card-about {
   background-color: white;
   width: 80%;
   height: 200px;
 }
-.card-body {
+.card-body-about {
   padding: 20px;
 }

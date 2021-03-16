@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "react-elastic-carousel";
 
 import ServiceCard from "./serviceCard";
 import "./styles/service.css";
@@ -27,15 +27,13 @@ class Service extends Component {
           </h1>
         </Row>
         <Row>
-          <Carousel
-            centerMode
-            centerSlidePercentage={35}
-            showIndicators={false}
-            showStatus={false}
-          >
+          <Carousel itemsToShow={2} pagination={false}>
             {titles.map((title, index) => {
               return (
-                <Col span={24}>
+                <Col
+                  span={24}
+                  style={{ display: "flex", justifyContent: "center" }}
+                >
                   <ServiceCard title={title} description={description[index]} />
                 </Col>
               );
