@@ -68,7 +68,7 @@ class Navbar extends Component {
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a href="/" onClick={this.logout}>Logout</a>
+          <a onClick={this.logout}>Logout</a>
         </Menu.Item>
       </Menu>
     );
@@ -101,7 +101,12 @@ class Navbar extends Component {
                 </Col>
                 <Col span={4} className="nav-link">
                   <div className="nav-link-text">
-                    <a className="linkStyleNavbar" onClick={this.contactClicked}>Contact</a>
+                    <a
+                      className="linkStyleNavbar"
+                      onClick={this.contactClicked}
+                    >
+                      Contact
+                    </a>
                   </div>
                 </Col>
                 <Col span={4} className="nav-link">
@@ -125,24 +130,44 @@ class Navbar extends Component {
                 </Col>
                 <Col span={3} className="nav-link">
                   <div className="nav-link-text">
-                    <a className="linkStyleNavbar" onClick={this.noticeboardClicked}>Notice Board</a>
+                    <a
+                      className="linkStyleNavbar"
+                      onClick={this.noticeboardClicked}
+                    >
+                      Notice Board
+                    </a>
                   </div>
                 </Col>
 
                 <Col span={3} className="nav-link">
                   <div className="nav-link-text">
-                    <a className="linkStyleNavbar" onClick={this.servicesClicked}>Services</a>
+                    <a
+                      className="linkStyleNavbar"
+                      onClick={this.servicesClicked}
+                    >
+                      Services
+                    </a>
                   </div>
                 </Col>
 
                 <Col span={3} className="nav-link">
                   <div className="nav-link-text">
-                    <a className="linkStyleNavbar" onClick={this.aboutUsClicked}>About US</a>
+                    <a
+                      className="linkStyleNavbar"
+                      onClick={this.aboutUsClicked}
+                    >
+                      About US
+                    </a>
                   </div>
                 </Col>
                 <Col span={3} className="nav-link">
                   <div className="nav-link-text">
-                    <a className="linkStyleNavbar" onClick={this.contactClicked}>Contact</a>
+                    <a
+                      className="linkStyleNavbar"
+                      onClick={this.contactClicked}
+                    >
+                      Contact
+                    </a>
                   </div>
                 </Col>
                 <Col span={3} className="nav-link">
