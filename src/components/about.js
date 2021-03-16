@@ -15,7 +15,7 @@ class About extends Component {
       "cdcq yudwy vahfytdw fatfdtyw ftsfdtw yue",
     ];
     return (
-      <div className="main-container-about">
+      <div className="main-container-about" id="home-about-us">
         <Row justify="center">
           <h1 className="about-heading" style={{ margin: "20px 0px" }}>
             Teams

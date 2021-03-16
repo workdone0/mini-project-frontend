@@ -9,7 +9,7 @@ class FooterIcon extends Component  {
     {
     return (
         <div>
-          <Row className="footer">
+          <Row className="footer" id="home-contact">
             <div style={{margin:"auto"}}>
               <div className="f-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-facebook footer-icons" viewBox="0 0 16 16">

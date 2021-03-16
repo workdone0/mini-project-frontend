@@ -7,7 +7,7 @@ class Contact extends Component  {
         render()
     {
     return (
-       <div className="contact" >
+       <div className="contact">
         <div className="max-width">
             <h2 className="title">Contact Us</h2>
             <div className="contact-content">

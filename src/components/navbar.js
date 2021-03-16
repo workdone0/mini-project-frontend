@@ -26,8 +26,23 @@ class Navbar extends Component {
     });
   };
 
+  noticeboardClicked = () => {
+    const anchor = document.getElementById("home-noticeboard");
+    anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   servicesClicked = () => {
     const anchor = document.getElementById("home-services");
+    anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+  aboutUsClicked = () => {
+    const anchor = document.getElementById("home-about-us");
+    anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+  contactClicked = () => {
+    const anchor = document.getElementById("home-contact");
     anchor.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
@@ -53,7 +68,7 @@ class Navbar extends Component {
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a onClick={this.logout}>Logout</a>
+          <a href="/" onClick={this.logout}>Logout</a>
         </Menu.Item>
       </Menu>
     );
@@ -71,7 +86,11 @@ class Navbar extends Component {
               <>
                 <Col span={4} />
                 <Col span={4} className="nav-link">
-                  <div className="nav-link-text">Home</div>
+                  <div className="nav-link-text">
+                    <Link className="linkStyleNavbar" to="/">
+                      Home
+                    </Link>
+                  </div>
                 </Col>
                 <Col span={4} className="nav-link">
                   <div className="nav-link-text">
@@ -81,7 +100,9 @@ class Navbar extends Component {
                   </div>
                 </Col>
                 <Col span={4} className="nav-link">
-                  <div className="nav-link-text">Contact</div>
+                  <div className="nav-link-text">
+                    <a className="linkStyleNavbar" onClick={this.contactClicked}>Contact</a>
+                  </div>
                 </Col>
                 <Col span={4} className="nav-link">
                   <div className="nav-link-text">
@@ -96,23 +117,33 @@ class Navbar extends Component {
               <>
                 <Col span={3} />
                 <Col span={3} className="nav-link">
-                  <div className="nav-link-text">Home</div>
+                  <div className="nav-link-text">
+                    <Link className="linkStyleNavbar" to="/">
+                      Home
+                    </Link>
+                  </div>
                 </Col>
-                <Col span={3} className="nav-link">
-                  <div className="nav-link-text">Notice Board</div>
-                </Col>
-
                 <Col span={3} className="nav-link">
                   <div className="nav-link-text">
-                    <a onClick={this.servicesClicked}>Services</a>
+                    <a className="linkStyleNavbar" onClick={this.noticeboardClicked}>Notice Board</a>
                   </div>
                 </Col>
 
                 <Col span={3} className="nav-link">
-                  <div className="nav-link-text">About US</div>
+                  <div className="nav-link-text">
+                    <a className="linkStyleNavbar" onClick={this.servicesClicked}>Services</a>
+                  </div>
+                </Col>
+
+                <Col span={3} className="nav-link">
+                  <div className="nav-link-text">
+                    <a className="linkStyleNavbar" onClick={this.aboutUsClicked}>About US</a>
+                  </div>
                 </Col>
                 <Col span={3} className="nav-link">
-                  <div className="nav-link-text">Contact</div>
+                  <div className="nav-link-text">
+                    <a className="linkStyleNavbar" onClick={this.contactClicked}>Contact</a>
+                  </div>
                 </Col>
                 <Col span={3} className="nav-link">
                   <div className="nav-link-text">
