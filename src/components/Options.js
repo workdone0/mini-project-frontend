@@ -21,6 +21,12 @@ class Options extends Component {
       "Have an event to Organise? Take no worries as everything you need is here!",
       "Gone are the days of old Complaint Folders!",
     ];
+    const path = [
+      "/Conference",
+      "/",
+      "/",
+      "/",
+    ];
     const image = [conference, hospital, event, complaint];
     return (
       <div>
@@ -35,6 +41,7 @@ class Options extends Component {
                   title={title}
                   description={description[index]}
                   image={image[index]}
+                  path={path[index]}
                 />
               </Col>
             );

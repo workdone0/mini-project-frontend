@@ -30,3 +30,7 @@
 .linkStyleNavbar {
   color: #ffffff;
 }
+
+.linkStyleNavbar:hover {
+  color: #ea2c62;
+}

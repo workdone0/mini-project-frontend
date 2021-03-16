@@ -1,8 +1,8 @@
-.card {
+.service-card {
   background-color: white;
   width: 80%;
   height: 200px;
 }
-.card-body {
+.service-card-body {
   padding: 20px;
 }

@@ -4,7 +4,7 @@ import { Row } from "antd";
 class NoticeBoard extends Component {
   render() {
     return (
-      <div>
+      <div id="home-noticeboard">
         <Row justify="center"><h1 style={{margin: "20px 0px"}}>Notice Board</h1></Row>
       </div>
     );
