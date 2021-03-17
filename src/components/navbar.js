@@ -2,17 +2,16 @@ import React, { Component } from "react";
 import { Row, Col, Menu, Dropdown, Button } from "antd";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { withCookies, Cookies } from "react-cookie";
+import { instanceOf } from "prop-types";
 
 import { setCurrentUser } from "../redux/user/user.actions";
 import "./styles/navbar.css";
 
 class Navbar extends Component {
-  constructor() {
-    super();
-    this.state = {
-      user: null,
-    };
-  }
+  static propTypes = {
+    cookies: instanceOf(Cookies).isRequired,
+  };
   componentDidMount() {
     this.setState({
       user: this.props.currentUser,
@@ -24,6 +23,8 @@ class Navbar extends Component {
     this.setState({
       user: null,
     });
+    const { cookies } = this.props;
+    cookies.remove("token");
   };
 
   noticeboardClicked = () => {
@@ -47,6 +48,7 @@ class Navbar extends Component {
   };
 
   render() {
+    const user = this.props.currentUser;
     const menu = (
       <Menu>
         <Menu.Item>
@@ -72,7 +74,6 @@ class Navbar extends Component {
         </Menu.Item>
       </Menu>
     );
-    console.log(this.state);
     return (
       <Row className="main-container-nav">
         <Col span={6} className="brand-container">
@@ -82,7 +83,7 @@ class Navbar extends Component {
         </Col>
         <Col span={18}>
           <Row align="middle">
-            {this.state.user ? (
+            {user ? (
               <>
                 <Col span={4} />
                 <Col span={4} className="nav-link">
@@ -94,7 +95,7 @@ class Navbar extends Component {
                 </Col>
                 <Col span={4} className="nav-link">
                   <div className="nav-link-text">
-                    <Link className="linkStyleNavbar" to="/mainOptions">
+                    <Link className="linkStyleNavbar" to="/mainoptions">
                       Services
                     </Link>
                   </div>
@@ -112,7 +113,7 @@ class Navbar extends Component {
                 <Col span={4} className="nav-link">
                   <div className="nav-link-text">
                     <Dropdown overlay={menu} placement="bottomCenter" arrow>
-                      <a className="linkStyleNavbar">{this.state.user.name}</a>
+                      <a className="linkStyleNavbar">{user.name}</a>
                     </Dropdown>
                   </div>
                 </Col>
@@ -195,4 +196,7 @@ const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withCookies(Navbar));
