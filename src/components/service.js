@@ -5,6 +5,7 @@ import Carousel from "react-elastic-carousel";
 import ServiceCard from "./serviceCard";
 import "./styles/service.css";
 
+
 class Service extends Component {
   render() {
     const titles = [
@@ -19,6 +20,7 @@ class Service extends Component {
       "Have an event to Organise? Take no worries as everything you need is here!",
       "Gone are the days of old Complaint Folders!",
     ];
+   
     return (
       <div className="main-container-service" id="home-services">
         <Row justify="center">
