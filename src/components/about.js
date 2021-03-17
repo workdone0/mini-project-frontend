@@ -21,10 +21,18 @@ class About extends Component {
           </h1>
         </Row>
         <Row style={{ width: "100%" }}>
-          <Carousel itemsToShow={1} showArrows={false} pagination={false}>
+          <Carousel
+            itemsToShow={1}
+            showArrows={false}
+            pagination={false}
+            enableAutoPlay={true}
+            verticalMode={true}
+            autoPlaySpeed={5000}
+          >
             {names.map((name, index) => {
               return (
                 <Col
+                  key={index}
                   span={24}
                   style={{ display: "flex", justifyContent: "center" }}
                 >

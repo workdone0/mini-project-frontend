@@ -21,12 +21,7 @@ class Options extends Component {
       "Have an event to Organise? Take no worries as everything you need is here!",
       "Gone are the days of old Complaint Folders!",
     ];
-    const path = [
-      "/Conference",
-      "/",
-      "/",
-      "/",
-    ];
+    const path = ["/conference", "/", "/", "/"];
     const image = [conference, hospital, event, complaint];
     return (
       <div>
@@ -36,7 +31,7 @@ class Options extends Component {
         <Row>
           {titles.map((title, index) => {
             return (
-              <Col span={6}>
+              <Col span={6} key={index}>
                 <OptionsCard
                   title={title}
                   description={description[index]}

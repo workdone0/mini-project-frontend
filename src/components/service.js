@@ -31,6 +31,7 @@ class Service extends Component {
             {titles.map((title, index) => {
               return (
                 <Col
+                  key={index}
                   span={24}
                   style={{ display: "flex", justifyContent: "center" }}
                 >
