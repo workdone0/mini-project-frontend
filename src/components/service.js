@@ -22,9 +22,7 @@ class Service extends Component {
     return (
       <div className="main-container-service" id="home-services">
         <Row justify="center">
-          <h1 className="service-heading" style={{ margin: "20px 0px" }}>
-            Our Services
-          </h1>
+          <h1 className="service-heading">Our Services</h1>
         </Row>
         <Row>
           <Carousel itemsToShow={2} pagination={false}>
