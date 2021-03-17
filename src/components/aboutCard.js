@@ -2,20 +2,28 @@ import React, { Component } from "react";
 import { Row, Col } from "antd";
 
 import "./styles/aboutCard.css";
+import page1 from "../assets/page1.png";
 
 class AboutCard extends Component {
   render() {
     return (
+      <Col span={20}>
       <div className="card-about">
         <div className="card-body-about">
-          <Row justify="center">
-            <h2 style={{ color: "#ea2c62" }}>{this.props.name}</h2>
+         
+            <img src={this.props.images} alt=""></img>
+            <Row justify="center">
+        
+            <h2 style={{ color: "white" }}>{this.props.name}</h2>
           </Row>
           <Row justify="center">
-            <p>{this.props.description}</p>
+            <p style={{color:"white"}}>{this.props.description}</p>
           </Row>
+         
         </div>
+      
       </div>
+      </Col>
     );
   }
 }

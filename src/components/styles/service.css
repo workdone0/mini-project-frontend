@@ -1,9 +1,14 @@
 .main-container-service {
   text-align: center;
   background-color: #000000;
-  height: 50vh;
+  height: 100vh;
+  margin-bottom:20px;
 }
 
 .service-heading {
   color: #ffffff;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin:30px;
+ 
+  
 }
