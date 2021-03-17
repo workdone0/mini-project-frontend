@@ -16,6 +16,8 @@ import Login from "./screens/login";
 import MainOptions from "./screens/mainOptions";
 import Conference from "./screens/conference";
 import ConferenceBookingForm from "./screens/conferenceBookingForm";
+import LoadingAnimation from "./screens/loadingAnimation";
+
 import { verifyLoginToken } from "./api/verify";
 
 class App extends Component {
@@ -27,6 +29,7 @@ class App extends Component {
     this.state = {
       user: null,
       token: null,
+      loading: true,
     };
   }
   async componentDidMount() {
@@ -44,8 +47,14 @@ class App extends Component {
     } else {
       console.log("Not Found");
     }
+    this.setState({
+      loading: false,
+    });
   }
   render() {
+    if (this.state.loading) {
+      return <LoadingAnimation />;
+    }
     if (this.props.currentUser) {
       return (
         <Router>
