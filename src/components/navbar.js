@@ -66,7 +66,8 @@ class Navbar extends Component {
             rel="noopener noreferrer"
             href="https://www.aliyun.com"
           >
-            Profile
+            <Link to ="/profile">Profile</Link>
+            
           </a>
         </Menu.Item>
         <Menu.Item>
