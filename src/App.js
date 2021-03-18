@@ -88,7 +88,6 @@ class App extends Component {
             <Route exact path="/login">
               <Login />
             </Route>
-            <Redirect to="/" />
           </Switch>
         </Router>
       );

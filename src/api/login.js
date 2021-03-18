@@ -3,7 +3,7 @@ import { baseURL } from "../baseUrl";
 
 export const loginApi = async (email, password) => {
   try {
-    const response = await axois.post(`${baseURL}/student/login`, {
+    const response = await axois.post(`${baseURL}/user/login`, {
       email: email,
       password: password,
     });

@@ -3,7 +3,7 @@ import { baseURL } from "../baseUrl";
 
 export const verifyLoginToken = async (token) => {
   try {
-    const response = await axois.post(`${baseURL}/verify/student`, {
+    const response = await axois.post(`${baseURL}/verify/user`, {
       token: token,
     });
     return response;
