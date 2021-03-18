@@ -72,7 +72,7 @@ class App extends Component {
             <ConferenceBookingForm />
           </Route>
           <Route exact path="/profile">
-            <Profile/>
+            <Profile />
           </Route>
 
           <Redirect to="/" />
