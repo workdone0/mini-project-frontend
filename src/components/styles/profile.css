@@ -1,0 +1,8 @@
+.ant-layout.ant-layout-has-sider
+{
+    height:100vh;
+}
+
+.ant-menu-item.ant-menu-item-selected {
+    margin: 60px;
+}
