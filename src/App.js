@@ -70,8 +70,6 @@ class App extends Component {
           <Route exact path="/bookconference">
             <ConferenceBookingForm />
           </Route>
-
-          <Redirect to="/" />
         </Router>
       );
     } else {
@@ -84,7 +82,6 @@ class App extends Component {
             <Route exact path="/login">
               <Login />
             </Route>
-            <Redirect to="/" />
           </Switch>
         </Router>
       );
