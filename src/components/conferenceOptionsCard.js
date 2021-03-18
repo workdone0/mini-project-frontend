@@ -1,25 +1,11 @@
 import { Row, Button } from "antd";
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./styles/conferenceOptionsCard.css";
 
 class ConferenceOptionsCard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      redirect: false,
-    };
-  }
-  clickedBooked = () => {
-    this.setState({
-      redirect: true,
-    });
-  };
   render() {
-    if (this.state.redirect) {
-      return <Redirect to="/bookconference" />;
-    }
     return (
       <div className="conference-card">
         <div className="conference-card-body">
@@ -35,7 +21,6 @@ class ConferenceOptionsCard extends Component {
           </Row>
           <Row justify="center">
             <Button
-              onClick={this.clickedBooked}
               type="primary"
               style={{
                 backgroundImage: "linear-gradient(130deg, #f54295, #f58442)",
@@ -43,7 +28,7 @@ class ConferenceOptionsCard extends Component {
               }}
               size="large"
             >
-              Book Here!
+              <Link to="/bookConference">Book Here!</Link>
             </Button>
           </Row>
         </div>

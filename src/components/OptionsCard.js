@@ -1,7 +1,7 @@
 import { Row, Button } from "antd";
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import "../assets/complaint.png";
 import "../assets/conference.png";
 import "../assets/hospital.png";
@@ -48,7 +48,8 @@ class OptionsCard extends Component {
                 borderColor: "white",
               }}
             >
-              Let's Go!
+               Let's Go!
+             
             </Button>
           </Row>
         </div>
