@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
 import { Row, Col, Menu, Dropdown, Button } from "antd";
 import ayushi from "../assets/ayushi.jpg";
-
+import { Link } from "react-router-dom";
 import "./styles/profile.css";
-
+import ProfileForm from "./profileForm";
 
 export class Sidenav extends Component {
  
@@ -27,7 +26,7 @@ export class Sidenav extends Component {
         </Row>
         <Row>
           
-        <button className="sidebar-button">My Profile</button>
+        <button className="sidebar-button"><Link to="/profileForm">My Profile</Link></button>
         </Row>
         <Row></Row>
         <Row>
@@ -38,7 +37,7 @@ export class Sidenav extends Component {
         </Row>
       </Col>
       <Col span={19}className="dashboard-content">
-
+         <ProfileForm/>
       </Col>
     </Row>
     </div>
