@@ -1,27 +1,5 @@
 .profile-form
 {
-    margin:1% 0% 0% -5%; 
-    width:80%;
-}
-
-.form-image
-{
+    margin:15% 30% 5% 11%;
    
-        margin: 2% 0% 2% 40%;
-        height:25vh;
-        border-radius:50%;
-        border-width: 5px;
-        border-style: double;
-        border-color:indianred;
-    
 }
-
-body
-{
-    overflow:hidden;
-}
-
-.abc-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: red;
-    opacity: 1; /* Firefox */
-  }
