@@ -1,6 +1,7 @@
 .profile-form
 {
     margin:15% 30% 5% 11%;
+    width:80%;
    
 }
 .form-image
@@ -21,3 +22,7 @@
     opacity: 1; /* Firefox */
   }
 
+  .profile-form-container
+  {
+      overflow:hidden;
+  }
