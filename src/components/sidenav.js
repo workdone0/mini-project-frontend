@@ -8,6 +8,8 @@ import {
   UploadOutlined,
 } from '@ant-design/icons';
 
+import "./styles/profile.css";
+
 const { Header, Sider, Content } = Layout;
 
 export class Sidenav extends Component {
