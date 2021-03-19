@@ -4,6 +4,8 @@ import { Row, Col} from "antd";
 import ayushi from "../assets/ayushi.jpg";
 import "./styles/sidenav.css";
 import ProfileForm from "./profileForm";
+import Dashboard from './dashboard';
+// import Dashboard from "./dashboard";
 
 export class Sidenav extends Component {
  
@@ -27,7 +29,7 @@ export class Sidenav extends Component {
           </Row>
         </Col>
         <Col span={19}>
-           <ProfileForm/>
+           <Dashboard/>
         </Col>
       </Row>
     </div>
