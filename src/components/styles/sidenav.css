@@ -45,14 +45,12 @@
 }
 
 .sidenav-user{
- 
-  font-size:20px;
+  font-family: "Dancing Script", cursive;
   background-image: linear-gradient(130deg, #e44690, #f07f3e);
-  color: white;
+  color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   margin-bottom: 25px;
-  text-transform:uppercase;
 }
 
 .sidenav-link{
