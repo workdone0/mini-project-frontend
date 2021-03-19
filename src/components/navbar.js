@@ -62,13 +62,7 @@ class Navbar extends Component {
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.aliyun.com"
-          >
-            <Link to="/profile">Profile</Link>
-          </a>
+          <Link to="/profile">Profile</Link>
         </Menu.Item>
         <Menu.Item>
           <a onClick={this.logout}>Logout</a>

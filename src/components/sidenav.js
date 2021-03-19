@@ -1,70 +1,44 @@
-import React, { Component } from 'react'
-import { Layout, Menu } from 'antd';
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-} from '@ant-design/icons';
-
-import "./styles/profile.css";
-
-const { Header, Sider, Content } = Layout;
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { Row, Col} from "antd";
+import ayushi from "../assets/ayushi.jpg";
+import "./styles/sidenav.css";
+import ProfileForm from "./profileForm";
+import Dashboard from './dashboard';
+// import Dashboard from "./dashboard";
 
 export class Sidenav extends Component {
-  state = {
-    collapsed: false,
-  };
-
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    });
-  };
+ 
 
   render() {
     return (
-      <Layout>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-          <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1" icon={<UserOutlined />}>
-              nav 1
-            </Menu.Item>
-            <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-              nav 2
-            </Menu.Item>
-            <Menu.Item key="3" icon={<UploadOutlined />}>
-              nav 3
-            </Menu.Item>
-          </Menu>
-        </Sider>
-        <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }}>
-            {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-              className: 'trigger',
-              onClick: this.toggle,
-            })}
-          </Header>
-          <Content
-            className="site-layout-background"
-            style={{
-              margin: '24px 16px',
-              padding: 24,
-              minHeight: 280,
-            }}
-          >
-            Content
-          </Content>
-        </Layout>
-      </Layout>
+     <div>
+      <Row className="sidenav-container">
+        <Col span={5} className="sidenav-navbar">
+          <Row justify="center">
+            <img src={ayushi} className="sidenav-image" alt="image"></img>
+          </Row>
+          <Row justify="center">
+            <h1 className="sidenav-user">{this.props.currentUser.name}</h1>
+          </Row>
+          <Row justify="center">
+            <a className="sidenav-link">My Profile</a>
+          </Row>
+          <Row justify="center">
+            <a className="sidenav-link">Dashboard</a>
+          </Row>
+        </Col>
+        <Col span={19}>
+           <Dashboard/>
+        </Col>
+      </Row>
+    </div>
     );
   }
 }
 
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
 
-        
-        
-
-export default Sidenav;
+export default connect(mapStateToProps, null)(Sidenav);
