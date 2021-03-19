@@ -21,6 +21,10 @@ import Profile from "./screens/profile";
 
 import { verifyLoginToken } from "./api/verify";
 
+const NoMatchPage = () => {
+  return <h3>404 - Not found</h3>;
+};
+
 class App extends Component {
   static propTypes = {
     cookies: instanceOf(Cookies).isRequired,
@@ -52,6 +56,7 @@ class App extends Component {
       loading: false,
     });
   }
+
   render() {
     if (this.state.loading) {
       return <LoadingAnimation />;
@@ -59,23 +64,28 @@ class App extends Component {
     if (this.props.currentUser) {
       return (
         <Router>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/mainoptions">
-            <MainOptions />
-          </Route>
-          <Route exact path="/conference">
-            <Conference />
-          </Route>
-          <Route exact path="/bookconference">
-            <ConferenceBookingForm />
-          </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/mainoptions">
+              <MainOptions />
+            </Route>
+            <Route exact path="/conference">
+              <Conference />
+            </Route>
+            <Route exact path="/login">
+              <Redirect to="/" />
+            </Route>
+            <Route exact path="/bookconference">
+              <ConferenceBookingForm />
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
 
-          <Redirect to="/" />
+            <Route component={NoMatchPage} />
+          </Switch>
         </Router>
       );
     } else {
@@ -88,6 +98,7 @@ class App extends Component {
             <Route exact path="/login">
               <Login />
             </Route>
+            <Route component={NoMatchPage} />
           </Switch>
         </Router>
       );

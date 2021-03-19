@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Input, DatePicker, Row, Col, TimePicker, Button, Form } from "antd";
 import { connect } from "react-redux";
 import moment from "moment";
 
 import CalanderImg from "../assets/calander.png";
-import { roomBookingApi } from "../api/roomBooking";
+import { roomBookingApi, getRoomBookingsApi } from "../api/roomBooking";
 
 class ConferenceBookingForm extends Component {
   constructor() {
@@ -20,8 +21,61 @@ class ConferenceBookingForm extends Component {
       roomNo: "A 103",
       description: "",
       loading: false,
+      roomBookingData: [],
+      buttonDisabled: true,
+      conflict: false,
     };
   }
+
+  componentDidMount = async () => {
+    const response = await getRoomBookingsApi();
+    this.setState({
+      roomBookingData: await response.data.data,
+    });
+  };
+
+  verifyingConflicts = () => {
+    var meetingSTime = new Date(
+      this.state.year,
+      this.state.month,
+      this.state.day,
+      this.state.startH,
+      this.state.startM
+    );
+    var meetingETime = new Date(
+      this.state.year,
+      this.state.month,
+      this.state.day,
+      this.state.endH,
+      this.state.endM
+    );
+    const startEpoch = meetingSTime / 1000 / 60;
+    const endEpoch = meetingETime / 1000 / 60;
+    if (this.state.roomBookingData.length > 0) {
+      const conflicts = this.state.roomBookingData.filter((booking) => {
+        return (
+          (startEpoch >= booking.startTime && startEpoch <= booking.endTime) ||
+          (endEpoch >= booking.startTime && endEpoch <= booking.endTime)
+        );
+      });
+      if (conflicts.length > 0) {
+        this.setState({
+          conflict: true,
+          buttonDisabled: true,
+        });
+      } else {
+        this.setState({
+          conflict: false,
+          buttonDisabled: false,
+        });
+      }
+    } else {
+      this.setState({
+        conflict: false,
+        buttonDisabled: false,
+      });
+    }
+  };
 
   dateSelected = async (e) => {
     const d = e._d;
@@ -30,6 +84,13 @@ class ConferenceBookingForm extends Component {
       month: await d.getMonth(),
       year: await d.getFullYear(),
     });
+    if (
+      this.state.day != "" &&
+      this.state.startH != "" &&
+      this.state.endH != ""
+    ) {
+      this.verifyingConflicts();
+    }
   };
 
   endSelected = async (time) => {
@@ -38,6 +99,13 @@ class ConferenceBookingForm extends Component {
       endH: await d.getHours(),
       endM: await d.getMinutes(),
     });
+    if (
+      this.state.day != "" &&
+      this.state.startH != "" &&
+      this.state.endH != ""
+    ) {
+      this.verifyingConflicts();
+    }
   };
 
   startSelected = async (time) => {
@@ -46,6 +114,13 @@ class ConferenceBookingForm extends Component {
       startH: await d.getHours(),
       startM: await d.getMinutes(),
     });
+    if (
+      this.state.day != "" &&
+      this.state.startH != "" &&
+      this.state.endH != ""
+    ) {
+      this.verifyingConflicts();
+    }
   };
 
   submitClicked = async () => {
@@ -143,6 +218,13 @@ class ConferenceBookingForm extends Component {
                 </Form.Item>
               </Col>
             </Row>
+            {this.state.conflict ? (
+              <p style={{ textAlign: "left", color: "#ea2c62" }}>
+                There seems to be another meeting already secheduled on this
+                date and time. See all meetings <Link to="/">here</Link>.
+              </p>
+            ) : null}
+
             <Form.Item label="Meeting Description">
               <Input.TextArea
                 autoSize={{ minRows: 2, maxRows: 6 }}
@@ -155,14 +237,19 @@ class ConferenceBookingForm extends Component {
           <Button
             shape="round"
             onClick={this.submitClicked}
-            style={{
-              width: "40%",
-              backgroundColor: "#ea2c62",
-              color: "#ffffff",
-              height: "50px",
-              marginTop: "30px",
-            }}
+            style={
+              this.state.buttonDisabled
+                ? { width: "40%", height: "50px", marginTop: "30px" }
+                : {
+                    width: "40%",
+                    backgroundColor: "#ea2c62",
+                    color: "#ffffff",
+                    height: "50px",
+                    marginTop: "30px",
+                  }
+            }
             loading={this.state.loading}
+            disabled={this.state.buttonDisabled}
           >
             Book Now
           </Button>
