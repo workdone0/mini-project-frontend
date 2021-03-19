@@ -184,7 +184,14 @@ class Navbar extends Component {
             )}
           </Row>
         </Col>
-        <Col xl={0} lg={6} md={6} sm={6} xs={6}>
+        <Col
+          xl={0}
+          lg={6}
+          md={6}
+          sm={6}
+          xs={6}
+          style={{ textAlign: "right", paddingRight: "10%" }}
+        >
           <MenuOutlined style={{ color: "#ffffff", fontSize: "20px" }} />
         </Col>
       </Row>

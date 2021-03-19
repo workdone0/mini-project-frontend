@@ -2,39 +2,32 @@ import React, { Component, useImperativeHandle } from "react";
 import { Row, Col } from "antd";
 
 import ConferenceOptionsCard from "./conferenceOptionsCard";
+import { getRoomsApi } from "../api/room";
 
 class ConferenceOptions extends Component {
+  constructor() {
+    super();
+    this.state = {
+      rooms: [],
+    };
+  }
+  componentDidMount = async () => {
+    const response = await getRoomsApi();
+    this.setState({
+      rooms: await response.data.data,
+    });
+  };
   render() {
-    const titles = [
-      "A-101",
-      "A-102",
-      "A-103",
-      "Multipurpose Hall",
-      "A-107",
-      "A-109",
-      "A-110",
-      "Multipurpose Hall",
-    ];
-    const description = [
-      "Capacity:50  Air-Conditioned:No Projector:Yes",
-      "Capacity:50 Air-Conditioned:No Projector:Yes",
-      "Capacity:50 Air-Conditioned:No Projector:Yes",
-      "Capacity:50 Air-Conditioned:No Projector:Yes",
-      "Capacity:50 Air-Conditioned:No Projector:Yes",
-      "Capacity:50 Air-Conditioned:No Projector:Yes",
-      "Capacity:50 Air-Conditioned:No Projector:Yes",
-      "Capacity:50 Air-Conditioned:No Projector:Yes",
-
-    ];
-   
     return (
-      <div>
-        <Row justify="center"><h1 style={{margin: "20px 0px"}}>Book Conference Room Here!</h1></Row>
+      <div style={{ minHeight: "80vh" }}>
+        <Row justify="center">
+          <h1 style={{ margin: "20px 0px" }}>Book Conference Room Here!</h1>
+        </Row>
         <Row>
-          {titles.map((title, index) => {
+          {this.state.rooms.map((room) => {
             return (
-              <Col span={6}>
-                <ConferenceOptionsCard title={title} description={description[index]}  />
+              <Col span={6} key={room._id}>
+                <ConferenceOptionsCard room={room} />
               </Col>
             );
           })}

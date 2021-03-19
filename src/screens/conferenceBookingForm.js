@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Input, DatePicker, Row, Col, TimePicker, Button, Form } from "antd";
 import { connect } from "react-redux";
-import moment from "moment";
+import { withRouter } from "react-router-dom";
 
 import CalanderImg from "../assets/calander.png";
 import { roomBookingApi, getRoomBookingsApi } from "../api/roomBooking";
@@ -18,7 +18,7 @@ class ConferenceBookingForm extends Component {
       startM: "",
       endH: "",
       endM: "",
-      roomNo: "A 103",
+      roomId: "",
       description: "",
       loading: false,
       roomBookingData: [],
@@ -29,8 +29,13 @@ class ConferenceBookingForm extends Component {
 
   componentDidMount = async () => {
     const response = await getRoomBookingsApi();
+    const bookingData = response.data.data;
+    const finBookingData = bookingData.filter((booking) => {
+      return booking.roomId === this.props.match.params.roomId;
+    });
     this.setState({
-      roomBookingData: await response.data.data,
+      roomBookingData: finBookingData,
+      roomId: await this.props.match.params.roomId,
     });
   };
 
@@ -135,7 +140,7 @@ class ConferenceBookingForm extends Component {
       startM,
       endH,
       endM,
-      roomNo,
+      roomId,
       description,
     } = this.state;
     var meetingSTime = new Date(year, month, day, startH, startM);
@@ -144,7 +149,7 @@ class ConferenceBookingForm extends Component {
     const endEpoch = meetingETime / 1000 / 60;
     const response = await roomBookingApi(
       this.props.currentUser._id,
-      roomNo,
+      roomId,
       startEpoch,
       endEpoch,
       description
@@ -161,6 +166,7 @@ class ConferenceBookingForm extends Component {
     });
   };
   render() {
+    console.log(this.state.roomBookingData);
     const format = "HH:mm";
     return (
       <Row style={{ height: "100vh" }}>
@@ -263,4 +269,7 @@ const mapStateToProps = ({ user }) => ({
   currentUser: user.currentUser,
 });
 
-export default connect(mapStateToProps, null)(ConferenceBookingForm);
+export default connect(
+  mapStateToProps,
+  null
+)(withRouter(ConferenceBookingForm));

@@ -77,7 +77,7 @@ class App extends Component {
             <Route exact path="/login">
               <Redirect to="/" />
             </Route>
-            <Route exact path="/bookconference">
+            <Route exact path="/bookconference/:roomId">
               <ConferenceBookingForm />
             </Route>
             <Route exact path="/profile">

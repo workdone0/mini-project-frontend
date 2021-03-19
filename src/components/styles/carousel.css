@@ -45,3 +45,9 @@
 .carousel-right {
   padding: 3%;
 }
+
+@media only screen and (max-width: 900px) {
+  .main-container-carousel {
+    height: 40vh;
+  }
+}

@@ -10,14 +10,16 @@ class ConferenceOptionsCard extends Component {
       <div className="conference-card">
         <div className="conference-card-body">
           <Row justify="center">
-            <h2>{this.props.title}</h2>
+            <h2>{this.props.room.name}</h2>
           </Row>
-          <Row>
+          <Row justify="center">
+            <p>Capacity: {this.props.room.capacity}</p>
+            <br />
             <p>
-              {this.props.description.split(" ").map((d) => {
-                return <div>{d}</div>;
-              })}
+              Air Conditioner: {this.props.room.airConditioned ? "Yes" : "No"}
             </p>
+            <br />
+            <p>Projector: {this.props.room.projector ? "Yes" : "No"}</p>
           </Row>
           <Row justify="center">
             <Button
@@ -28,7 +30,9 @@ class ConferenceOptionsCard extends Component {
               }}
               size="large"
             >
-              <Link to="/bookConference">Book Here!</Link>
+              <Link to={`/bookConference/${this.props.room._id}`}>
+                Book Here!
+              </Link>
             </Button>
           </Row>
         </div>
