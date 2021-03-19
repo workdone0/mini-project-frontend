@@ -1,5 +1,11 @@
-.profile-form
-{
-    margin:15% 30% 5% 11%;
-   
+.profile-form {
+  margin: 15% 30% 5% 11%;
+}
+.form-image {
+  margin: 2% 0% 2% 40%;
+  height: 25vh;
+  border-radius: 50%;
+  border-width: 5px;
+  border-style: double;
+  border-color: indianred;
 }
