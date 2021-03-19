@@ -19,6 +19,7 @@ import ConferenceBookingForm from "./screens/conferenceBookingForm";
 import LoadingAnimation from "./screens/loadingAnimation";
 import Profile from "./screens/profile";
 
+
 import { verifyLoginToken } from "./api/verify";
 
 class App extends Component {
@@ -74,6 +75,7 @@ class App extends Component {
           <Route exact path="/profile">
             <Profile />
           </Route>
+         
 
           <Redirect to="/" />
         </Router>
