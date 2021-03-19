@@ -1,5 +1,6 @@
 .profile-form {
   margin: 15% 30% 5% 11%;
+  width: 80%;
 }
 .form-image {
   margin: 2% 0% 2% 40%;
@@ -8,4 +9,14 @@
   border-width: 5px;
   border-style: double;
   border-color: indianred;
+}
+
+.abc-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 1; /* Firefox */
+}
+
+.profile-form-container {
+  overflow: hidden;
 }

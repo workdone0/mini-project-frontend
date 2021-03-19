@@ -1,4 +1,4 @@
-import { Row, Button } from "antd";
+import { Row, Button, Col } from "antd";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
@@ -13,13 +13,13 @@ class ConferenceOptionsCard extends Component {
             <h2>{this.props.room.name}</h2>
           </Row>
           <Row justify="center">
-            <p>Capacity: {this.props.room.capacity}</p>
-            <br />
-            <p>
-              Air Conditioner: {this.props.room.airConditioned ? "Yes" : "No"}
-            </p>
-            <br />
-            <p>Projector: {this.props.room.projector ? "Yes" : "No"}</p>
+            <Col span={24} style={{ textAlign: "center" }}>
+              <p>Capacity: {this.props.room.capacity}</p>
+              <p>
+                Air Conditioner: {this.props.room.airConditioned ? "Yes" : "No"}
+              </p>
+              <p>Projector: {this.props.room.projector ? "Yes" : "No"}</p>
+            </Col>
           </Row>
           <Row justify="center">
             <Button

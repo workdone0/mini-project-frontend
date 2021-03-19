@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Input, DatePicker, Row, Col, TimePicker, Button, Form } from "antd";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import BackNavbar from "../components/backNavbar";
 
 import CalanderImg from "../assets/calander.png";
 import { roomBookingApi, getRoomBookingsApi } from "../api/roomBooking";
@@ -166,101 +167,103 @@ class ConferenceBookingForm extends Component {
     });
   };
   render() {
-    console.log(this.state.roomBookingData);
     const format = "HH:mm";
     return (
-      <Row style={{ height: "100vh" }}>
-        <Col
-          span={8}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <img src={CalanderImg} style={{ height: "60%", width: "auto" }} />
-        </Col>
-        <Col
-          span={16}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            paddingLeft: "30px",
-            paddingRight: "30px",
-            paddingTop: "10%",
-            textAlign: "center",
-          }}
-        >
-          <h2 style={{ fontSize: "40px", fontWeight: "500" }}>
-            Organizing meetings just got easy.
-          </h2>
-          <Form layout="vertical" style={{ width: "100%" }}>
-            <Form.Item label="Select Date">
-              <DatePicker
-                onChange={this.dateSelected}
-                style={{ width: "100%" }}
-              />
-            </Form.Item>
-            <Row>
-              <Col span={12}>
-                <Form.Item label="Select Meeting Start Time">
-                  <TimePicker
-                    style={{ width: "100%" }}
-                    placeholder="Select Meeting Start Time"
-                    format={format}
-                    onChange={this.startSelected}
-                  />
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <Form.Item label="Select Meeting End Time">
-                  <TimePicker
-                    style={{ width: "100%" }}
-                    placeholder="Select Meeting End Time"
-                    format={format}
-                    onChange={this.endSelected}
-                  />
-                </Form.Item>
-              </Col>
-            </Row>
-            {this.state.conflict ? (
-              <p style={{ textAlign: "left", color: "#ea2c62" }}>
-                There seems to be another meeting already secheduled on this
-                date and time. See all meetings <Link to="/">here</Link>.
-              </p>
-            ) : null}
-
-            <Form.Item label="Meeting Description">
-              <Input.TextArea
-                autoSize={{ minRows: 2, maxRows: 6 }}
-                style={{ width: "100%" }}
-                placeholder="Description"
-                onChange={this.descriptionChanged}
-              />
-            </Form.Item>
-          </Form>
-          <Button
-            shape="round"
-            onClick={this.submitClicked}
-            style={
-              this.state.buttonDisabled
-                ? { width: "40%", height: "50px", marginTop: "30px" }
-                : {
-                    width: "40%",
-                    backgroundColor: "#ea2c62",
-                    color: "#ffffff",
-                    height: "50px",
-                    marginTop: "30px",
-                  }
-            }
-            loading={this.state.loading}
-            disabled={this.state.buttonDisabled}
+      <>
+        <BackNavbar />
+        <Row style={{ height: "100vh" }}>
+          <Col
+            span={8}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
           >
-            Book Now
-          </Button>
-        </Col>
-      </Row>
+            <img src={CalanderImg} style={{ height: "60%", width: "auto" }} />
+          </Col>
+          <Col
+            span={16}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              paddingLeft: "30px",
+              paddingRight: "30px",
+              paddingTop: "10%",
+              textAlign: "center",
+            }}
+          >
+            <h2 style={{ fontSize: "40px", fontWeight: "500" }}>
+              Organizing meetings just got easy.
+            </h2>
+            <Form layout="vertical" style={{ width: "100%" }}>
+              <Form.Item label="Select Date">
+                <DatePicker
+                  onChange={this.dateSelected}
+                  style={{ width: "100%" }}
+                />
+              </Form.Item>
+              <Row>
+                <Col span={12}>
+                  <Form.Item label="Select Meeting Start Time">
+                    <TimePicker
+                      style={{ width: "100%" }}
+                      placeholder="Select Meeting Start Time"
+                      format={format}
+                      onChange={this.startSelected}
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={12}>
+                  <Form.Item label="Select Meeting End Time">
+                    <TimePicker
+                      style={{ width: "100%" }}
+                      placeholder="Select Meeting End Time"
+                      format={format}
+                      onChange={this.endSelected}
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
+              {this.state.conflict ? (
+                <p style={{ textAlign: "left", color: "#ea2c62" }}>
+                  There seems to be another meeting already secheduled on this
+                  date and time. See all meetings <Link to="/">here</Link>.
+                </p>
+              ) : null}
+
+              <Form.Item label="Meeting Description">
+                <Input.TextArea
+                  autoSize={{ minRows: 2, maxRows: 6 }}
+                  style={{ width: "100%" }}
+                  placeholder="Description"
+                  onChange={this.descriptionChanged}
+                />
+              </Form.Item>
+            </Form>
+            <Button
+              shape="round"
+              onClick={this.submitClicked}
+              style={
+                this.state.buttonDisabled
+                  ? { width: "40%", height: "50px", marginTop: "30px" }
+                  : {
+                      width: "40%",
+                      backgroundColor: "#ea2c62",
+                      color: "#ffffff",
+                      height: "50px",
+                      marginTop: "30px",
+                    }
+              }
+              loading={this.state.loading}
+              disabled={this.state.buttonDisabled}
+            >
+              Book Now
+            </Button>
+          </Col>
+        </Row>
+      </>
     );
   }
 }
