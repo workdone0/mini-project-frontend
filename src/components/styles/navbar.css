@@ -34,3 +34,10 @@
 .linkStyleNavbar:hover {
   color: #ea2c62;
 }
+
+@media only screen and (max-width: 1200px) {
+  .brand-container {
+    text-align: left;
+    padding-left: 10%;
+  }
+}

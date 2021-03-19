@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { withCookies, Cookies } from "react-cookie";
 import { instanceOf } from "prop-types";
+import { MenuOutlined } from "@ant-design/icons";
 
 import { setCurrentUser } from "../redux/user/user.actions";
 import "./styles/navbar.css";
@@ -66,8 +67,7 @@ class Navbar extends Component {
             rel="noopener noreferrer"
             href="https://www.aliyun.com"
           >
-            <Link to ="/profile">Profile</Link>
-            
+            <Link to="/profile">Profile</Link>
           </a>
         </Menu.Item>
         <Menu.Item>
@@ -76,13 +76,13 @@ class Navbar extends Component {
       </Menu>
     );
     return (
-      <Row className="main-container-nav">
-        <Col span={6} className="brand-container">
+      <Row className="main-container-nav" justify="center" align="middle">
+        <Col xl={6} lg={18} md={18} sm={18} xs={18} className="brand-container">
           <div className="brand-name">
             Take<span>Easy</span>
           </div>
         </Col>
-        <Col span={18}>
+        <Col xl={18} lg={0} md={0} sm={0} xs={0}>
           <Row align="middle">
             {user ? (
               <>
@@ -183,6 +183,9 @@ class Navbar extends Component {
               </>
             )}
           </Row>
+        </Col>
+        <Col xl={0} lg={6} md={6} sm={6} xs={6}>
+          <MenuOutlined style={{ color: "#ffffff", fontSize: "20px" }} />
         </Col>
       </Row>
     );
