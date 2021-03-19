@@ -1,64 +1,48 @@
 import React, { Component } from 'react'
-import { Layout, Menu } from 'antd';
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-} from '@ant-design/icons';
+
+import { Row, Col, Menu, Dropdown, Button } from "antd";
+import ayushi from "../assets/ayushi.jpg";
 
 import "./styles/profile.css";
 
-const { Header, Sider, Content } = Layout;
 
 export class Sidenav extends Component {
-  state = {
-    collapsed: false,
-  };
-
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    });
-  };
+ 
 
   render() {
     return (
-      <Layout>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-          <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1" icon={<UserOutlined />}>
-              nav 1
-            </Menu.Item>
-            <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-              nav 2
-            </Menu.Item>
-            <Menu.Item key="3" icon={<UploadOutlined />}>
-              nav 3
-            </Menu.Item>
-          </Menu>
-        </Sider>
-        <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }}>
-            {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-              className: 'trigger',
-              onClick: this.toggle,
-            })}
-          </Header>
-          <Content
-            className="site-layout-background"
-            style={{
-              margin: '24px 16px',
-              padding: 24,
-              minHeight: 280,
-            }}
-          >
-            Content
-          </Content>
-        </Layout>
-      </Layout>
+     <div>
+<Row className="navbar-container-nav">
+        <Col span={6} className="navbar-brand-container">
+          <div className="navbar-brand-name">
+            Take<span>Easy</span>
+           
+          </div>
+        </Col>
+    </Row>
+    <Row className="sidebar-container-nav">
+      <Col span={5} className="sidebar-brand-container">
+        <Row>
+          <img src={ayushi} className="sidebar-image" alt="image"></img>
+        </Row>
+        <Row>
+          
+        <button className="sidebar-button">My Profile</button>
+        </Row>
+        <Row></Row>
+        <Row>
+          <ul>
+            <li>Dashboard</li>
+            
+          </ul>
+        </Row>
+      </Col>
+      <Col span={19}className="dashboard-content">
+
+      </Col>
+    </Row>
+    </div>
+
     );
   }
 }
