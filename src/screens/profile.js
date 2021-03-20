@@ -5,14 +5,13 @@ import {withRouter} from "react-router-dom";
 
 export class Profile extends Component {
     token = localStorage.getItem('token');
-    componentDidMount(){
-        console.log(this.props.location.state);
-    }
     render() {
+        const isDashboard = this.props.location.state.isDashboard;
+        const isProfileForm = this.props.location.state.isProfileForm;
         return (
             <div>
                 <BackNavbar/>
-                <Sidenav/>
+                <Sidenav isDashboard={isDashboard} isProfileForm={isProfileForm} />
             </div>
         )
     }

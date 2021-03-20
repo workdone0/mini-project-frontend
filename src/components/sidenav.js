@@ -8,6 +8,11 @@ import Dashboard from "./dashboard";
 
 export class Sidenav extends Component {
   render() {
+    const isDashboard = this.props.isDashboard;
+    const isProfileForm = this.props.isProfileForm;
+
+    console.log(isDashboard);
+    console.log(isProfileForm);
     return (
       <div>
         <Row className="sidenav-container">
@@ -26,7 +31,7 @@ export class Sidenav extends Component {
             </Row>
           </Col>
           <Col span={19}>
-            <Dashboard />
+            {isDashboard? <Dashboard/> : <ProfileForm/>}
           </Col>
         </Row>
       </div>
