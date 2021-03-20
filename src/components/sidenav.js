@@ -26,7 +26,7 @@ export class Sidenav extends Component {
             </Row>
           </Col>
           <Col span={19}>
-            <ProfileForm />
+            <Dashboard />
           </Col>
         </Row>
       </div>

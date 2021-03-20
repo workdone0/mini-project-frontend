@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import Sidenav from "../components/sidenav";
 import BackNavbar from "../components/backNavbar";
+import {withRouter} from "react-router-dom";
 
 export class Profile extends Component {
+    token = localStorage.getItem('token');
+    componentDidMount(){
+        console.log(this.props.location.state);
+    }
     render() {
         return (
             <div>
@@ -13,4 +18,4 @@ export class Profile extends Component {
     }
 }
 
-export default Profile;
+export default withRouter(Profile);
