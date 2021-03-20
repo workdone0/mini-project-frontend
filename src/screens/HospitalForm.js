@@ -148,10 +148,10 @@ export class HospitalForm extends Component {
                     </Row>
            
 
-            <div className="main-container-about" id="home-about-us">
+            <div className="main-container-about" id="home-about-us" style={{backgroundColor:"RGB(134,254,254,0.1"}}>
        
         <Row justify="center">
-          <h1 className="about-heading" style={{ margin: "50px 0px" }}>
+          <h1 className="about-heading" style={{ margin: "50px 0px",color:"black" }}>
             Know Our Doctors
           </h1>
         </Row>
