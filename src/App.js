@@ -18,6 +18,7 @@ import Conference from "./screens/conference";
 import ConferenceBookingForm from "./screens/conferenceBookingForm";
 import LoadingAnimation from "./screens/loadingAnimation";
 import Profile from "./screens/profile";
+import HospitalForm from "./screens/HospitalForm";
 
 
 import { verifyLoginToken } from "./api/verify";
@@ -83,6 +84,10 @@ class App extends Component {
             </Route>
             <Route exact path="/profile">
               <Profile />
+            </Route>
+
+            <Route exact path="/HospitalForm">
+              <HospitalForm />
             </Route>
 
             <Route component={NoMatchPage} />
