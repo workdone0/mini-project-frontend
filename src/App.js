@@ -19,7 +19,7 @@ import ConferenceBookingForm from "./screens/conferenceBookingForm";
 import LoadingAnimation from "./screens/loadingAnimation";
 import Profile from "./screens/profile";
 import HospitalForm from "./screens/HospitalForm";
-
+import Register from "./screens/register";
 
 import { verifyLoginToken } from "./api/verify";
 
@@ -79,6 +79,9 @@ class App extends Component {
             <Route exact path="/login">
               <Redirect to="/" />
             </Route>
+            <Route exact path="/register">
+              <Redirect to="/" />
+            </Route>
             <Route exact path="/bookconference/:roomId">
               <ConferenceBookingForm />
             </Route>
@@ -103,6 +106,9 @@ class App extends Component {
             </Route>
             <Route exact path="/login">
               <Login />
+            </Route>
+            <Route exact path="/register">
+              <Register />
             </Route>
             <Route component={NoMatchPage} />
           </Switch>

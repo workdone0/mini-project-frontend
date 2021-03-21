@@ -1,4 +1,4 @@
-.login-main-container {
+.register-main-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,18 +6,18 @@
   background-color: #000000;
 }
 
-.brand-name-login-page {
+.brand-name-register-page {
   font-size: 8vh;
   font-weight: 700;
   margin: 0;
   color: #ffffff;
 }
 
-.brand-name-login-page span {
+.brand-name-register-page span {
   color: #ea2c62;
 }
 
-.login-form-column {
+.register-form-column {
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -56,7 +56,7 @@
   border-color: #ea2c62 !important;
 }
 
-.login-button-login-page {
+.register-button-register-page {
   width: 60% !important;
   height: 40px !important;
   border-radius: 15px !important;
