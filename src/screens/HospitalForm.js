@@ -30,7 +30,7 @@ export class HospitalForm extends Component {
         };
       }
     render() {
-        const names = ["Dr.Pankaj Goel", "Dr.Kritika Sinha"];
+        const names = ["Dr.Ashish Sharma", "Dr.Anita Pateshwari"];
         const description = [
           "Backend Developer,Third Year ,Computer Science and Engineering Student.",
           "Frontend Developer,Third Year ,Computer Science and Engineering Student.",
