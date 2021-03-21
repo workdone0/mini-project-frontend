@@ -22,6 +22,8 @@ class Navbar extends Component {
   componentDidMount() {
     this.setState({
       user: this.props.currentUser,
+      isDashboard:"false",
+      isProfileForm:"false",
     });
   }
 
@@ -65,16 +67,10 @@ class Navbar extends Component {
     const menu = (
       <Menu>
         <Menu.Item>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.antgroup.com"
-          >
-            Dashboard
-          </a>
+          <Link to={{pathname:'/profile', state:{isDashboard: true}}}>Dashboard</Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/profile">Profile</Link>
+          <Link to={{pathname:'/profile', state:{isDashboard: false}}}>Profile</Link>
         </Menu.Item>
         <Menu.Item>
           <a onClick={this.logout}>Logout</a>

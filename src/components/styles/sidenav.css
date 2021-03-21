@@ -62,3 +62,18 @@
 .sidenav-link:hover {
   color: #ea2c62;
 }
+
+[data-theme='compact'] .site-collapse-custom-collapse .site-collapse-custom-panel,
+.site-collapse-custom-collapse .site-collapse-custom-panel {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 0px;
+  font-size: 1.2rem;
+  color: white;
+}
+.ant-collapse > .ant-collapse-item > .ant-collapse-header{
+  color:white !important;
+}
+
+.panel-link {
+  font-size: 1rem;
+}
