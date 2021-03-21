@@ -6,11 +6,23 @@
   background-color: #000000;
 }
 
+.login-container
+{
+  border:2px solid #222;
+  box-shadow: 2px 2px 2px #222;
+  width:100%;
+  margin:100px;
+  padding:30px 30px 70px 20px;
+  background-color:#222;
+  border-radius:2%;
+}
+
 .brand-name-login-page {
   font-size: 8vh;
   font-weight: 700;
-  margin: 0;
+
   color: #ffffff;
+  text-align:center;
 }
 
 .brand-name-login-page span {
@@ -57,10 +69,11 @@
 }
 
 .login-button-login-page {
-  width: 60% !important;
+  width: 40% !important;
   height: 40px !important;
   border-radius: 15px !important;
-  margin: 10px !important;
+ margin-left:30%;
+ margin-top:5%;
   background-color: #ea2c62 !important;
   border: none !important;
 }
