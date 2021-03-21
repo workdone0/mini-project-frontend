@@ -28,7 +28,11 @@ export class ProfileForm extends Component {
 
     return (
       <div className="profile-form-container">
-        <img src={ayushi} className="form-image" alt="image2"></img>
+        <img
+          src={`https://avatars.dicebear.com/api/bottts/${this.props.currentUser.name}.svg`}
+          className="form-image"
+          alt="image2"
+        ></img>
 
         <Form
           {...layout}

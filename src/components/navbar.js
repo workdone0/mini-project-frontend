@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Menu, Dropdown, Button } from "antd";
+import { Row, Col, Menu, Dropdown, Button, Drawer } from "antd";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { withCookies, Cookies } from "react-cookie";
@@ -10,6 +10,12 @@ import { setCurrentUser } from "../redux/user/user.actions";
 import "./styles/navbar.css";
 
 class Navbar extends Component {
+  constructor() {
+    super();
+    this.state = {
+      drawerVisible: false,
+    };
+  }
   static propTypes = {
     cookies: instanceOf(Cookies).isRequired,
   };
@@ -50,6 +56,12 @@ class Navbar extends Component {
     anchor.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
+  toggelDrawer = () => {
+    const curState = !this.state.drawerVisible;
+    this.setState({
+      drawerVisible: curState,
+    });
+  };
   render() {
     const user = this.props.currentUser;
     const menu = (
@@ -66,125 +78,156 @@ class Navbar extends Component {
       </Menu>
     );
     return (
-      <Row className="main-container-nav" justify="center" align="middle">
-        <Col xl={6} lg={18} md={18} sm={18} xs={18} className="brand-container">
-          <div className="brand-name">
-            Take<span>Easy</span>
-          </div>
-        </Col>
-        <Col xl={18} lg={0} md={0} sm={0} xs={0}>
-          <Row align="middle">
-            {user ? (
-              <>
-                <Col span={4} />
-                <Col span={4} className="nav-link">
-                  <div className="nav-link-text">
-                    <Link className="linkStyleNavbar" to="/">
-                      Home
-                    </Link>
-                  </div>
-                </Col>
-                <Col span={4} className="nav-link">
-                  <div className="nav-link-text">
-                    <Link className="linkStyleNavbar" to="/mainoptions">
-                      Services
-                    </Link>
-                  </div>
-                </Col>
-                <Col span={4} className="nav-link">
-                  <div className="nav-link-text">
-                    <a
-                      className="linkStyleNavbar"
-                      onClick={this.contactClicked}
-                    >
-                      Contact
-                    </a>
-                  </div>
-                </Col>
-                <Col span={4} className="nav-link">
-                  <div className="nav-link-text">
-                    <Dropdown overlay={menu} placement="bottomCenter" arrow>
-                      <a className="linkStyleNavbar">{user.name}</a>
-                    </Dropdown>
-                  </div>
-                </Col>
-                <Col span={4} />
-              </>
-            ) : (
-              <>
-                <Col span={3} />
-                <Col span={3} className="nav-link">
-                  <div className="nav-link-text">
-                    <Link className="linkStyleNavbar" to="/">
-                      Home
-                    </Link>
-                  </div>
-                </Col>
-                <Col span={3} className="nav-link">
-                  <div className="nav-link-text">
-                    <a
-                      className="linkStyleNavbar"
-                      onClick={this.noticeboardClicked}
-                    >
-                      Notice Board
-                    </a>
-                  </div>
-                </Col>
+      <>
+        <Row className="main-container-nav" justify="center" align="middle">
+          <Col
+            xl={6}
+            lg={18}
+            md={18}
+            sm={18}
+            xs={18}
+            className="brand-container"
+          >
+            <div className="brand-name">
+              Take<span>Easy</span>
+            </div>
+          </Col>
+          <Col xl={18} lg={0} md={0} sm={0} xs={0}>
+            <Row align="middle">
+              {user ? (
+                <>
+                  <Col span={4} />
+                  <Col span={4} className="nav-link">
+                    <div className="nav-link-text">
+                      <Link className="linkStyleNavbar" to="/">
+                        Home
+                      </Link>
+                    </div>
+                  </Col>
+                  <Col span={4} className="nav-link">
+                    <div className="nav-link-text">
+                      <Link className="linkStyleNavbar" to="/mainoptions">
+                        Services
+                      </Link>
+                    </div>
+                  </Col>
+                  <Col span={4} className="nav-link">
+                    <div className="nav-link-text">
+                      <a
+                        className="linkStyleNavbar"
+                        onClick={this.contactClicked}
+                      >
+                        Contact
+                      </a>
+                    </div>
+                  </Col>
+                  <Col span={4} className="nav-link">
+                    <div className="nav-link-text">
+                      <Dropdown overlay={menu} placement="bottomCenter" arrow>
+                        <a className="linkStyleNavbar">{user.name}</a>
+                      </Dropdown>
+                    </div>
+                  </Col>
+                  <Col span={4} />
+                </>
+              ) : (
+                <>
+                  <Col span={3} />
+                  <Col span={3} className="nav-link">
+                    <div className="nav-link-text">
+                      <Link className="linkStyleNavbar" to="/">
+                        Home
+                      </Link>
+                    </div>
+                  </Col>
+                  <Col span={3} className="nav-link">
+                    <div className="nav-link-text">
+                      <a
+                        className="linkStyleNavbar"
+                        onClick={this.noticeboardClicked}
+                      >
+                        Notice Board
+                      </a>
+                    </div>
+                  </Col>
 
-                <Col span={3} className="nav-link">
-                  <div className="nav-link-text">
-                    <a
-                      className="linkStyleNavbar"
-                      onClick={this.servicesClicked}
-                    >
-                      Services
-                    </a>
-                  </div>
-                </Col>
+                  <Col span={3} className="nav-link">
+                    <div className="nav-link-text">
+                      <a
+                        className="linkStyleNavbar"
+                        onClick={this.servicesClicked}
+                      >
+                        Services
+                      </a>
+                    </div>
+                  </Col>
 
-                <Col span={3} className="nav-link">
-                  <div className="nav-link-text">
-                    <a
-                      className="linkStyleNavbar"
-                      onClick={this.aboutUsClicked}
-                    >
-                      About US
-                    </a>
-                  </div>
-                </Col>
-                <Col span={3} className="nav-link">
-                  <div className="nav-link-text">
-                    <a
-                      className="linkStyleNavbar"
-                      onClick={this.contactClicked}
-                    >
-                      Contact
-                    </a>
-                  </div>
-                </Col>
-                <Col span={3} className="nav-link">
-                  <div className="nav-link-text">
-                    <Link className="linkStyleNavbar" to="/login">
-                      Login/Signup
-                    </Link>
-                  </div>
-                </Col>
-                <Col span={3} />
-              </>
-            )}
-          </Row>
-        </Col>
-        <Col
-          xl={0}
-          lg={6}
-          md={6}
-          sm={6}
-          xs={6}
-          style={{ textAlign: "right", paddingRight: "10%" }}
+                  <Col span={3} className="nav-link">
+                    <div className="nav-link-text">
+                      <a
+                        className="linkStyleNavbar"
+                        onClick={this.aboutUsClicked}
+                      >
+                        About US
+                      </a>
+                    </div>
+                  </Col>
+                  <Col span={3} className="nav-link">
+                    <div className="nav-link-text">
+                      <a
+                        className="linkStyleNavbar"
+                        onClick={this.contactClicked}
+                      >
+                        Contact
+                      </a>
+                    </div>
+                  </Col>
+                  <Col span={3} className="nav-link">
+                    <div className="nav-link-text">
+                      <Link className="linkStyleNavbar" to="/login">
+                        Login/Signup
+                      </Link>
+                    </div>
+                  </Col>
+                  <Col span={3} />
+                </>
+              )}
+            </Row>
+          </Col>
+          <Col
+            xl={0}
+            lg={6}
+            md={6}
+            sm={6}
+            xs={6}
+            style={{ textAlign: "right", paddingRight: "10%" }}
+          >
+            <MenuOutlined
+              onClick={this.toggelDrawer}
+              style={{ color: "#ffffff", fontSize: "20px" }}
+            />
+          </Col>
+        </Row>
+        <Drawer
+          placement="left"
+          closable={true}
+          onClose={this.toggelDrawer}
+          visible={this.state.drawerVisible}
+          width="50%"
         >
-          <MenuOutlined style={{ color: "#ffffff", fontSize: "20px" }} />
-        </Col>
-      </Row>
+          {this.props.currentUser ? (
+            <Row>
+              <Col span={24}>Hi, {this.props.currentUser.name}</Col>
+            </Row>
+          ) : (
+            <Row>
+              <Col span={24}>
+                <Link to="/login">Login</Link>
+              </Col>
+            </Row>
+          )}
+        </Drawer>
+      </>
     );
   }
 }

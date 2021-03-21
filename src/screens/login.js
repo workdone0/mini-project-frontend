@@ -5,6 +5,7 @@ import { withCookies, Cookies } from "react-cookie";
 import { instanceOf } from "prop-types";
 import { connect } from "react-redux";
 
+import CalanderImg from "../assets/calander.png";
 import { loginApi } from "../api/login";
 import { setCurrentUser } from "../redux/user/user.actions";
 import "./styles/login.css";
@@ -53,8 +54,17 @@ class Login extends React.Component {
     }
     return (
       <Row className="login-main-container">
-        <Col span={8}></Col>
-        <Col span={8} className="login-form-column">
+        <Col
+          span={12}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <img src={CalanderImg} style={{ height: "60%", width: "auto" }} />
+        </Col>
+        <Col span={12} className="login-form-column">
           <h2 className="brand-name-login-page">
             Take<span>Easy</span>
           </h2>
@@ -79,7 +89,6 @@ class Login extends React.Component {
             Login
           </Button>
         </Col>
-        <Col span={8}></Col>
       </Row>
     );
   }

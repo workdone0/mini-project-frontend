@@ -17,7 +17,11 @@ export class Sidenav extends Component {
         <Row className="sidenav-container">
           <Col span={5} className="sidenav-navbar">
             <Row justify="center">
-              <img src={ayushi} className="sidenav-image" alt="image"></img>
+              <img
+                src={`https://avatars.dicebear.com/api/bottts/${this.props.currentUser.name}.svg`}
+                className="sidenav-image"
+                alt="image"
+              ></img>
             </Row>
             <Row justify="center">
               <h1 className="sidenav-user">{this.props.currentUser.name}</h1>
