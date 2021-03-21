@@ -55,10 +55,10 @@ class Navbar extends Component {
     const menu = (
       <Menu>
         <Menu.Item>
-          <Link to={{pathname:'/profile', state:{isDashboard: "true", isProfileForm: "false"}}}>Dashboard</Link>
+          <Link to={{pathname:'/profile', state:{isDashboard: true}}}>Dashboard</Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to={{pathname:'/profile', state:{isDashboard: "false", isProfileForm: "true"}}}>Profile</Link>
+          <Link to={{pathname:'/profile', state:{isDashboard: false}}}>Profile</Link>
         </Menu.Item>
         <Menu.Item>
           <a onClick={this.logout}>Logout</a>

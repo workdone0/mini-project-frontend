@@ -31,7 +31,7 @@ export class Sidenav extends Component {
             </Row>
           </Col>
           <Col span={19}>
-            {isDashboard? <Dashboard/> : <ProfileForm/>}
+            {isDashboard ? (<Dashboard/>) : (<ProfileForm/>)}
           </Col>
         </Row>
       </div>
