@@ -20,7 +20,7 @@ import LoadingAnimation from "./screens/loadingAnimation";
 import Profile from "./screens/profile";
 import HospitalForm from "./screens/HospitalForm";
 import Register from "./screens/register";
-
+import HostelComplaint from "./screens/HostelComplaint";
 import { verifyLoginToken } from "./api/verify";
 
 const NoMatchPage = () => {
@@ -91,6 +91,9 @@ class App extends Component {
 
             <Route exact path="/HospitalForm">
               <HospitalForm />
+            </Route>
+
+              <HostelComplaint />
             </Route>
 
             <Route component={NoMatchPage} />
