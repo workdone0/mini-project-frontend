@@ -1,13 +1,14 @@
 import React from "react";
-import { Row, Col, Input, Button } from "antd";
+import { Row, Col, Input, Button,Card } from "antd";
 import { Redirect } from "react-router-dom";
 import { withCookies, Cookies } from "react-cookie";
 import { instanceOf } from "prop-types";
 import { connect } from "react-redux";
 
-import CalanderImg from "../assets/calander.png";
+
 import { loginApi } from "../api/login";
 import { setCurrentUser } from "../redux/user/user.actions";
+import { Link } from "react-router-dom";
 import "./styles/login.css";
 
 class Login extends React.Component {
@@ -54,17 +55,9 @@ class Login extends React.Component {
     }
     return (
       <Row className="login-main-container">
-        <Col
-          span={12}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <img src={CalanderImg} style={{ height: "60%", width: "auto" }} />
-        </Col>
-        <Col span={12} className="login-form-column">
+       
+        <Col span={10} className="login-form-column">
+        <div className="login-container">
           <h2 className="brand-name-login-page">
             Take<span>Easy</span>
           </h2>
@@ -88,7 +81,18 @@ class Login extends React.Component {
           >
             Login
           </Button>
+          <Row>
+           <Col span={15}>
+         <p style={{color:"white", margin:"10px"}}> Need an account ? <Link to="/register">Sign Up</Link></p>
+         </Col> 
+         <Col span={9}>
+          <p style={{paddingTop:"10px"}}> <a >Forgot Password?</a></p>
+         </Col>
+         </Row>
+          </div>
+         
         </Col>
+       
       </Row>
     );
   }
