@@ -20,7 +20,7 @@ class ConferenceBookingForm extends Component {
       endH: "",
       endM: "",
       roomId: "",
-      description: "",
+      title: "",
       loading: false,
       roomBookingData: [],
       buttonDisabled: true,
@@ -142,7 +142,7 @@ class ConferenceBookingForm extends Component {
       endH,
       endM,
       roomId,
-      description,
+      title,
     } = this.state;
     var meetingSTime = new Date(year, month, day, startH, startM);
     var meetingETime = new Date(year, month, day, endH, endM);
@@ -153,7 +153,7 @@ class ConferenceBookingForm extends Component {
       roomId,
       startEpoch,
       endEpoch,
-      description
+      title
     );
     this.setState({
       loading: false,
@@ -161,9 +161,9 @@ class ConferenceBookingForm extends Component {
     console.log(response);
   };
 
-  descriptionChanged = async (event) => {
+  titleChanged = async (event) => {
     this.setState({
-      description: await event.target.value,
+      title: await event.target.value,
     });
   };
   render() {
@@ -198,6 +198,13 @@ class ConferenceBookingForm extends Component {
               Organizing meetings just got easy.
             </h2>
             <Form layout="vertical" style={{ width: "100%" }}>
+              <Form.Item label="Title">
+                <Input
+                  onChange={this.titleChanged}
+                  style={{ width: "100%" }}
+                  placeholder="Title"
+                />
+              </Form.Item>
               <Form.Item label="Select Date">
                 <DatePicker
                   onChange={this.dateSelected}
@@ -232,15 +239,6 @@ class ConferenceBookingForm extends Component {
                   date and time. See all meetings <Link to="/">here</Link>.
                 </p>
               ) : null}
-
-              <Form.Item label="Meeting Description">
-                <Input.TextArea
-                  autoSize={{ minRows: 2, maxRows: 6 }}
-                  style={{ width: "100%" }}
-                  placeholder="Description"
-                  onChange={this.descriptionChanged}
-                />
-              </Form.Item>
             </Form>
             <Button
               shape="round"

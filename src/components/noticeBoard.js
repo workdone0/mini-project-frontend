@@ -1,36 +1,32 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
 import NoticeBoardCard from "./noticeBoardcard";
+import { getRoomBookingsApi } from "../api/roomBooking";
 
 class NoticeBoard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      events: [],
+    };
+  }
+  async componentDidMount() {
+    const response = await getRoomBookingsApi();
+    this.setState({
+      events: await response.data.data,
+    });
+  }
   render() {
-    const titles = [
-      "Innovision Club Meeting",
-      "Udaan Club Meeting",
-      "DSA Workshop",
-    ];
-    const venue = [
-      "A-105",
-      "A-105",
-      "A-105",
-    ];
-    const time = [
-      "5pm-6pm",
-      "6pm-7pm",
-      "8pm-9pm",
-    ];
     return (
       <div id="home-noticeboard">
-        <Row justify="center"><h1 style={{margin: "20px 0px"}}>Notice Board</h1></Row>
+        <Row justify="center">
+          <h1 style={{ margin: "20px 0px" }}>Notice Board</h1>
+        </Row>
         <Row>
-          {titles.map((title, index) => {
-              return (
+          {this.state.events.map((event, index) => {
+            return (
               <Col span={24} key={index}>
-                <NoticeBoardCard
-                  title={title}
-                  venue={venue[index]}
-                  time={time[index]}
-                />
+                <NoticeBoardCard event={event} />
               </Col>
             );
           })}

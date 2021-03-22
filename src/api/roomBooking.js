@@ -7,7 +7,7 @@ export const roomBookingApi = async (
   roomId,
   startTime,
   endTime,
-  description
+  title
 ) => {
   try {
     const response = await axois.post(`${baseURL}/roombooking/new`, {
@@ -15,7 +15,7 @@ export const roomBookingApi = async (
       roomId: roomId,
       startTime: startTime,
       endTime: endTime,
-      description: description,
+      title: title,
     });
     return response;
   } catch (error) {
