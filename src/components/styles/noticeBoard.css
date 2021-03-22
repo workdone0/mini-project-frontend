@@ -1,0 +1,9 @@
+.notice-table-heading{
+    width:84%;
+    border-bottom: 2.5px solid white;
+    /* border-image: linear-gradient(130deg, #e44690, rgb(230, 164, 202)) 30 stretch; */
+    margin: 0px auto;
+}
+.notice-table{
+    margin:0px 0px 35px;
+}

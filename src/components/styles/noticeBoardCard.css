@@ -1,7 +1,16 @@
 .main-container-noticeboard-card{
-    margin:40px;
+    width:84%;
+    border-bottom: 2.5px solid white;
+    padding: 5px 0px 0px;
+    margin: 0px auto;
+}
+.color1{
+    background-image: linear-gradient(130deg, #e44690, rgb(230, 164, 202));
+}
+.color2{
+    background-image: linear-gradient(130deg, rgb(230, 164, 202), #e44690);
 }
 .notice-card-heading{
-    padding:20px;
-    border-bottom: 2px solid crimson;
+    font-size: 1.07rem;
+    font-weight: normal;
 }
