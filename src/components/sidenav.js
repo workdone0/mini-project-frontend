@@ -5,6 +5,7 @@ import ayushi from "../assets/ayushi.jpg";
 import "./styles/sidenav.css";
 import ProfileForm from "./profileForm";
 import Dashboard from "./dashboard";
+import ConferenceDashboard from "./conferenceDashboard";
 
 const { Panel } = Collapse;
 
@@ -69,28 +70,28 @@ export class Sidenav extends Component {
                 >
                   <Row>
                     <a className="sidenav-link panel-link">
-                      Conference Room Requests
+                      Conference
                     </a>
                   </Row>
                   <Row>
                     <a className="sidenav-link panel-link">
-                      Hospital Appointments
+                      Hospital
                     </a>
                   </Row>
                   <Row>
                     <a className="sidenav-link panel-link">
-                      Event Utilities Booked
+                      Event
                     </a>
                   </Row>
                   <Row>
-                    <a className="sidenav-link panel-link">Hostel Complaints</a>
+                    <a className="sidenav-link panel-link">Hostel</a>
                   </Row>
                 </Panel>
               </Collapse>
             </Row>
           </Col>
           <Col span={19}>
-            {this.state.isDashboard ? <Dashboard /> : <ProfileForm />}
+            <ConferenceDashboard/>
           </Col>
         </Row>
       </div>

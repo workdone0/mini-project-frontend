@@ -216,13 +216,15 @@ class Navbar extends Component {
           width="50%"
         >
           {this.props.currentUser ? (
-            <Row>
-              <Col span={24}>Hi, {this.props.currentUser.name}</Col>
+            <Row className="navbar-drawer">
+              <Col span={24}>
+                <div className="navbar-drawer-text">Hi, {this.props.currentUser.name}</div>
+              </Col>
             </Row>
           ) : (
-            <Row>
+            <Row className="navbar-drawer">
               <Col span={24}>
-                <Link to="/login">Login</Link>
+                <Link to="/login"><div className="navbar-drawer-text">Login</div></Link>
               </Col>
             </Row>
           )}

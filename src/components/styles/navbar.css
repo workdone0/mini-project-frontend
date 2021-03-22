@@ -35,6 +35,15 @@
   color: #ea2c62;
 }
 
+.navbar-drawer{
+  margin: 20px 25px;
+}
+
+.navbar-drawer-text{
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
 @media only screen and (max-width: 1200px) {
   .brand-container {
     text-align: left;
