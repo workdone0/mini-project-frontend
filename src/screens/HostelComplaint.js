@@ -26,7 +26,8 @@ export class HostelComplaint extends Component {
                 <BackNavbar />
                 <Row>
                     
-
+                    
+                    <Col span={1}></Col>
                     <Col span={8} className="Col-1" >
                         <Row>
                             <img src={complaint} className="complaint-image" ></img>
@@ -65,7 +66,11 @@ export class HostelComplaint extends Component {
                         <Col span={5}></Col>
 
                     </Col>
-                    <Col span={14} className="Col-2" >
+                    <Col span={2}></Col>
+                    <Col span={12} className="Col-2" >
+                        <h2 style={{ fontSize: "35px", fontWeight: "500", textAlign:"center" }}>
+                            Hostel Complaints? Take it Easy!
+                        </h2>
                         <Form layout="vertical" style={{ width: "100%" }}>
 
                             <Form.Item name="hostel" label=" Hostel No."
@@ -164,6 +169,7 @@ export class HostelComplaint extends Component {
 
 
                     </Col>
+                    <Col span={1}></Col>
                 </Row>
             </>
 
