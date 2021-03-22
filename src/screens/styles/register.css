@@ -48,7 +48,7 @@
   border-bottom:1px solid white !important;
   background-color: transparent !important;
   outline: none !important;
-  color:white;
+  color:tan !important;
 }
 
 .email-input-form:focus {
@@ -61,6 +61,7 @@
 
 input.ant-input {
   background-color: transparent;
+  color:tan !important;
 }
 
 .password-input-form:focus {
