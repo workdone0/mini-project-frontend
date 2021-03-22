@@ -25,14 +25,14 @@ export class HostelComplaint extends Component {
             <>
                 <BackNavbar />
                 <Row>
-                    <Col span={2}></Col>
+                    
 
                     <Col span={8} className="Col-1" >
                         <Row>
                             <img src={complaint} className="complaint-image" ></img>
                         </Row>
 
-
+                       
                         <Row>
                             <Col span={2} style={{ marginLeft: "20px" }}>
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -62,8 +62,10 @@ export class HostelComplaint extends Component {
                             <p >Boy's Hostel Warden : <a>7930459213 </a> </p>
                         </Row>
 
+                        <Col span={5}></Col>
+
                     </Col>
-                    <Col span={11} className="Col-2" >
+                    <Col span={14} className="Col-2" >
                         <Form layout="vertical" style={{ width: "100%" }}>
 
                             <Form.Item name="hostel" label=" Hostel No."
@@ -114,7 +116,7 @@ export class HostelComplaint extends Component {
 
 
                             <Row>
-                                <Col span={21}>
+                                <Col span={10}>
                                     <Form.Item label="Preferred Time From">
                                         <TimePicker
                                             style={{ width: "100%" }}
@@ -124,7 +126,7 @@ export class HostelComplaint extends Component {
                                         />
                                     </Form.Item>
                                 </Col>
-                                <Col span={20}>
+                                <Col span={10}>
                                     <Form.Item label="Preferred Time To :" >
                                         <TimePicker
                                             style={{ width: "100%", marginLeft: "10px" }}
