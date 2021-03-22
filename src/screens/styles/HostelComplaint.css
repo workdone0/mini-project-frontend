@@ -1,26 +1,16 @@
 .complaint-image
 {
-    height:50%;
-     width:80%;
+    height:70%;
+     width:100%;
     margin-top:8%;
-    margin-left:25px;
+  
    
 }
 
-.Col-1
-{
-    border-radius:5px;
-     background-color:#222;
-      margin-top:5%;
-       box-shadow:2px 2px 2px #222;
-}
+
 
 .Col-2
 {
     margin-top: 5%;
-     width: 90%;
-      background-color: rgb(134,254,254,0.2);
-       padding: 15px;
-        border-radius:5px;
-         box-shadow: 2px 2px 2px lightgoldenrodyellow;
+   width:100%;
 }

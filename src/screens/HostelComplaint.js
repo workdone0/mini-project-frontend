@@ -25,9 +25,9 @@ export class HostelComplaint extends Component {
             <>
                 <BackNavbar />
                 <Row>
-                    <Col span={5}></Col>
+                    <Col span={2}></Col>
 
-                    <Col span={7} className="Col-1" >
+                    <Col span={8} className="Col-1" >
                         <Row>
                             <img src={complaint} className="complaint-image" ></img>
                         </Row>
@@ -44,7 +44,7 @@ export class HostelComplaint extends Component {
                             </Col>
 
                             <Col>
-                                <p style={{ color: "white" }}>Girl's Hostel Warden :<a> 8210295678 </a> </p>
+                                <p >Girl's Hostel Warden :<a> 8210295678 </a> </p>
                             </Col>
                         </Row>
 
@@ -59,11 +59,11 @@ export class HostelComplaint extends Component {
                                 </svg>
                             </Col>
 
-                            <p style={{ color: "white" }}>Boy's Hostel Warden : <a>7930459213 </a> </p>
+                            <p >Boy's Hostel Warden : <a>7930459213 </a> </p>
                         </Row>
 
                     </Col>
-                    <Col span={7} className="Col-2" >
+                    <Col span={11} className="Col-2" >
                         <Form layout="horizontal" style={{ width: "100%" }}>
 
                             <Form.Item name="hostel" label=" Hostel No."
