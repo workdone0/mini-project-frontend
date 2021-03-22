@@ -93,6 +93,7 @@ class App extends Component {
               <HospitalForm />
             </Route>
 
+            <Route exact path="/HostelComplaint">
               <HostelComplaint />
             </Route>
 
