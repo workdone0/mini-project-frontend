@@ -64,7 +64,7 @@ export class HostelComplaint extends Component {
 
                     </Col>
                     <Col span={11} className="Col-2" >
-                        <Form layout="horizontal" style={{ width: "100%" }}>
+                        <Form layout="vertical" style={{ width: "100%" }}>
 
                             <Form.Item name="hostel" label=" Hostel No."
                                 rules={[{ required: true }]}>
