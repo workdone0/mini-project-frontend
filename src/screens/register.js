@@ -1,9 +1,13 @@
 import React from "react";
-import { Row, Col, Input, Button } from "antd";
-
+import { Row, Col, Input, Button, Select} from "antd";
+import { Link } from "react-router-dom";
 import lockImg from "../assets/lock.png";
 import { registerApi } from "../api/register";
 import "./styles/register.css";
+import signup from "../assets/signup.png";
+import reactDom from "react-dom";
+
+const { Option } = Select;
 
 class Register extends React.Component {
   constructor() {
@@ -51,9 +55,10 @@ class Register extends React.Component {
             alignItems: "center",
           }}
         >
-          <img src={lockImg} style={{ height: "50%", width: "50%" }} />
+          <img src={signup} style={{ height: "70%", width: "100%" ,opacity:0.7}} />
         </Col>
         <Col span={12} className="register-form-column">
+        <div className="register-container">
           <h2 className="brand-name-register-page">
             Take<span>Easy</span>
           </h2>
@@ -65,23 +70,28 @@ class Register extends React.Component {
           <Input
             onChange={(event) => this.setState({ phone: event.target.value })}
             className="email-input-form"
-            placeholder="Phone"
+            placeholder="Contact No"
           />
           <Input
             onChange={(event) => this.setState({ email: event.target.value })}
             className="email-input-form"
-            placeholder="Email"
+            placeholder="Email Id"
           />
           <Input
             onChange={(event) => this.setState({ clg_id: event.target.value })}
             className="email-input-form"
-            placeholder="Id"
+            placeholder=" College Id"
           />
-          <Input
+         
+          <Select
             onChange={(event) => this.setState({ type: event.target.value })}
-            className="email-input-form"
-            placeholder="Type"
-          />
+            className="email-input-form"  placeholder=" Account Type">
+          
+           <Option value="professors">Professors </Option>
+            <Option value="students">Students</Option>
+             <Option value="non teaching staffs">Non Teaching Staffs</Option>
+            </Select>
+            
           <Input.Password
             onChange={(event) =>
               this.setState({ password: event.target.value })
@@ -89,7 +99,7 @@ class Register extends React.Component {
             className="password-input-form"
             placeholder="Password"
           />
-          <Button
+          <Button 
             onClick={this.onRegisterPressed}
             className="register-button-register-page"
             type="primary"
@@ -97,6 +107,8 @@ class Register extends React.Component {
           >
             Register
           </Button>
+          <p style={{color:"white", marginLeft:"24%" ,paddingTop:"2px"}}> Already a member? <Link to="/login">Sign In</Link></p>
+          </div>
         </Col>
       </Row>
     );

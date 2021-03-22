@@ -3,7 +3,20 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #000000;
+  background-image:url("https://images.unsplash.com/photo-1554050857-c84a8abdb5e2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60");
+ 
+}
+
+.register-container
+{
+  border:2px solid #222;
+  box-shadow: 2px 2px 2px #222;
+  width:70%;
+  margin:0;
+  padding:10px 30px 20px 20px;
+  background-color:#222;
+  border-radius:2%;
+  height:80vh;
 }
 
 .brand-name-register-page {
@@ -11,6 +24,7 @@
   font-weight: 700;
   margin: 0;
   color: #ffffff;
+  text-align:center;
 }
 
 .brand-name-register-page span {
@@ -26,11 +40,14 @@
   padding-right: 60px;
 }
 
-.email-input-form {
-  border-radius: 15px !important;
+.email-input-form , .password-input-form{
+  border-radius: 2px !important;
   margin: 10px !important;
-  height: 50px;
-  border-color: #ffffff;
+  height: 30px;
+  border-color:transparent !important;
+  border-bottom:1px solid white !important;
+  background-color: transparent !important;
+  outline: none !important;
 }
 
 .email-input-form:focus {
@@ -41,11 +58,8 @@
   border-color: #ea2c62 !important;
 }
 
-.password-input-form {
-  border-radius: 15px !important;
-  margin: 10px !important;
-  height: 50px;
-  border-color: #ffffff;
+input.ant-input {
+  background-color: transparent;
 }
 
 .password-input-form:focus {
@@ -56,11 +70,35 @@
   border-color: #ea2c62 !important;
 }
 
+svg {
+  color: white !important;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  border-radius: 2px;}
+
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    position: relative;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 2px;}
+
+  
+  .ant-select-arrow
+  {
+    color: white !important;
+  }
+
 .register-button-register-page {
   width: 60% !important;
   height: 40px !important;
-  border-radius: 15px !important;
-  margin: 10px !important;
+  border-radius: 3px !important;
+  margin-left: 20% !important;
+  margin-top:3% !important;
   background-color: #ea2c62 !important;
   border: none !important;
+  
 }

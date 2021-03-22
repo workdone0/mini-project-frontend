@@ -10,7 +10,7 @@
 {
   border:2px solid #222;
   box-shadow: 2px 2px 2px #222;
-  width:100%;
+  width:85%;
   margin:100px;
   padding:30px 30px 70px 20px;
   background-color:#222;
@@ -73,7 +73,7 @@
   height: 40px !important;
   border-radius: 15px !important;
  margin-left:30%;
- margin-top:5%;
+ margin-top:8%;
   background-color: #ea2c62 !important;
   border: none !important;
 }

@@ -81,12 +81,12 @@ class Login extends React.Component {
           >
             Login
           </Button>
-          <Row>
+          <Row style={{height:"10vh"}}>
            <Col span={15}>
-         <p style={{color:"white", margin:"10px"}}> Need an account ? <Link to="/register">Sign Up</Link></p>
+         <p style={{color:"white", margin:"30px"}}> Need an account ? <Link to="/register">Sign Up</Link></p>
          </Col> 
          <Col span={9}>
-          <p style={{paddingTop:"10px"}}> <a >Forgot Password?</a></p>
+          <p style={{paddingTop:"30px"}}> <a >Forgot Password?</a></p>
          </Col>
          </Row>
           </div>
