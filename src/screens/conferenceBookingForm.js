@@ -192,6 +192,7 @@ class ConferenceBookingForm extends Component {
               paddingRight: "30px",
               paddingTop: "10%",
               textAlign: "center",
+             
             }}
           >
             <h2 style={{ fontSize: "40px", fontWeight: "500" }}>
@@ -201,8 +202,9 @@ class ConferenceBookingForm extends Component {
               <Form.Item label="Title">
                 <Input
                   onChange={this.titleChanged}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", color:"black" }}
                   placeholder="Title"
+                
                 />
               </Form.Item>
               <Form.Item label="Select Date">

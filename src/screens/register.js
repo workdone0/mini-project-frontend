@@ -85,7 +85,7 @@ class Register extends React.Component {
          
           <Select
             onChange={(event) => this.setState({ type: event.target.value })}
-            className="email-input-form"  placeholder=" Account Type">
+            className="account-input-form"  placeholder=" Account Type">
           
            <Option value="professors">Professors </Option>
             <Option value="students">Students</Option>

@@ -111,7 +111,7 @@ export class HospitalForm extends Component {
                         rules={[{ required: true }]}>
                         <Select
                         placeholder="Select a option and change input text above"
-                        style={{ width: "80%" }}
+                        style={{ width: "80%" ,border:"1px solid gray" }}
                     
                             >
                         <Option value="Morning">Morning Slot </Option>

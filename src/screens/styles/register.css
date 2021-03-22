@@ -48,7 +48,7 @@
   border-bottom:1px solid white !important;
   background-color: transparent !important;
   outline: none !important;
-  color:tan !important;
+  color:gray !important;
 }
 
 .email-input-form:focus {
@@ -61,7 +61,7 @@
 
 input.ant-input {
   background-color: transparent;
-  color:tan !important;
+  color:gray;
 }
 
 .password-input-form:focus {
@@ -76,17 +76,20 @@ svg {
   color: white !important;
 }
 
-.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+.account-input-form {
   position: relative;
   background-color: transparent;
   border: none;
+  border-bottom:1px solid white;
   border-radius: 2px;}
 
   .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     position: relative;
     background-color: transparent !important;
     border: none !important;
-    border-radius: 2px;}
+    border-radius: 2px;
+
+  }
 
   
   .ant-select-arrow
