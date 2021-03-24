@@ -11,7 +11,7 @@ import AboutCard from "../components/aboutCard";
 
 import "../components/styles/about.css";
 
-import conference from "../assets/conference.png";
+import Ashish from "../assets/Ashish.jpg";
 import complaint from "../assets/complaint.png";
 import FooterIcon from "../components/footerIcons";
 import Footer from "../components/footer";
@@ -32,11 +32,11 @@ export class HospitalForm extends Component {
     render() {
         const names = ["Dr.Ashish Sharma", "Dr.Anita Pateshwari"];
         const description = [
-          "Backend Developer,Third Year ,Computer Science and Engineering Student.",
+          "MBBS, DFM ,CCH",
           "Frontend Developer,Third Year ,Computer Science and Engineering Student.",
           
         ];
-        const images = [conference, complaint];
+        const images = [Ashish, complaint];
         const breakPoints = [
           {
             width: 576,
