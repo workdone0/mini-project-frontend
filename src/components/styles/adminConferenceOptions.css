@@ -1,0 +1,13 @@
+.blink-me {
+    margin: 20px 0px 40px 0px;
+    color:crimson;
+    animation: blinker 3s linear infinite;
+    font-family:'Georgia';
+    text-transform: uppercase;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
