@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import "./styles/adminButtons.css";
 
-class OptionsCard extends Component {
+class AdminButtons extends Component {
   constructor() {
     super();
     this.state = {
@@ -43,4 +43,4 @@ class OptionsCard extends Component {
   }
 }
 
-export default OptionsCard;
+export default AdminButtons;
