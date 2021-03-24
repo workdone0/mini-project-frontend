@@ -12,7 +12,7 @@ class AdminHomeButton extends Component {
       "Check Hostel Complaints",
     ];
     const path = [
-        "/AdminHome",
+        "/AdminConferenceHomePage",
         "/AdminHome",
         "/AdminHome",
         "/AdminHome",        

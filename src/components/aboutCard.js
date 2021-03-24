@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Row, Col } from "antd";
 
 import "./styles/aboutCard.css";
-import page1 from "../assets/page1.png";
 
 class AboutCard extends Component {
   render() {
@@ -20,6 +19,12 @@ class AboutCard extends Component {
             </Row>
             <Row justify="center">
               <p style={{ color: "white" }}>{this.props.description}</p>
+            </Row>
+            <Row justify="center">
+              <p style={{ color: "white" }}>Phone No : {this.props.phone}</p>
+            </Row>
+            <Row justify="center">
+              <p style={{ color: "white" }}>Timing : {this.props.shift}</p>
             </Row>
           </div>
         </div>

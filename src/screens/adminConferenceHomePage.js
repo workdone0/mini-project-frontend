@@ -2,23 +2,17 @@
 import React, { Component } from "react";
 import Footers from "../components/footer";
 import FooterIcon from "../components/footerIcons";
-import { Row, Col } from "antd";
-import Navbar from "../components/navbar";
 import AdminConferenceOptions from "../components/adminConferenceOptions";
+import AdminNavbar from "../components/adminNavbar";
 
 class AdminConferenceHomePage extends Component {
   render() {
     return (
         <>
-        <Navbar />
-      
-     
+        <AdminNavbar/>
         <AdminConferenceOptions />
-       
         <FooterIcon />
         <Footers />
-      
-       
       </>
     );
   }

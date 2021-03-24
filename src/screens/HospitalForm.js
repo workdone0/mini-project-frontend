@@ -33,8 +33,15 @@ export class HospitalForm extends Component {
         const names = ["Dr.Ashish Sharma", "Dr.Anita Pateshwari"];
         const description = [
           "MBBS, DFM ,CCH",
-          "Frontend Developer,Third Year ,Computer Science and Engineering Student.",
-          
+          "MBBS",
+        ];
+        const phone = [
+          "7908347651",
+          "9002666256",
+        ];
+        const shift = [
+          "4pm-9pm, 9pm-9am(On Call)",
+          "9am-4pm",
         ];
         const images = [Ashish, complaint];
         const breakPoints = [
@@ -168,6 +175,8 @@ export class HospitalForm extends Component {
                     images={images[index]}
                     name={name}
                     description={description[index]}
+                    phone = {phone[index]}
+                    shift = {shift[index]}
                   />
                 </Col>
               );
