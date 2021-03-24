@@ -22,6 +22,7 @@ import HospitalForm from "./screens/HospitalForm";
 import Register from "./screens/register";
 import HostelComplaint from "./screens/HostelComplaint";
 import { verifyLoginToken } from "./api/verify";
+import AdminHome from "./screens/adminHome";
 
 const NoMatchPage = () => {
   return <h3>404 - Not found</h3>;
@@ -95,6 +96,10 @@ class App extends Component {
 
             <Route exact path="/HostelComplaint">
               <HostelComplaint />
+            </Route>
+
+            <Route exact path="/AdminHome">
+              <AdminHome />
             </Route>
 
             <Route component={NoMatchPage} />
