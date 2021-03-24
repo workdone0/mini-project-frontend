@@ -19,9 +19,9 @@ class AdminConferenceOptions extends Component {
     const path = ["/", "/"];
     const image = [];
     return (
-      <div style={{ minHeight: "70vh" }}>
+      <div style={{ minHeight: "69vh" }}>
         <Row justify="center">
-          <h1 style={{ margin: "20px 0px 40px 0px" }} className="blink-me">Welcome, Admin!</h1>
+          <h1 style={{  }} className="blink-me">Welcome, Admin!</h1>
         </Row>
         <Row>
           {titles.map((title, index) => {

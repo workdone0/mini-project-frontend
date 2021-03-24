@@ -37,3 +37,17 @@ p{
     margin: 10%;
     margin-top:18%;
 }
+
+.hospital-marquee-row
+{
+    font-weight: 800;
+    font-family:"papyrus";
+    animation: rainbow 5s infinite;
+}
+
+@keyframes rainbow{
+    0%{color: orange;}
+  30%{color: coral;}
+	60%{color: green;}
+	100%{color: orange;}
+}
