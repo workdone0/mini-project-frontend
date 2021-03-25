@@ -13,8 +13,8 @@ class Dashboard extends Component {
                               className = "dashboard-cards" 
                               bordered={false}
                               style={{borderRadius:"15px",
-                              boxShadow:"5px 5px 1px 3px rgb(84,190,231,0.7)",
-                              backgroundColor:"rgb(84,190,231"}}>
+                              boxShadow:"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                              backgroundImage:"linear-gradient(130deg, #05d3fc, #0f8299)"}}>
                                   <Row>
                                       <Col span={12}>
                               <h1> 75 </h1>
@@ -35,8 +35,8 @@ class Dashboard extends Component {
                              title="Pending"
                               bordered={false} 
                               style={{ borderRadius:"15px",
-                               boxShadow:"5px 5px 1px 3px rgb(241,163,19,0.7)",
-                               backgroundColor:"rgb(241,163,19)"}}>
+                               boxShadow:"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                               backgroundImage:"linear-gradient(130deg, #ffdb0f, #bda20b)"}}>
                                 <Row>
                                       <Col span={12}>
                               <h1> 20 </h1>
@@ -58,8 +58,8 @@ class Dashboard extends Component {
                             bordered={false} 
                              className = "dashboard-cards" 
                              style={{ borderRadius:"15px",
-                              boxShadow:"5px 5px 1px 3px rgb(46,139,87,0.7)",
-                              backgroundColor:"rgb(46,139,87)"}}>
+                              boxShadow:"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                              backgroundImage:"linear-gradient(130deg, #17e00b, #1dab15)"}}>
                                 <Row>
                                       <Col span={12}>
                               <h1> 35</h1>
@@ -81,8 +81,8 @@ class Dashboard extends Component {
                               className="dashboard-cards" 
                               bordered={false} 
                               style={{ borderRadius:"15px",
-                               boxShadow:"5px 5px 1px 3px rgb(167,63,63,0.7)",
-                               backgroundColor:"rgb(167,63,63)"}}>
+                               boxShadow:"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                               backgroundImage:"linear-gradient(130deg, #eb1349, #b5143d)"}}>
                                <Row>
                                       <Col span={12}>
                               <h1> 20</h1>
