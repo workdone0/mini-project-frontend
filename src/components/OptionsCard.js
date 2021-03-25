@@ -33,19 +33,23 @@ class OptionsCard extends Component {
         <img className="options-card-image" src={this.props.image}></img>
         <div className="options-card-body">
           <Row justify="center">
-            <h2>{this.props.title}</h2>
+            <h2 style={{color:"white"}}>{this.props.title}</h2>
           </Row>
           <Row justify="center">
-            <p>{this.props.description}</p>
+            <p style={{color:"white"}}>{this.props.description}</p>
           </Row>
           <Row justify="center">
             <Button
+            className="card-button"
               type="primary"
               size="large"
               onClick={this.clickedLetGo}
               style={{
-                backgroundImage: "linear-gradient(130deg, #f54295, #f58442)",
-                borderColor: "white",
+               
+                                    backgroundColor:"crimson ",
+                                    borderRadius: "10px",
+                                    border:"none",
+                                    
               }}
             >
                Let's Go!

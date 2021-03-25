@@ -1,7 +1,7 @@
 .main-container-sidenav {
   padding: 3px;
-  background-color: rgb(0, 0, 0, 0.9);
-  box-shadow: 10px 3px 5px 3px black;
+  background-color: rgb(0, 0, 0);
+ 
 }
 .sidenav-brand-container {
   text-align: left;

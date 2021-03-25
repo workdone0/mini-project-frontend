@@ -10,7 +10,7 @@ class ConferenceOptionsCard extends Component {
       <div className="conference-card">
         <div className="conference-card-body">
           <Row justify="center">
-            <h2>{this.props.room.name}</h2>
+            <h2 style={{color:"white"}}>{this.props.room.name}</h2>
           </Row>
           <Row justify="center">
             <Col span={24} style={{ textAlign: "center" }}>
@@ -25,8 +25,9 @@ class ConferenceOptionsCard extends Component {
             <Button
               type="primary"
               style={{
-                backgroundImage: "linear-gradient(130deg, #f54295, #f58442)",
-                borderColor: "white",
+                backgroundColor: "crimson",
+                borderColor: "#222",
+                borderRadius:"10px"
               }}
               size="large"
             >

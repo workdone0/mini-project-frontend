@@ -1,7 +1,7 @@
 .main-container-about {
   text-align: center;
   background-color: #000000;
-  height: 60vh;
+  height: 80vh;
 }
 
 .about-heading {
@@ -17,6 +17,6 @@
 
 @media only screen and (min-width: 900px) {
   .main-container-about {
-    height: 80vh;
+    height: 90vh;
   }
 }

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 
 
-import "./styles/optionsCard.css";
+import "./styles/adminConferenceOptionCard.css";
 
 class AdminConferenceOptionCard extends Component {
   constructor() {
@@ -25,11 +25,11 @@ class AdminConferenceOptionCard extends Component {
       return <Redirect to={this.props.path} />;
     }
     return (
-      <div className="options-card">
-       <img className="options-card-image" src={this.props.image}></img> 
-        <div className="options-card-body">
+      <div className="admin-options-card">
+      
+        <div className="admin-options-card-body">
           <Row justify="center">
-            <h1 style={{color:"crimson", fontFamily:"papyrus"}}>{this.props.title}</h1>
+            <h1 style={{color:"crimson", fontFamily:"Times New Roman"}}>{this.props.title}</h1>
           </Row>
           <Row justify="center">
             <p style={{color:"gray"}}>{this.props.description}</p>
@@ -40,8 +40,9 @@ class AdminConferenceOptionCard extends Component {
               size="large"
               onClick={this.clickedLetGo}
               style={{
-                backgroundImage: "linear-gradient(130deg, #f54295, #f58442)",
-                borderColor: "white",
+                backgroundColor: "crimson",
+                border: "none",
+                borderRadius:"15px"
               }}
             >
                Let's Go!

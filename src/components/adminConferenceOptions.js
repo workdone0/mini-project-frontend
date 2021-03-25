@@ -27,7 +27,6 @@ class AdminConferenceOptions extends Component {
                 <AdminConferenceOptionCard
                   title={title}
                   description={description[index]}
-                  //image={image[index]}
                   path={path[index]}
                 />
               </Col>

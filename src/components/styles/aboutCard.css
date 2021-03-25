@@ -1,6 +1,6 @@
 .card-about {
   width: 100%;
-  height: auto;
+  height: 60vh;
   background: #222;
   border-radius: 6px;
   padding: 25px 35px;
@@ -34,4 +34,12 @@
 }
 .card-about:hover img {
   border-color: #fff !important;
+}
+
+button.sc-bdfBwQ.lgksPe.rec.rec-arrow.rec.rec-arrow-right , button.sc-bdfBwQ.lgksPe.rec.rec-arrow.rec.rec-arrow-left{
+  background-color: crimson;
+}
+
+button.sc-bdfBwQ.iLquPE.rec.rec-arrow.rec.rec-arrow-left,button.sc-bdfBwQ.iLquPE.rec.rec-arrow.rec.rec-arrow-right {
+  background-color: #222;
 }
