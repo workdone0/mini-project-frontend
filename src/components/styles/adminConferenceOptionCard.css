@@ -1,0 +1,27 @@
+.admin-options-card {
+   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #222;
+    width: 90%;
+    height: 35vh;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    transition: all 0.3s ease;
+   margin-left:25%;
+    
+  
+  }
+  
+  .admin-options-card:hover {
+  
+    transform: scale(1.05);
+    border-radius: 60px;
+    
+  }
+  
+  .admin-options-card-body {
+    padding: 20px;
+    margin:auto;
+  }
+  

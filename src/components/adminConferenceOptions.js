@@ -17,7 +17,7 @@ class AdminConferenceOptions extends Component {
      
     ];
     const path = ["/", "/"];
-    const image = [];
+  
     return (
       <div style={{ minHeight: "69vh" }}>
         <Row justify="center">
@@ -26,12 +26,12 @@ class AdminConferenceOptions extends Component {
         <Row>
           {titles.map((title, index) => {
             return (
-              <Col span={12} key={index} >
+              <Col span={10} key={index} >
                 <AdminConferenceOptionCard
                   title={title}
                   
                   description={description[index]}
-                  //image={image[index]}
+                
                   path={path[index]}
                 />
               </Col>
