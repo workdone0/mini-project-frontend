@@ -24,7 +24,7 @@ class Options extends Component {
     const path = ["/conference", "/HospitalForm", "/", "/HostelComplaint"];
     const image = [conference, hospital, event, complaint];
     return (
-      <div>
+      <div style={{backgroundColor:"black"}}>
         <Row justify="center">
           <h1 style={{ margin: "20px 0px" }}>Our Services</h1>
         </Row>

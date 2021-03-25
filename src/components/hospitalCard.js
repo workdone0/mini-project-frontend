@@ -3,7 +3,7 @@ import { Row, Col } from "antd";
 
 import "./styles/aboutCard.css";
 
-class AboutCard extends Component {
+class HospitalCard extends Component {
   render() {
     return (
       <Col span={20}>
@@ -18,15 +18,14 @@ class AboutCard extends Component {
               <h2 style={{ color: "white" }}>{this.props.name}</h2>
             </Row>
             <Row justify="center">
-              <h3 style={{ color: "white" }}>{this.props.fields}</h3>
+              <p style={{ color: "white" }}>{this.props.description}</p>
             </Row>
             <Row justify="center">
-              <p style={{ color: "white" }}>{this.props.year}</p>
+              <p style={{ color: "white" }}>Phone No : {this.props.phone}</p>
             </Row>
             <Row justify="center">
-              <p style={{ color: "white" }}>{this.props.dept}</p>
+              <p style={{ color: "white" }}>Timing : {this.props.shift}</p>
             </Row>
-           
           </div>
         </div>
       </Col>
@@ -34,4 +33,4 @@ class AboutCard extends Component {
   }
 }
 
-export default AboutCard;
+export default HospitalCard;

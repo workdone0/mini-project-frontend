@@ -25,7 +25,7 @@ class Contact extends Component {
                     xmlns="http://www.w3.org/2000/svg"
                     width="23"
                     height="23"
-                    fill="currentColor"
+                    fill="crimson"
                     className="bi bi-envelope-fill contact-icons"
                     viewBox="0 0 16 16"
                   >
@@ -43,7 +43,7 @@ class Contact extends Component {
                     xmlns="http://www.w3.org/2000/svg"
                     width="23"
                     height="23"
-                    fill="currentColor"
+                    fill="crimson"
                     class="bi bi-telephone-outbound-fill contact-icons"
                     viewBox="0 0 16 16"
                   >
@@ -88,8 +88,11 @@ class Contact extends Component {
                 type="primary"
                 size="large"
                 style={{
-                  backgroundImage: "linear-gradient(130deg, #f54295, #f58442)",
-                  borderColor: "white",
+                 
+                 
+                      backgroundColor:"crimson ",
+                      borderRadius: "10px",
+                      border:"none",
                 }}
               >
                 Send Message

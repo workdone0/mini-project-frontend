@@ -12,11 +12,15 @@ import hospital from "../assets/hospital.png";
 class About extends Component {
   render() {
     const names = ["Shubham Kumar", "Aditi Bansal", "Ayushi Sinha"];
-    const description = [
-      "Backend Developer,Third Year ,Computer Science and Engineering Student.",
-      "Frontend Developer,Third Year ,Computer Science and Engineering Student.",
-      "Frontend Developer,Third Year ,Computer Science and Engineering Student.",
+    const fields = [
+      "Backend Developer",
+      "Frontend Developer",
+      "Frontend Developer",
     ];
+    const year =  ["Third Year", "Third Year", "Third Year",];
+    const dept = ["Computer Science and Engineering Department",
+     "Computer Science and Engineering Department",
+     "Computer Science and Engineering Department",];
     const images = [conference, complaint, hospital];
     const breakPoints = [
       {
@@ -58,7 +62,9 @@ class About extends Component {
                   <AboutCard
                     images={images[index]}
                     name={name}
-                    description={description[index]}
+                    fields={fields[index]}
+                    year={year[index]}
+                    dept={dept[index]}
                   />
                 </Col>
               );
