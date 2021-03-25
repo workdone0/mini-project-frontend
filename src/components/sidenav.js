@@ -69,19 +69,13 @@ export class Sidenav extends Component {
                   style={{ borderBottom: "0px", color: "white" }}
                 >
                   <Row>
-                    <a className="sidenav-link panel-link">
-                      Conference
-                    </a>
+                    <a className="sidenav-link panel-link">Conference</a>
                   </Row>
                   <Row>
-                    <a className="sidenav-link panel-link">
-                      Hospital
-                    </a>
+                    <a className="sidenav-link panel-link">Hospital</a>
                   </Row>
                   <Row>
-                    <a className="sidenav-link panel-link">
-                      Event
-                    </a>
+                    <a className="sidenav-link panel-link">Event</a>
                   </Row>
                   <Row>
                     <a className="sidenav-link panel-link">Hostel</a>
@@ -91,7 +85,7 @@ export class Sidenav extends Component {
             </Row>
           </Col>
           <Col span={19}>
-            <Dashboard/>
+            <ConferenceDashboard />
           </Col>
         </Row>
       </div>

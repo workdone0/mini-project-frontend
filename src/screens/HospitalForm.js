@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Row, Col, Button } from "antd";
 import BackNavbar from "../components/backNavbar";
 import patient from "../assets/patient.png";
 import "../components/styles/HospitalForm.css";
 import patientForm from "../assets/patientForm.png";
-import { Input, DatePicker, TimePicker, Form , Select,} from "antd";
+import { Input, DatePicker, TimePicker, Form, Select } from "antd";
 import Carousel from "react-elastic-carousel";
 
 import HospitalCard from "../components/hospitalCard";
@@ -19,180 +19,195 @@ import Footer from "../components/footer";
 const { Option } = Select;
 
 export class HospitalForm extends Component {
-    constructor() {
-        super();
-        this.state = {
-         
-          loading: false,
-         
-          buttonDisabled: true,
-        
-        };
-      }
-    render() {
-        const names = ["Dr.Ashish Sharma", "Dr.Anita Pateshwari"];
-        const description = [
-          "MBBS, DFM ,CCH",
-          "MBBS",
-        ];
-        const phone = [
-          "7908347651",
-          "9002666256",
-        ];
-        const shift = [
-          "4pm-9pm, 9pm-9am(On Call)",
-          "9am-4pm",
-        ];
-        const images = [Ashish, complaint];
-        const breakPoints = [
-          {
-            width: 576,
-            itemsToShow: 1,
-            pagination: false,
-            showArrows: true,
-            enableAutoPlay: true,
-            autoPlaySpeed: 300,
-          },
-          {
-            width: 768,
-            itemsToShow: 2,
-            pagination: false,
-            showArrows: true,
-            enableAutoPlay: true,
-            autoPlaySpeed: 300,
-          },
-          { width: 992, itemsToShow: 3, pagination: false, showArrows: false },
-          { width: 1200, itemsToShow: 3, pagination: false, showArrows: false },
-        ];
+  constructor() {
+    super();
+    this.state = {
+      loading: false,
 
-        return (
-            <>
-                <BackNavbar />
-                <Row style={{backgroundColor:"black",height:"100vh"}}>
-                    <Col span={2}></Col>
-                    <Col span={9}>
+      buttonDisabled: true,
+    };
+  }
+  render() {
+    const names = ["Dr.Ashish Sharma", "Dr.Anita Pateshwari"];
+    const description = ["MBBS, DFM ,CCH", "MBBS"];
+    const phone = ["7908347651", "9002666256"];
+    const shift = ["4pm-9pm, 9pm-9am(On Call)", "9am-4pm"];
+    const images = [Ashish, complaint];
+    const breakPoints = [
+      {
+        width: 576,
+        itemsToShow: 1,
+        pagination: false,
+        showArrows: true,
+        enableAutoPlay: true,
+        autoPlaySpeed: 300,
+      },
+      {
+        width: 768,
+        itemsToShow: 2,
+        pagination: false,
+        showArrows: true,
+        enableAutoPlay: true,
+        autoPlaySpeed: 300,
+      },
+      { width: 992, itemsToShow: 3, pagination: false, showArrows: false },
+      { width: 1200, itemsToShow: 3, pagination: false, showArrows: false },
+    ];
 
-                        <Row >
-                            <h1 className="content-left">Health and Medical </h1>
-                        </Row>
-                        <Row>
-                            <h1 className="content-left-2"> Servies for you!!</h1>
-                        </Row>
-                        <Row><br></br></Row>
-                        <Row>
-                            <p style={{color:"grey"}}>We provide the best healthcare services to  students and faculties.</p>
-                            <p style={{color:"grey"}}>Make your appointments online and get the best servies</p>
-                        </Row>
+    return (
+      <>
+        <BackNavbar />
+        <Row style={{ backgroundColor: "black", height: "100vh" }}>
+          <Col span={2}></Col>
+          <Col span={9}>
+            <Row>
+              <h1 className="content-left">Health and Medical </h1>
+            </Row>
+            <Row>
+              <h1 className="content-left-2"> Servies for you!!</h1>
+            </Row>
+            <Row>
+              <br></br>
+            </Row>
+            <Row style={{ margin: "30px 0" }}>
+              <p className="hospital-paragraph">
+                We provide the best healthcare services to students and
+                faculties.
+              </p>
+              <p className="hospital-paragraph">
+                Make your appointments online and get the best services
+              </p>
+            </Row>
 
-                        <Row>
-                            <Button
-                                type="primary"
-                                size="large"
-                                style={{
-                                    backgroundColor:"crimson ",
-                                    borderRadius: "10px",
-                                    border:"none",
-                                }}>Make an Appointment.</Button>
-                        </Row>
-                    </Col>
-                    <Col span={13}>
-                        <img className="patient-image" src={patient} alt="image"></img>
-                    </Col>
-                </Row>
-               
-                <Row style={{ height: "100vh" }}  >
-                    <Col span={9} >
-                        <img src={patientForm} className="patient-form-image"></img>
-                    </Col>
-                    <Col span={15}>
-                        <h1 style={{ marginTop: "12%",marginBottom:"5%", fontSize: "40px", fontWeight: "500" }} >Schedule your appointment with Doctor!</h1>
-                        <Row >
-                        <Form layout="vertical" style={{ width: "100%" }}>
-                        < Form.Item name="date" label="Select Date" 
-                         rules={[{ required: true }]}>
-                        <DatePicker
-                          onChange={this.dateSelected}
-                          style={{ width: "80%" }}
-                         
-                         />
-                      </Form.Item>
-                        <Form.Item name="slot" label=" Select Slot"
-                        rules={[{ required: true }]}>
-                        <Select
-                        placeholder="Select a option and change input text above"
-                        style={{ width: "80%" ,border:"1px solid gray" }}
-                    
-                            >
-                        <Option value="Morning">Morning Slot </Option>
-                        <Option value="Noon">Noon Slot</Option>
-                        <Option value="Evening">Evening Slot</Option>
-                      
-                    </Select>
-                    
-                    </Form.Item>
-                    </Form>
+            <Row>
+              <Button
+                type="primary"
+                size="large"
+                style={{
+                  backgroundColor: "crimson ",
+                  borderRadius: "10px",
+                  border: "none",
+                  width: "50%",
+                  height: "50px",
+                }}
+              >
+                Make an Appointment.
+              </Button>
+            </Row>
+          </Col>
+          <Col span={13}>
+            <img className="patient-image" src={patient} alt="image"></img>
+          </Col>
+        </Row>
 
-                    <Button
-              shape="round"
-              onClick={this.submitClicked}
-              style={
-                this.state.buttonDisabled
-                  ? { width: "40%", height: "50px", marginTop: "30px", marginLeft:"30%" }
-                  : {
-                     
-                      width: "40%",
-                      backgroundColor: "crimson",
-                      color: "#ffffff",
-                      height: "50px",
-                      marginTop: "30px",
-                    }
-              }
-              loading={this.state.loading}
-              disabled={this.state.buttonDisabled}
+        <Row style={{ height: "100vh" }}>
+          <Col span={9}>
+            <img src={patientForm} className="patient-form-image"></img>
+          </Col>
+          <Col span={15}>
+            <h1
+              style={{
+                marginTop: "12%",
+                marginBottom: "5%",
+                fontSize: "40px",
+                fontWeight: "500",
+              }}
             >
-              Book Now
-            </Button>
-                                </Row>
-                            </Col> 
-                    </Row>
-           
-
-            <div className="main-container-about" id="home-about-us" style={{backgroundColor:"black",height:"95vh"}}>
-       
-        <Row justify="center">
-          <h1 className="about-heading" style={{ margin: "50px 0px",color:"white" }}>
-            Know Our Doctors
-          </h1>
-        </Row>
-        <Row style={{ width: "100%" }} >
-          <Carousel breakPoints={breakPoints}>
-            {names.map((name, index) => {
-              return (
-                <Col
-                  key={index}
-                  span={16}
-                  style={{ display: "flex" }}
+              Schedule your appointment with Doctor!
+            </h1>
+            <Row>
+              <Form layout="vertical" style={{ width: "100%" }}>
+                <Form.Item
+                  name="date"
+                  label="Select Date"
+                  rules={[{ required: true }]}
                 >
-                  <HospitalCard
-                    images={images[index]}
-                    name={name}
-                    description={description[index]}
-                    phone = {phone[index]}
-                    shift = {shift[index]}
+                  <DatePicker
+                    onChange={this.dateSelected}
+                    style={{ width: "80%" }}
                   />
-                </Col>
-              );
-            })}
-          </Carousel>
+                </Form.Item>
+                <Form.Item
+                  name="slot"
+                  label=" Select Slot"
+                  rules={[{ required: true }]}
+                >
+                  <Select
+                    placeholder="Select a option and change input text above"
+                    style={{ width: "80%", border: "1px solid gray" }}
+                  >
+                    <Option value="Morning">Morning Slot </Option>
+                    <Option value="Noon">Noon Slot</Option>
+                    <Option value="Evening">Evening Slot</Option>
+                  </Select>
+                </Form.Item>
+              </Form>
+
+              <Button
+                shape="round"
+                onClick={this.submitClicked}
+                style={
+                  this.state.buttonDisabled
+                    ? {
+                        width: "40%",
+                        height: "50px",
+                        marginTop: "30px",
+                        marginLeft: "30%",
+                      }
+                    : {
+                        width: "40%",
+                        backgroundColor: "crimson",
+                        color: "#ffffff",
+                        height: "50px",
+                        marginTop: "30px",
+                      }
+                }
+                loading={this.state.loading}
+                disabled={this.state.buttonDisabled}
+              >
+                Book Now
+              </Button>
+            </Row>
+          </Col>
         </Row>
-       
-        <FooterIcon/>
-        <Footer/>
-      </div>  
-        </>
-            
-        )
-    }
+
+        <div
+          className="main-container-about"
+          id="home-about-us"
+          style={{ backgroundColor: "black", height: "95vh" }}
+        >
+          <Row justify="center">
+            <h1
+              className="about-heading"
+              style={{ margin: "50px 0px", color: "white" }}
+            >
+              Know Our Doctors
+            </h1>
+          </Row>
+          <Row style={{ width: "100%" }}>
+            <Carousel breakPoints={breakPoints}>
+              {names.map((name, index) => {
+                return (
+                  <Col key={index} span={16} style={{ display: "flex" }}>
+                    <HospitalCard
+                      images={images[index]}
+                      name={name}
+                      description={description[index]}
+                      phone={phone[index]}
+                      shift={shift[index]}
+                    />
+                  </Col>
+                );
+              })}
+            </Carousel>
+          </Row>
+
+          <FooterIcon />
+          <Footer />
+        </div>
+      </>
+    );
+  }
 }
 
-export default HospitalForm
+export default HospitalForm;

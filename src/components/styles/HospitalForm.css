@@ -1,40 +1,35 @@
-.patient-image
-{
-    height:80%;
-    width:100%;
-   
-    padding-left:20px;
+.patient-image {
+  height: 80%;
+  width: 100%;
+
+  padding-left: 20px;
+  transform: scale(1.2);
 }
 
-.content-left
-{
-    font-size:40px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    margin-top:20%;
-    color:white;
-    font-weight: 900;
+.content-left {
+  font-size: 40px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-top: 20%;
+  color: white;
+  font-weight: 900;
 }
 
-.content-left-2
-{
-    font-size:40px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-   color:crimson;
-   line-height: 0%;
-   font-weight:800;
-  
-    
+.content-left-2 {
+  font-size: 40px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: crimson;
+  line-height: 0%;
+  font-weight: 800;
 }
-p{
-    font-size:15px;
-    font-weight:300;
-   font-family:Georgia, 'Times New Roman', Times, serif;
+.hopital-paragraph {
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: grey;
 }
 
-.patient-form-image
-{
-    width:80%;
-    margin: 10%;
-    margin-top:18%;
+.patient-form-image {
+  width: 80%;
+  margin: 10%;
+  margin-top: 18%;
 }
-
