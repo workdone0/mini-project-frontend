@@ -1,28 +1,12 @@
 .login-main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  background-image:url("https://images.unsplash.com/photo-1554050857-c84a8abdb5e2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60");
-}
-
-.login-container
-{
-  border:2px solid #222;
-  box-shadow: 2px 2px 2px #222;
-  width:85%;
-  margin:100px;
-  padding:30px 30px 70px 20px;
-  background-color:#222;
-  border-radius:2%;
 }
 
 .brand-name-login-page {
   font-size: 8vh;
   font-weight: 700;
-
-  color: #ffffff;
-  text-align:center;
+  color: #000000;
+  text-align: center;
 }
 
 .brand-name-login-page span {
@@ -30,50 +14,45 @@
 }
 
 .login-form-column {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding: 0 5%;
 }
 
-.email-input-form {
-  border-radius: 15px !important;
-  margin: 10px !important;
+.login-input {
+  border: 1px solid black !important;
+  margin: 2% 0 !important;
+  border-radius: 10px !important;
   height: 50px;
-  border-color: #ffffff;
-}
-
-.email-input-form:focus {
-  border-color: #ea2c62 !important;
-}
-
-.email-input-form:hover {
-  border-color: #ea2c62 !important;
-}
-
-.password-input-form {
-  border-radius: 15px !important;
-  margin: 10px !important;
-  height: 50px;
-  border-color: #ffffff;
-}
-
-.password-input-form:focus {
-  border-color: #ea2c62 !important;
-}
-
-.password-input-form:hover {
-  border-color: #ea2c62 !important;
 }
 
 .login-button-login-page {
-  width: 40% !important;
-  height: 40px !important;
-  border-radius: 15px !important;
- margin-left:30%;
- margin-top:8%;
+  width: 50% !important;
+  height: 50px !important;
+  border-radius: 10px !important;
   background-color: #ea2c62 !important;
   border: none !important;
+}
+
+.login-btn-text {
+  margin: 0;
+  color: #ffffff;
+}
+
+.image-login {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bottom-link-login {
+  color: #000000;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.bottom-link-login a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.bottom-link-login a:hover {
+  color: #ea2c62;
 }

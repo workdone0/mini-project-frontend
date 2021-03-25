@@ -13,51 +13,48 @@ class NoticeBoard extends Component {
   }
   async componentDidMount() {
     const response = await getRoomBookingsApi();
+    const now = Date.now() / 1000 / 60;
+    const futureEvents = response.data.data.filter((event) => {
+      return event.startTime >= now;
+    });
     this.setState({
-      events: await response.data.data,
+      events: await futureEvents,
     });
   }
 
-  handleColor = (i) =>{
-    if(i%2==0){
+  handleColor = (i) => {
+    if (i % 2 == 0) {
       return "main-container-noticeboard-card color1";
-    }
-    else{
+    } else {
       return "main-container-noticeboard-card color2";
     }
-  }
+  };
   render() {
     return (
-      <div id="home-noticeboard">
+      <div
+        id="home-noticeboard"
+        style={{
+          background: "#ffffff",
+          paddingLeft: "10%",
+          paddingRight: "10%",
+        }}
+      >
         <Row justify="center">
-          <h1 style={{ margin: "20px 0px" }}>Notice Board</h1>
-        </Row>
-        <Row justify="center" className="notice-table-heading">
-          <Col span={2}></Col>
-          <Col span={7}>
-            <h2 className="notice-heading">Title</h2>
-          </Col>
-          <Col span={3}></Col>
-          <Col span={4}>
-            <h2 className="notice-heading">
-              Venue
-            </h2>
-          </Col>
-          <Col span={3}></Col>
-          <Col span={4}>
-            <h2 className="notice-heading">Timing</h2>
-          </Col>
-          <Col span={1}></Col>
+          <h1 className="notice-board-heading">Notice Board</h1>
         </Row>
         <Row className="notice-table">
           {this.state.events.map((event, index) => {
             return (
               <Col span={24} key={index}>
-                <NoticeBoardCard event={event} color={this.handleColor(index)}/>
+                <NoticeBoardCard
+                  event={event}
+                  color={this.handleColor(index)}
+                />
               </Col>
             );
           })}
         </Row>
+        <hr style={{ color: "#ffffff", margin: 0 }}></hr>
       </div>
     );
   }

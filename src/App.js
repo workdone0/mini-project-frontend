@@ -21,10 +21,11 @@ import Profile from "./screens/profile";
 import HospitalForm from "./screens/HospitalForm";
 import Register from "./screens/register";
 import HostelComplaint from "./screens/HostelComplaint";
-import { verifyLoginToken } from "./api/verify";
 import AdminHome from "./screens/adminHome";
-
 import AdminConferenceHomePage from "./screens/adminConferenceHomePage";
+import BookingRequests from "./screens/bookingReqests";
+
+import { verifyLoginToken } from "./api/verify";
 
 const NoMatchPage = () => {
   return <h3>404 - Not found</h3>;
@@ -67,51 +68,65 @@ class App extends Component {
       return <LoadingAnimation />;
     }
     if (this.props.currentUser) {
-      return (
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/mainoptions">
-              <MainOptions />
-            </Route>
-            <Route exact path="/conference">
-              <Conference />
-            </Route>
-            <Route exact path="/login">
-              <Redirect to="/" />
-            </Route>
-            <Route exact path="/register">
-              <Redirect to="/" />
-            </Route>
-            <Route exact path="/bookconference/:roomId">
-              <ConferenceBookingForm />
-            </Route>
-            <Route exact path="/profile">
-              <Profile />
-            </Route>
+      if (this.props.currentUser.type > 2) {
+        return (
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <AdminHome />
+              </Route>
+              <Route exact path="/login">
+                <Redirect to="/" />
+              </Route>
+              <Route exact path="/conferencepage">
+                <AdminConferenceHomePage />
+              </Route>
+              <Route exact path="/bookingrequests">
+                <BookingRequests />
+              </Route>
+              <Route component={NoMatchPage} />
+            </Switch>
+          </Router>
+        );
+      } else {
+        return (
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/mainoptions">
+                <MainOptions />
+              </Route>
+              <Route exact path="/conference">
+                <Conference />
+              </Route>
+              <Route exact path="/login">
+                <Redirect to="/" />
+              </Route>
+              <Route exact path="/register">
+                <Redirect to="/" />
+              </Route>
+              <Route exact path="/bookconference/:roomId">
+                <ConferenceBookingForm />
+              </Route>
+              <Route exact path="/profile">
+                <Profile />
+              </Route>
 
-            <Route exact path="/HospitalForm">
-              <HospitalForm />
-            </Route>
+              <Route exact path="/HospitalForm">
+                <HospitalForm />
+              </Route>
 
-            <Route exact path="/HostelComplaint">
-              <HostelComplaint />
-            </Route>
+              <Route exact path="/HostelComplaint">
+                <HostelComplaint />
+              </Route>
 
-            <Route exact path="/AdminHome">
-              <AdminHome />
-            </Route>
-            
-            <Route exact path="/AdminConferenceHomePage">
-              <AdminConferenceHomePage />
-            </Route>
-
-            <Route component={NoMatchPage} />
-          </Switch>
-        </Router>
-      );
+              <Route component={NoMatchPage} />
+            </Switch>
+          </Router>
+        );
+      }
     } else {
       return (
         <Router>

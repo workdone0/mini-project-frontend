@@ -1,8 +1,10 @@
-.notice-table-heading{
-    width:84%;
-    border-bottom: 2.5px solid white;
-    margin: 0px auto;
+#home-noticeboard {
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
-.notice-table{
-    margin:0px 0px 35px;
+
+.notice-board-heading {
+  color: #000000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 50px 0px;
 }

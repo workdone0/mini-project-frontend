@@ -1,11 +1,10 @@
 import React from "react";
-import { Row, Col, Input, Button, Select} from "antd";
+import { Row, Col, Input, Button, Select } from "antd";
 import { Link } from "react-router-dom";
-import lockImg from "../assets/lock.png";
 import { registerApi } from "../api/register";
 import "./styles/register.css";
-import signup from "../assets/signup.png";
-import reactDom from "react-dom";
+import Success from "./success";
+import namaste from "../assets/namaste.png";
 
 const { Option } = Select;
 
@@ -20,6 +19,7 @@ class Register extends React.Component {
       email: "",
       password: "",
       loading: false,
+      registerSuccessful: false,
     };
   }
   onRegisterPressed = async () => {
@@ -32,10 +32,12 @@ class Register extends React.Component {
       this.state.email,
       this.state.password,
       this.state.clg_id,
-      this.state.type
+      this.state.type.toUpperCase()
     );
     if (response.status == 201) {
-      console.log("User created Successfully");
+      this.setState({
+        registerSuccessful: true,
+      });
     } else {
       console.log("Registration Failed");
     }
@@ -45,70 +47,134 @@ class Register extends React.Component {
   };
   render() {
     return (
-      <Row className="register-main-container">
-        <Col
-          span={12}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <img src={signup} style={{ height: "70%", width: "100%" ,opacity:0.7}} />
+      <Row align="middle" justify="center" className="register-main-container">
+        <Col xl={10} lg={10} md={0} sm={0} xs={0}>
+          <img className="image-register" src={namaste} />
         </Col>
-        <Col span={12} className="register-form-column">
-        <div className="register-container">
-          <h2 className="brand-name-register-page">
-            Take<span>Easy</span>
-          </h2>
-          <Input
-            onChange={(event) => this.setState({ name: event.target.value })}
-            className="email-input-form"
-            placeholder="Name"
-          />
-          <Input
-            onChange={(event) => this.setState({ phone: event.target.value })}
-            className="email-input-form"
-            placeholder="Contact No"
-          />
-          <Input
-            onChange={(event) => this.setState({ email: event.target.value })}
-            className="email-input-form"
-            placeholder="Email Id"
-          />
-          <Input
-            onChange={(event) => this.setState({ clg_id: event.target.value })}
-            className="email-input-form"
-            placeholder=" College Id"
-          />
-         
-          <Select
-            onChange={(event) => this.setState({ type: event.target.value })}
-            className="account-input-form"  placeholder=" Account Type">
-          
-           <Option value="professors">Professors </Option>
-            <Option value="students">Students</Option>
-             <Option value="non teaching staffs">Non Teaching Staffs</Option>
-            </Select>
-            
-          <Input.Password
-            onChange={(event) =>
-              this.setState({ password: event.target.value })
-            }
-            className="password-input-form"
-            placeholder="Password"
-          />
-          <Button 
-            onClick={this.onRegisterPressed}
-            className="register-button-register-page"
-            type="primary"
-            loading={this.state.loading}
-          >
-            Register
-          </Button>
-          <p style={{color:"white", marginLeft:"24%" ,paddingTop:"2px"}}> Already a member? <Link to="/login">Sign In</Link></p>
-          </div>
+        <Col
+          xl={14}
+          lg={14}
+          md={24}
+          sm={24}
+          xs={24}
+          className="register-form-column"
+        >
+          {this.state.registerSuccessful ? (
+            <Success text="Account created successfully." />
+          ) : (
+            <>
+              <h2 className="brand-name-register-page">
+                Take<span>Easy</span>
+              </h2>
+              <Input
+                onChange={(event) =>
+                  this.setState({ name: event.target.value })
+                }
+                className="input-register"
+                placeholder="Name"
+              />
+              <Row>
+                <Col span={11}>
+                  <Input
+                    onChange={(event) =>
+                      this.setState({ phone: event.target.value })
+                    }
+                    className="input-register"
+                    placeholder="Contact No"
+                  />
+                </Col>
+                <Col span={2} />
+                <Col span={11}>
+                  <Input
+                    onChange={(event) =>
+                      this.setState({ email: event.target.value })
+                    }
+                    className="input-register"
+                    placeholder="Email Id"
+                  />
+                </Col>
+              </Row>
+              <Input.Password
+                onChange={(event) =>
+                  this.setState({ password: event.target.value })
+                }
+                className="input-register"
+                placeholder="Password"
+              />
+              <Row>
+                <Col span={11}>
+                  <Input
+                    onChange={(event) =>
+                      this.setState({ clg_id: event.target.value })
+                    }
+                    className="input-register"
+                    placeholder=" College Id"
+                  />
+                </Col>
+                <Col span={2} />
+                <Col span={11}>
+                  <Select
+                    onChange={(value) => this.setState({ type: value })}
+                    dropdownClassName="register-dropdown"
+                    className="input-register-dropdown"
+                    placeholder="Account Type"
+                    dropdownMatchSelectWidth
+                    bordered={false}
+                  >
+                    <Option value="1">Professor </Option>
+                    <Option value="0">Student</Option>
+                    <Option value="2">Non Teaching Staff</Option>
+                  </Select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col
+                  span={24}
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "4%",
+                  }}
+                >
+                  <Button
+                    onClick={this.onRegisterPressed}
+                    className="register-button-register-page"
+                    type="primary"
+                    loading={this.state.loading}
+                  >
+                    <h2 className="register-btn-text">Register</h2>
+                  </Button>
+                </Col>
+              </Row>
+              <Row style={{ marginTop: "8%" }}>
+                <Col
+                  xl={15}
+                  lg={15}
+                  md={24}
+                  sm={24}
+                  xs={24}
+                  style={{ textAlign: "center" }}
+                >
+                  <p className="bottom-link-register">
+                    Already a User? <Link to="/login">Login</Link>
+                  </p>
+                </Col>
+                <Col
+                  xl={9}
+                  lg={9}
+                  md={24}
+                  sm={24}
+                  xs={24}
+                  style={{ textAlign: "center" }}
+                >
+                  <p className="bottom-link-register">
+                    <a>Forgot Password?</a>
+                  </p>
+                </Col>
+              </Row>
+            </>
+          )}
         </Col>
       </Row>
     );
@@ -116,4 +182,3 @@ class Register extends React.Component {
 }
 
 export default Register;
-
