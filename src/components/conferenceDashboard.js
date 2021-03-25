@@ -33,21 +33,27 @@ class ConferenceDashboard extends Component {
           <h1 style={{ margin: "20px 0px" }}>Conference Requests</h1>
         </Row>
         <Row justify="center" className="conference-table-heading">
-          <Col span={2}></Col>
+          <Col span={1}></Col>
           <Col span={6}>
             <h2 className="conference-heading">Title</h2>
           </Col>
-          <Col span={2}></Col>
+          <Col span={1}></Col>
           <Col span={3}>
-            <h2 className="conference-heading">Date 1</h2>
+            <h2 className="conference-heading">Venue</h2>
           </Col>
-          <Col span={2}></Col>
+          <Col span={1}></Col>
           <Col span={3}>
             <h2 className="conference-heading">
-              Date 2
+              Date
             </h2>
           </Col>
-          <Col span={2}></Col>
+          <Col span={1}></Col>
+          <Col span={3}>
+            <h2 className="conference-heading">
+              Time
+            </h2>
+          </Col>
+          <Col span={1}></Col>
           <Col span={3}>
             <h2 className="conference-heading">Status</h2>
           </Col>

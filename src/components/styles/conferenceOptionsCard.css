@@ -1,10 +1,20 @@
 .conference-card {
+    background-color: #222;
     margin: 20px;
-
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    color:white;
   }
+
+.conference-card:hover{
+  transition: 0.3s ease-in;
+  transform: scale(1.05);
+  border-radius: 60px;
+}
+
   .conference-card-body {
+    color:white;
     padding: 20px;
   }
   

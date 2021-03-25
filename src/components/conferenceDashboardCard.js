@@ -9,25 +9,29 @@ class ConferenceDashboardCard extends Component {
     return (
       <div className={this.props.color}>
         <Row justify="center">
-          <Col span={2}></Col>
+          <Col span={1}></Col>
           <Col span={6}>
             <h2 className="notice-card-heading">{this.props.event.title}</h2>
           </Col>
-          <Col span={2}></Col>
+          <Col span={1}></Col>
           <Col span={3}>
             <h2 className="notice-card-heading">
               {this.props.event.roomId.name}
             </h2>
           </Col>
-          <Col span={2}></Col>
+          <Col span={1}></Col>
           <Col span={3}>
             <h2 className="notice-card-heading">
-              {this.props.event.roomId.name}
+              -
             </h2>
           </Col>
-          <Col span={2}></Col>
+          <Col span={1}></Col>
           <Col span={3}>
-            <h2 className="notice-card-heading">{`${startTime.getHours()}:${startTime.getMinutes()} - ${endTime.getHours()}:${endTime.getMinutes()}`}</h2>
+          <h2 className="notice-card-heading">{`${startTime.getHours()}:${startTime.getMinutes()} - ${endTime.getHours()}:${endTime.getMinutes()}`}</h2>
+          </Col>
+          <Col span={1}></Col>
+          <Col span={3}>
+            -
           </Col>
           <Col span={1}></Col>
         </Row>
