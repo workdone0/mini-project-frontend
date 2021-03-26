@@ -19,10 +19,8 @@
 }
 
 .options-card:hover {
-
   transform: scale(1.05);
-  border-radius: 60px;
-  
+  background-color: transparent;
 }
 .options-card-image {
   height: auto;
