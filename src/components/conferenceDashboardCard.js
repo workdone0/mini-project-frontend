@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
-import "./styles/noticeBoardCard.css";
+import "./styles/conferenceDashboardCard.css";
 
 class ConferenceDashboardCard extends Component {
   render() {
@@ -11,23 +11,23 @@ class ConferenceDashboardCard extends Component {
         <Row justify="center">
           <Col span={1}></Col>
           <Col span={6}>
-            <h2 className="notice-card-heading">{this.props.event.title}</h2>
+            <h2 className="dashboard-card-heading">{this.props.event.title}</h2>
           </Col>
           <Col span={1}></Col>
           <Col span={3}>
-            <h2 className="notice-card-heading">
+            <h2 className="dashboard-card-heading">
               {this.props.event.roomId.name}
             </h2>
           </Col>
           <Col span={1}></Col>
           <Col span={3}>
-            <h2 className="notice-card-heading">
+            <h2 className="dashboard-card-heading">
               -
             </h2>
           </Col>
           <Col span={1}></Col>
           <Col span={3}>
-          <h2 className="notice-card-heading">{`${startTime.getHours()}:${startTime.getMinutes()} - ${endTime.getHours()}:${endTime.getMinutes()}`}</h2>
+          <h2 className="dashboard-card-heading">{`${startTime.getHours()}:${startTime.getMinutes()} - ${endTime.getHours()}:${endTime.getMinutes()}`}</h2>
           </Col>
           <Col span={1}></Col>
           <Col span={3}>

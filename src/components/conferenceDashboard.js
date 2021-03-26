@@ -20,10 +20,10 @@ class ConferenceDashboard extends Component {
 
   handleColor = (i) =>{
     if(i%2==0){
-      return "main-container-noticeboard-card color1";
+      return "main-container-dashboard-card color1";
     }
     else{
-      return "main-container-noticeboard-card color2";
+      return "main-container-dashboard-card color2";
     }
   }
   render() {
