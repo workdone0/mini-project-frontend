@@ -1,9 +1,7 @@
 .patient-image {
-  height: 80%;
-  width: 100%;
-
-  padding-left: 20px;
-  transform: scale(1.2);
+  height:500px;
+  width:auto;
+  margin: 60px 0px;
 }
 
 .content-left {
@@ -21,11 +19,11 @@
   line-height: 0%;
   font-weight: 800;
 }
-.hopital-paragraph {
-  font-size: 1.3rem;
+.hospital-paragraph {
+  font-size: 1.25rem;
   font-weight: 300;
   font-family: Georgia, "Times New Roman", Times, serif;
-  color: grey;
+  color:grey;
 }
 
 .patient-form-image {

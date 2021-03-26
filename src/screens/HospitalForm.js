@@ -96,7 +96,7 @@ export class HospitalForm extends Component {
             </Row>
           </Col>
           <Col span={13}>
-            <img className="patient-image" src={patient} alt="image"></img>
+            <Row justify="center"><img className="patient-image" src={patient} alt="image"></img></Row>
           </Col>
         </Row>
 
