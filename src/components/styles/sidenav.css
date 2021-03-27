@@ -34,6 +34,13 @@
   height: 92.5vh;
 }
 
+.sidenav-back-column {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
 .sidenav-image {
   margin: 2rem 0rem 0.7rem;
   height: 25vh;

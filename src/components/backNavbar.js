@@ -11,7 +11,7 @@ export class BackNavbar extends Component {
         <Row className="main-container-sidenav">
           <Col xs={1} sm={1} lg={1} md={1} xl={1}></Col>
           <Col
-            xs={12}
+            xs={14}
             sm={12}
             lg={10}
             md={10}
@@ -23,7 +23,14 @@ export class BackNavbar extends Component {
             </div>
           </Col>
           <Col xs={0} sm={0} lg={10} md={10} xl={10}></Col>
-          <Col xs={10} sm={10} lg={2} md={2} xl={2}>
+          <Col
+            className="sidenav-back-column"
+            xs={7}
+            sm={10}
+            lg={2}
+            md={2}
+            xl={2}
+          >
             <a onClick={this.props.history.goBack} className="sidenav-back">
               Back
             </a>

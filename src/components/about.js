@@ -17,10 +17,12 @@ class About extends Component {
       "Frontend Developer",
       "Frontend Developer",
     ];
-    const year =  ["Third Year", "Third Year", "Third Year",];
-    const dept = ["Computer Science and Engineering Department",
-     "Computer Science and Engineering Department",
-     "Computer Science and Engineering Department",];
+    const year = ["Third Year", "Third Year", "Third Year"];
+    const dept = [
+      "Computer Science and Engineering Department",
+      "Computer Science and Engineering Department",
+      "Computer Science and Engineering Department",
+    ];
     const images = [conference, complaint, hospital];
     const breakPoints = [
       {
@@ -29,7 +31,7 @@ class About extends Component {
         pagination: false,
         showArrows: true,
         enableAutoPlay: true,
-        autoPlaySpeed: 300,
+        autoPlaySpeed: 3000,
       },
       {
         width: 768,
@@ -37,7 +39,7 @@ class About extends Component {
         pagination: false,
         showArrows: true,
         enableAutoPlay: true,
-        autoPlaySpeed: 300,
+        autoPlaySpeed: 3000,
       },
       { width: 992, itemsToShow: 3, pagination: false, showArrows: false },
       { width: 1200, itemsToShow: 3, pagination: false, showArrows: false },
