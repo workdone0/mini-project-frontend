@@ -22,8 +22,8 @@ class Navbar extends Component {
   componentDidMount() {
     this.setState({
       user: this.props.currentUser,
-      isDashboard:"false",
-      isProfileForm:"false",
+      isDashboard: "false",
+      isProfileForm: "false",
     });
   }
 
@@ -67,10 +67,10 @@ class Navbar extends Component {
     const menu = (
       <Menu>
         <Menu.Item>
-          <Link to={{pathname:'/profile', state:{isDashboard: true}}}>Dashboard</Link>
+          <Link to="/profile/0">Dashboard</Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to={{pathname:'/profile', state:{isDashboard: false}}}>Profile</Link>
+          <Link to="/profile/1">Profile</Link>
         </Menu.Item>
         <Menu.Item>
           <a onClick={this.logout}>Logout</a>
@@ -218,13 +218,17 @@ class Navbar extends Component {
           {this.props.currentUser ? (
             <Row className="navbar-drawer">
               <Col span={24}>
-                <div className="navbar-drawer-text">Hi, {this.props.currentUser.name}</div>
+                <div className="navbar-drawer-text">
+                  Hi, {this.props.currentUser.name}
+                </div>
               </Col>
             </Row>
           ) : (
             <Row className="navbar-drawer">
               <Col span={24}>
-                <Link to="/login"><div className="navbar-drawer-text">Login</div></Link>
+                <Link to="/login">
+                  <div className="navbar-drawer-text">Login</div>
+                </Link>
               </Col>
             </Row>
           )}

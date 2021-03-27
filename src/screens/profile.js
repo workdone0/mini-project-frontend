@@ -6,6 +6,7 @@ import { withRouter } from "react-router-dom";
 export class Profile extends Component {
   token = localStorage.getItem("token");
   render() {
+    console.log(this.props);
     return (
       <div>
         <BackNavbar />

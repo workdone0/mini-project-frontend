@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./styles/sidenav.css";
 
 export class BackNavbar extends Component {
+  goBack = () => {};
   render() {
     return (
       <div>
@@ -23,9 +24,9 @@ export class BackNavbar extends Component {
           </Col>
           <Col xs={0} sm={0} lg={10} md={10} xl={10}></Col>
           <Col xs={10} sm={10} lg={2} md={2} xl={2}>
-            <Link to="/" className="sidenav-back">
+            <a onClick={this.props.history.goBack} className="sidenav-back">
               Back
-            </Link>
+            </a>
           </Col>
           <Col span={1} />
         </Row>
@@ -34,4 +35,4 @@ export class BackNavbar extends Component {
   }
 }
 
-export default BackNavbar;
+export default withRouter(BackNavbar);

@@ -15,27 +15,6 @@ import {
 
 const { SubMenu } = Menu;
 export class Sidenav extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isDashboard: null,
-    };
-  }
-  componentDidMount() {
-    this.setState({
-      isDashboard: this.props.isDashboard,
-    });
-  }
-  clickedProfile = () => {
-    this.setState({
-      isDashboard: false,
-    });
-  };
-  clickedDashboard = () => {
-    this.setState({
-      isDashboard: true,
-    });
-  };
   render() {
     var selectedKey = this.props.type + 1;
     selectedKey = String(selectedKey);
@@ -51,7 +30,9 @@ export class Sidenav extends Component {
               ></img>
             </Row>
             <Row justify="center">
-              <h1 className="sidenav-user">{this.props.currentUser.name}</h1>
+              <h1 className="sidenav-user">
+                Hi, {this.props.currentUser.name}
+              </h1>
             </Row>
             <Menu
               defaultSelectedKeys={[selectedKey]}
@@ -73,9 +54,15 @@ export class Sidenav extends Component {
                 <Menu.Item key="3">
                   <Link to="/profile/2">Conference Bookings</Link>
                 </Menu.Item>
-                <Menu.Item key="6">Option 6</Menu.Item>
-                <Menu.Item key="7">Option 7</Menu.Item>
-                <Menu.Item key="8">Option 8</Menu.Item>
+                <Menu.Item key="4">
+                  <Link to="/profile/3">Hospital Bookings</Link>
+                </Menu.Item>
+                <Menu.Item key="5">
+                  <Link to="/profile/4">Event Utility Bookings</Link>
+                </Menu.Item>
+                <Menu.Item key="6">
+                  <Link to="/profile/5">Hostel Complaints</Link>
+                </Menu.Item>
               </SubMenu>
             </Menu>
           </Col>
