@@ -1,11 +1,11 @@
 .notice-card-heading {
-  font-size: 2rem;
+  font-size: 100%;
   color: #000000;
   font-weight: 500;
 }
 
 .notice-card-sub-heading {
-  font-size: 1rem;
+  font-size: 80%;
   color: #000000;
   font-weight: 300;
 }

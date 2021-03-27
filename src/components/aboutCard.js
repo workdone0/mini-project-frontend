@@ -21,12 +21,15 @@ class AboutCard extends Component {
               <h3 style={{ color: "white" }}>{this.props.fields}</h3>
             </Row>
             <Row justify="center">
-              <p style={{ color: "white" }}>{this.props.year}</p>
+              <Col xs={0} sm={0} lg={24} md={24} xl={24}>
+                <p style={{ color: "white" }}>{this.props.year}</p>
+              </Col>
             </Row>
             <Row justify="center">
-              <p style={{ color: "white" }}>{this.props.dept}</p>
+              <Col xs={0} sm={0} lg={24} md={24} xl={24}>
+                <p style={{ color: "white" }}>{this.props.dept}</p>
+              </Col>
             </Row>
-           
           </div>
         </div>
       </Col>
