@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Row, Col, Collapse } from "antd";
+import { Row, Col, Collapse, Menu } from "antd";
 import "./styles/sidenav.css";
 import ProfileForm from "./profileForm";
 import Dashboard from "./dashboard";
 import ConferenceDashboard from "./conferenceDashboard";
 
-const { Panel } = Collapse;
+import {
+  PieChartOutlined,
+  UserOutlined,
+  CustomerServiceOutlined,
+} from "@ant-design/icons";
 
+const { SubMenu } = Menu;
 export class Sidenav extends Component {
   constructor() {
     super();
@@ -32,6 +37,8 @@ export class Sidenav extends Component {
     });
   };
   render() {
+    var selectedKey = this.props.type + 1;
+    selectedKey = String(selectedKey);
     return (
       <div>
         <Row className="sidenav-container">
@@ -46,45 +53,31 @@ export class Sidenav extends Component {
             <Row justify="center">
               <h1 className="sidenav-user">{this.props.currentUser.name}</h1>
             </Row>
-            <Row justify="center">
-              <Link className="sidenav-link" to="/profile/1">
-                Profile
-              </Link>
-            </Row>
-            <Row justify="center">
-              <Link className="sidenav-link" to="/profile/0">
-                Dashboard
-              </Link>
-            </Row>
-            <Row justify="center">
-              <Collapse
-                className="site-collapse-custom-collapse"
-                accordion
-                bordered={false}
+            <Menu
+              defaultSelectedKeys={[selectedKey]}
+              mode="inline"
+              inlineCollapsed={false}
+              theme="dark"
+            >
+              <Menu.Item key="1" icon={<PieChartOutlined />}>
+                <Link to="/profile/0">Dashboard</Link>
+              </Menu.Item>
+              <Menu.Item key="2" icon={<UserOutlined />}>
+                <Link to="/profile/1">Profile</Link>
+              </Menu.Item>
+              <SubMenu
+                key="sub1"
+                icon={<CustomerServiceOutlined />}
+                title="Services"
               >
-                <Panel
-                  className="site-collapse-custom-panel"
-                  header="Services"
-                  key="1"
-                  style={{ borderBottom: "0px", color: "white" }}
-                >
-                  <Row>
-                    <Link className="sidenav-link panel-link" to="/profile/2">
-                      Conference
-                    </Link>
-                  </Row>
-                  <Row>
-                    <a className="sidenav-link panel-link">Hospital</a>
-                  </Row>
-                  <Row>
-                    <a className="sidenav-link panel-link">Event</a>
-                  </Row>
-                  <Row>
-                    <a className="sidenav-link panel-link">Hostel</a>
-                  </Row>
-                </Panel>
-              </Collapse>
-            </Row>
+                <Menu.Item key="3">
+                  <Link to="/profile/2">Conference Bookings</Link>
+                </Menu.Item>
+                <Menu.Item key="6">Option 6</Menu.Item>
+                <Menu.Item key="7">Option 7</Menu.Item>
+                <Menu.Item key="8">Option 8</Menu.Item>
+              </SubMenu>
+            </Menu>
           </Col>
           <Col span={19}>
             {this.props.type == 0 ? (

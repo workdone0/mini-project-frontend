@@ -9,7 +9,7 @@ export class Profile extends Component {
     return (
       <div>
         <BackNavbar />
-        <Sidenav type={this.props.match.params.typeId} />
+        <Sidenav type={Number(this.props.match.params.typeId)} />
       </div>
     );
   }
