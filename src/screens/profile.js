@@ -6,11 +6,10 @@ import { withRouter } from "react-router-dom";
 export class Profile extends Component {
   token = localStorage.getItem("token");
   render() {
-    const isDashboard = this.props.location.state.isDashboard;
     return (
       <div>
         <BackNavbar />
-        <Sidenav isDashboard={isDashboard} />
+        <Sidenav type={this.props.match.params.typeId} />
       </div>
     );
   }

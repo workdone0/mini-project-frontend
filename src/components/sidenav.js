@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Row, Col, Collapse } from "antd";
-import ayushi from "../assets/ayushi.jpg";
 import "./styles/sidenav.css";
 import ProfileForm from "./profileForm";
 import Dashboard from "./dashboard";
@@ -47,14 +47,14 @@ export class Sidenav extends Component {
               <h1 className="sidenav-user">{this.props.currentUser.name}</h1>
             </Row>
             <Row justify="center">
-              <a onClick={this.clickedProfile} className="sidenav-link">
-                My Profile
-              </a>
+              <Link className="sidenav-link" to="/profile/1">
+                Profile
+              </Link>
             </Row>
             <Row justify="center">
-              <a onClick={this.clickedDashboard} className="sidenav-link">
+              <Link className="sidenav-link" to="/profile/0">
                 Dashboard
-              </a>
+              </Link>
             </Row>
             <Row justify="center">
               <Collapse
@@ -69,7 +69,9 @@ export class Sidenav extends Component {
                   style={{ borderBottom: "0px", color: "white" }}
                 >
                   <Row>
-                    <a className="sidenav-link panel-link">Conference</a>
+                    <Link className="sidenav-link panel-link" to="/profile/2">
+                      Conference
+                    </Link>
                   </Row>
                   <Row>
                     <a className="sidenav-link panel-link">Hospital</a>
@@ -85,7 +87,13 @@ export class Sidenav extends Component {
             </Row>
           </Col>
           <Col span={19}>
-            <ConferenceDashboard />
+            {this.props.type == 0 ? (
+              <Dashboard />
+            ) : this.props.type == 1 ? (
+              <ProfileForm />
+            ) : (
+              <ConferenceDashboard />
+            )}
           </Col>
         </Row>
       </div>

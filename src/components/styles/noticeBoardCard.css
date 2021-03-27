@@ -10,6 +10,7 @@
   font-weight: 300;
 }
 
-.notice-room-heading > h2, h4 {
+.notice-room-heading > h2,
+h4 {
   display: inline;
 }

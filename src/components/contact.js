@@ -44,7 +44,7 @@ class Contact extends Component {
                     width="23"
                     height="23"
                     fill="crimson"
-                    class="bi bi-telephone-outbound-fill contact-icons"
+                    className="bi bi-telephone-outbound-fill contact-icons"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -88,11 +88,9 @@ class Contact extends Component {
                 type="primary"
                 size="large"
                 style={{
-                 
-                 
-                      backgroundColor:"crimson ",
-                      borderRadius: "10px",
-                      border:"none",
+                  backgroundColor: "crimson ",
+                  borderRadius: "10px",
+                  border: "none",
                 }}
               >
                 Send Message

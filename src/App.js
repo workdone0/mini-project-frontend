@@ -110,7 +110,7 @@ class App extends Component {
               <Route exact path="/bookconference/:roomId">
                 <ConferenceBookingForm />
               </Route>
-              <Route exact path="/profile">
+              <Route exact path="/profile/:typeId">
                 <Profile />
               </Route>
 

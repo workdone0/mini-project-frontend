@@ -31,7 +31,7 @@ class NoticeBoardCard extends Component {
               </h4>
             </Row>
           </Col>
-          <Col className="notice-room-heading" span={4}>
+          <Col span={4}>
             <h2 className="notice-card-heading">
               {this.props.event.roomId.name}
             </h2>
