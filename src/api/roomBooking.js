@@ -31,3 +31,25 @@ export const getRoomBookingsApi = async () => {
     return error;
   }
 };
+
+export const confirmRoomBookingApi = async (bookingId) => {
+  try {
+    const response = await axios.patch(
+      `${baseURL}/roombooking/confirm/${bookingId}`
+    );
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const declineRoomBookingApi = async (bookingId) => {
+  try {
+    const response = await axios.patch(
+      `${baseURL}/roombooking/decline/${bookingId}`
+    );
+    return response;
+  } catch (error) {
+    return error;
+  }
+};

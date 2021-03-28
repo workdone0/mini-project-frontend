@@ -1,10 +1,61 @@
 import React from "react";
 import { Row, Col } from "antd";
 
+import { getRoomBookingsApi } from "../api/roomBooking";
+
 import "./styles/bookingRequests.css";
+import BookingRequestCard from "../components/bookingRequestCard";
 
 class BookingRequests extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      bookingRequests: [],
+    };
+  }
+  async componentDidMount() {
+    const response = await getRoomBookingsApi();
+    if (response.status == 200) {
+      this.setState({
+        bookingRequests: await response.data.data,
+      });
+    }
+  }
+
+  updateStatus = (id, status) => {
+    var requests = this.state.bookingRequests.filter((request) => {
+      return request._id != id;
+    });
+    var request = this.state.bookingRequests.filter((request) => {
+      return request._id === id;
+    });
+    request[0].status = status;
+    requests.push(request[0]);
+    this.setState({
+      bookingRequests: requests,
+    });
+  };
+
   render() {
+    const toDisplayRequest = this.state.bookingRequests.filter((request) => {
+      return request.status == 0;
+    });
+    if (toDisplayRequest.length == 0) {
+      return (
+        <Row style={{ height: "100vh" }}>
+          <Col
+            span={24}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <h1>Nothing to Display</h1>
+          </Col>
+        </Row>
+      );
+    }
     return (
       <div style={{ padding: "2%" }}>
         <h1>Room Booking Requests</h1>
@@ -31,6 +82,17 @@ class BookingRequests extends React.Component {
             <p className="booking-requests-table-header-text">Actions</p>
           </Col>
         </Row>
+        {toDisplayRequest.length > 0
+          ? toDisplayRequest.map((request) => {
+              return (
+                <BookingRequestCard
+                  key={request._id}
+                  request={request}
+                  updateStatus={this.updateStatus}
+                />
+              );
+            })
+          : null}
       </div>
     );
   }

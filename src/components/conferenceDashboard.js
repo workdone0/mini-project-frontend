@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
+import { connect } from "react-redux";
+
 import { getRoomBookingsApi } from "../api/roomBooking";
+
 import "./styles/conferenceDashboard.css";
 import ConferenceDashboardCard from "./conferenceDashboardCard";
 
@@ -18,15 +21,17 @@ class ConferenceDashboard extends Component {
     });
   }
 
-  handleColor = (i) =>{
-    if(i%2==0){
+  handleColor = (i) => {
+    if (i % 2 == 0) {
       return "main-container-dashboard-card color1";
-    }
-    else{
+    } else {
       return "main-container-dashboard-card color2";
     }
-  }
+  };
   render() {
+    const toDisplayEvents = this.state.events.filter((event) => {
+      return event.userId._id === this.props.currentUser._id;
+    });
     return (
       <div id="conference-dashboard">
         <Row justify="center">
@@ -43,15 +48,11 @@ class ConferenceDashboard extends Component {
           </Col>
           <Col span={1}></Col>
           <Col span={3}>
-            <h2 className="conference-heading">
-              Date
-            </h2>
+            <h2 className="conference-heading">Date</h2>
           </Col>
           <Col span={1}></Col>
           <Col span={3}>
-            <h2 className="conference-heading">
-              Time
-            </h2>
+            <h2 className="conference-heading">Time</h2>
           </Col>
           <Col span={1}></Col>
           <Col span={3}>
@@ -60,10 +61,13 @@ class ConferenceDashboard extends Component {
           <Col span={1}></Col>
         </Row>
         <Row className="conference-table">
-          {this.state.events.map((event, index) => {
+          {toDisplayEvents.map((event, index) => {
             return (
               <Col span={24} key={index}>
-                <ConferenceDashboardCard event={event} color={this.handleColor(index)}/>
+                <ConferenceDashboardCard
+                  event={event}
+                  color={this.handleColor(index)}
+                />
               </Col>
             );
           })}
@@ -73,4 +77,8 @@ class ConferenceDashboard extends Component {
   }
 }
 
-export default ConferenceDashboard;
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
+
+export default connect(mapStateToProps, null)(ConferenceDashboard);

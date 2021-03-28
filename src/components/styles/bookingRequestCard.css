@@ -1,0 +1,22 @@
+.booking-request-card-data-col {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking-request-card-data-text {
+  margin: 0;
+  font-size: 15px;
+}
+
+.booking-request-card-data-col-actions {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.booking-request-card-action-icon {
+  font-size: 25px;
+  margin: 0 10px;
+}

@@ -13,7 +13,7 @@ class About extends Component {
   render() {
     const names = ["Shubham Kumar", "Aditi Bansal", "Ayushi Sinha"];
     const fields = [
-      "Backend Developer",
+      "Full Stack Developer",
       "Frontend Developer",
       "Frontend Developer",
     ];
