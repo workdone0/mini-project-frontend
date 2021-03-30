@@ -24,7 +24,9 @@ class BookingRequestCard extends React.Component {
   };
   declineClicked = async () => {
     const response = await declineRoomBookingApi(this.props.request._id);
-    console.log(response);
+    if (response.status == 200) {
+      this.props.updateStatus(this.state.request._id, 2);
+    }
   };
   render() {
     const request = this.state.request;
