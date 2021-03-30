@@ -1,17 +1,23 @@
-.main-container-dashboard-card{
-    width:84%;
-    border-bottom: 2.5px solid white;
-    margin: 0px auto;
+.main-container-dashboard-card {
+  width: 84%;
+  border-bottom: 2.5px solid white;
+  margin: 0px auto;
 }
-.dashboard-card-heading{
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin:0px;
-    padding:4.5px 0px;
+.dashboard-card-heading {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0px;
+  padding: 4.5px 0px;
 }
-.color1{
-    background-image: linear-gradient(to right, #bad9e3, #94bed4);
+.color1 {
+  background-image: linear-gradient(to right, #bad9e3, #94bed4);
 }
-.color2{
-    background-image: linear-gradient(to right, #daeef5, #d1e6ed);
+.color2 {
+  background-image: linear-gradient(to right, #daeef5, #d1e6ed);
+}
+
+.dashboard-card-column {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }

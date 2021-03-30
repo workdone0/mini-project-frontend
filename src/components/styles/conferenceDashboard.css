@@ -1,8 +1,14 @@
-.conference-table-heading{
-    width:84%;
-    border-bottom: 2.5px solid white;
-    margin: 0px auto;
+.conference-table-heading {
+  width: 84%;
+  border-bottom: 2.5px solid white;
+  margin: 0px auto;
 }
-.conference-table{
-    margin:0px 0px 35px;
+.conference-table {
+  margin: 0px 0px 35px;
+}
+
+.conference-table-heading-column {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }
