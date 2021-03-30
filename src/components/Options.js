@@ -31,7 +31,7 @@ class Options extends Component {
         <Row>
           {titles.map((title, index) => {
             return (
-              <Col span={6} key={index}>
+              <Col xs={24} sm={24} lg={6} md={12} xl={6} key={index}>
                 <OptionsCard
                   title={title}
                   description={description[index]}

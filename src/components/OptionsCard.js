@@ -1,4 +1,4 @@
-import { Row, Button } from "antd";
+import { Row, Col, Button } from "antd";
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -33,10 +33,13 @@ class OptionsCard extends Component {
         <img className="options-card-image" src={this.props.image}></img>
         <div className="options-card-body">
           <Row justify="center">
+
             <h2 style={{color:"white"}}>{this.props.title}</h2>
           </Row>
           <Row justify="center">
+          <Col xs={0} sm={0} lg={24} md={0} xl={24}>
             <p style={{color:"white"}}>{this.props.description}</p>
+            </Col>
           </Row>
           <Row justify="center">
             <Button

@@ -22,8 +22,8 @@ export class HostelComplaint extends Component {
       <>
         <BackNavbar />
         <Row>
-          <Col span={1}></Col>
-          <Col span={8} className="Col-1">
+        <Col xs={1} sm={1} lg={1} md={1} xl={1}></Col>
+        <Col xs={0} sm={0} lg={8} md={0} xl={8} className="Col-1">
             <Row>
               <img src={complaint} className="complaint-image"></img>
             </Row>
@@ -77,7 +77,7 @@ export class HostelComplaint extends Component {
             <Col span={5}></Col>
           </Col>
           <Col span={2}></Col>
-          <Col span={12} className="Col-2">
+          <Col xs={22} sm={22} lg={12} md={14} xl={12} className="Col-2">
             <h2
               style={{
                 fontSize: "35px",
@@ -87,7 +87,7 @@ export class HostelComplaint extends Component {
             >
               Hostel Complaints? Take it Easy!
             </h2>
-            <Form layout="vertical" style={{ width: "100%" }}>
+            <Form layout="vertical" style={{ width: "100%",margin:"2%" }}>
               <Form.Item
                 name="hostel"
                 label=" Hostel No."
@@ -141,7 +141,7 @@ export class HostelComplaint extends Component {
               </Form.Item>
 
               <Row>
-                <Col span={10}>
+                <Col xs={24} sm={24} lg={10} md={12} xl={10}>
                   <Form.Item label="Preferred Time From">
                     <TimePicker
                       style={{ width: "100%" }}
@@ -150,7 +150,7 @@ export class HostelComplaint extends Component {
                     />
                   </Form.Item>
                 </Col>
-                <Col span={10}>
+                <Col xs={24} sm={24} lg={10} md={12} xl={10}>
                   <Form.Item label="Preferred Time To :">
                     <TimePicker
                       style={{ width: "100%", marginLeft: "10px" }}

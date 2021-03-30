@@ -10,10 +10,12 @@ class ConferenceOptionsCard extends Component {
       <div className="conference-card">
         <div className="conference-card-body">
           <Row justify="center">
+          <Col xs={24} sm={24} lg={24} md={24} xl={24} style={{ textAlign: "center" }}>
             <h2 style={{color:"white"}}>{this.props.room.name}</h2>
+            </Col>
           </Row>
           <Row justify="center">
-            <Col span={24} style={{ textAlign: "center" }}>
+            <Col xs={24} sm={24} lg={24} md={24} xl={24}style={{ textAlign: "center" }}>
               <p>Capacity: {this.props.room.capacity}</p>
               <p>
                 Air Conditioner: {this.props.room.airConditioned ? "Yes" : "No"}

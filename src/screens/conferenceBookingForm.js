@@ -183,7 +183,7 @@ class ConferenceBookingForm extends Component {
         <BackNavbar />
         <Row style={{ height: "100vh" }}>
           <Col
-            span={8}
+            xs={0} sm={0} lg={8} md={8} xl={8}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -193,7 +193,7 @@ class ConferenceBookingForm extends Component {
             <img src={CalanderImg} style={{ height: "60%", width: "auto" }} />
           </Col>
           <Col
-            span={16}
+         xs={0} sm={0} lg={16} md={16} xl={16}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -208,9 +208,11 @@ class ConferenceBookingForm extends Component {
               <Success text="Room Booking Successful" />
             ) : (
               <>
-                <h2 style={{ fontSize: "40px", fontWeight: "500" }}>
-                  Organizing meetings just got easy.
+               
+                  <h2 style={{ fontSize: "40px", fontWeight: "500" }}>
+                    Organizing meetings just got easy.
                 </h2>
+                
                 <Form layout="vertical" style={{ width: "100%" }}>
                   <Form.Item label="Title">
                     <Input
@@ -226,7 +228,7 @@ class ConferenceBookingForm extends Component {
                     />
                   </Form.Item>
                   <Row>
-                    <Col span={12}>
+                    <Col xs={24} sm={24} lg={12} md={12} xl={12}>
                       <Form.Item label="Select Meeting Start Time">
                         <TimePicker
                           style={{ width: "100%" }}
@@ -236,7 +238,7 @@ class ConferenceBookingForm extends Component {
                         />
                       </Form.Item>
                     </Col>
-                    <Col span={12}>
+                    <Col xs={24} sm={24} lg={12} md={12} xl={12}>
                       <Form.Item label="Select Meeting End Time">
                         <TimePicker
                           style={{ width: "100%" }}
@@ -262,12 +264,12 @@ class ConferenceBookingForm extends Component {
                     this.state.buttonDisabled
                       ? { width: "40%", height: "50px", marginTop: "30px" }
                       : {
-                          width: "40%",
-                          backgroundColor: "#ea2c62",
-                          color: "#ffffff",
-                          height: "50px",
-                          marginTop: "30px",
-                        }
+                        width: "40%",
+                        backgroundColor: "#ea2c62",
+                        color: "#ffffff",
+                        height: "50px",
+                        marginTop: "30px",
+                      }
                   }
                   loading={this.state.loading}
                   disabled={this.state.buttonDisabled}
