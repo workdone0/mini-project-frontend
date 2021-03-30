@@ -8,6 +8,7 @@ import Success from "./success";
 
 import CalanderImg from "../assets/calander.png";
 import { roomBookingApi, getRoomBookingsApi } from "../api/roomBooking";
+import "./styles/conferenceBookingForm.css";
 
 class ConferenceBookingForm extends Component {
   constructor() {
@@ -183,17 +184,13 @@ class ConferenceBookingForm extends Component {
         <BackNavbar />
         <Row style={{ height: "100vh" }}>
           <Col
-            xs={0} sm={0} lg={8} md={8} xl={8}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
+            xs={0} sm={0} lg={0} md={0} xl={8}
+            className="conference-booking-image"
           >
             <img src={CalanderImg} style={{ height: "60%", width: "auto" }} />
           </Col>
           <Col
-         xs={0} sm={0} lg={16} md={16} xl={16}
+            xs={24} sm={24} lg={24} md={24} xl={16}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -207,13 +204,13 @@ class ConferenceBookingForm extends Component {
             {this.state.submittedSuccessfully ? (
               <Success text="Room Booking Successful" />
             ) : (
-              <>
+              <div className="conference-booking-container">
                
                   <h2 style={{ fontSize: "40px", fontWeight: "500" }}>
                     Organizing meetings just got easy.
                 </h2>
                 
-                <Form layout="vertical" style={{ width: "100%" }}>
+                <Form className="conference-booking-form" layout="vertical" style={{ width: "100%" }}>
                   <Form.Item label="Title">
                     <Input
                       onChange={this.titleChanged}
@@ -228,17 +225,17 @@ class ConferenceBookingForm extends Component {
                     />
                   </Form.Item>
                   <Row>
-                    <Col xs={24} sm={24} lg={12} md={12} xl={12}>
+                    <Col xs={24} sm={24} lg={24} md={24} xl={12}>
                       <Form.Item label="Select Meeting Start Time">
                         <TimePicker
-                          style={{ width: "100%" }}
+                          style={{ width: "100%"}}
                           placeholder="Select Meeting Start Time"
                           format={format}
                           onChange={this.startSelected}
                         />
                       </Form.Item>
                     </Col>
-                    <Col xs={24} sm={24} lg={12} md={12} xl={12}>
+                    <Col xs={24} sm={24} lg={24} md={24} xl={12}>
                       <Form.Item label="Select Meeting End Time">
                         <TimePicker
                           style={{ width: "100%" }}
@@ -276,7 +273,7 @@ class ConferenceBookingForm extends Component {
                 >
                   Book Now
                 </Button>
-              </>
+              </div>
             )}
           </Col>
         </Row>

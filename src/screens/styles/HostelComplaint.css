@@ -6,11 +6,13 @@
   
    
 }
-
-
-
 .Col-2
 {
     margin-top: 2%;
    width:100%;
 }
+@media only screen and (max-width: 526px) {
+    .hostel-complaint-form{
+      margin-left: 2% !important;
+    }
+  }

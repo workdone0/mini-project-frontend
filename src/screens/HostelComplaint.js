@@ -21,8 +21,8 @@ export class HostelComplaint extends Component {
     return (
       <>
         <BackNavbar />
-        <Row>
-        <Col xs={1} sm={1} lg={1} md={1} xl={1}></Col>
+        <Row justify="center">
+        <Col xs={1} sm={1} lg={1} md={0} xl={1}></Col>
         <Col xs={0} sm={0} lg={8} md={0} xl={8} className="Col-1">
             <Row>
               <img src={complaint} className="complaint-image"></img>
@@ -87,7 +87,7 @@ export class HostelComplaint extends Component {
             >
               Hostel Complaints? Take it Easy!
             </h2>
-            <Form layout="vertical" style={{ width: "100%",margin:"2%" }}>
+            <Form layout="vertical" className="hostel-complaint-form" style={{ width: "100%"}}>
               <Form.Item
                 name="hostel"
                 label=" Hostel No."
@@ -141,7 +141,7 @@ export class HostelComplaint extends Component {
               </Form.Item>
 
               <Row>
-                <Col xs={24} sm={24} lg={10} md={12} xl={10}>
+                <Col xs={24} sm={24} lg={12} md={12} xl={12}>
                   <Form.Item label="Preferred Time From">
                     <TimePicker
                       style={{ width: "100%" }}
@@ -150,10 +150,10 @@ export class HostelComplaint extends Component {
                     />
                   </Form.Item>
                 </Col>
-                <Col xs={24} sm={24} lg={10} md={12} xl={10}>
+                <Col xs={24} sm={24} lg={12} md={12} xl={12}>
                   <Form.Item label="Preferred Time To :">
                     <TimePicker
-                      style={{ width: "100%", marginLeft: "10px" }}
+                      style={{ width: "100%"}}
                       placeholder=""
                       onChange={this.endSelected}
                     />
@@ -170,15 +170,17 @@ export class HostelComplaint extends Component {
                   ? {
                       width: "40%",
                       height: "50px",
-                      marginTop: "30px",
+                      marginTop: "20px",
                       marginLeft: "30%",
+                      marginBottom:"15px",
                     }
                   : {
                       width: "40%",
                       backgroundColor: "#ea2c62",
                       color: "#ffffff",
                       height: "50px",
-                      marginTop: "30px",
+                      marginTop: "20px",
+                      marginBottom:"15px",
                     }
               }
               loading={this.state.loading}
