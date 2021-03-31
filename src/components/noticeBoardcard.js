@@ -15,13 +15,13 @@ class NoticeBoardCard extends Component {
           align="middle"
           style={{ paddingTop: "1%", paddingBottom: "1%" }}
         >
-          <Col span={2}></Col>
-          <Col span={7}>
+          <Col xs={0} md={2}></Col>
+          <Col xs={9} md={7}>
             <h2 className="notice-card-heading">
               {moment(startTime).fromNow().toUpperCase()}
             </h2>
           </Col>
-          <Col span={9}>
+          <Col xs={11} md={9}>
             <Row>
               <h2 className="notice-card-heading">{this.props.event.title}</h2>
             </Row>
@@ -31,12 +31,12 @@ class NoticeBoardCard extends Component {
               </h4>
             </Row>
           </Col>
-          <Col span={4}>
+          <Col xs={4} md={4}>
             <h2 className="notice-card-heading">
               {this.props.event.roomId.name}
             </h2>
           </Col>
-          <Col span={2}></Col>
+          <Col xs={0} md={2}></Col>
         </Row>
       </div>
     );

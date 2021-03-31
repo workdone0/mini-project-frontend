@@ -15,6 +15,7 @@ import Ashish from "../assets/Ashish.jpg";
 import complaint from "../assets/complaint.png";
 import FooterIcon from "../components/footerIcons";
 import Footer from "../components/footer";
+import Typewriter from "typewriter-effect";
 
 const { Option } = Select;
 
@@ -58,33 +59,39 @@ export class HospitalForm extends Component {
       <>
         <BackNavbar />
         <Row style={{ backgroundColor: "black", height: "100vh" }}>
-          <Col span={2}></Col>
-          <Col span={9}>
+          <Col xs={4} lg={2}></Col>
+          <Col xs={16} lg={9}>
             <Row>
               <h1 className="content-left">Health and Medical </h1>
             </Row>
             <Row>
-              <h1 className="content-left-2"> Servies for you!!</h1>
+              <h1 className="content-left-2"> Services for you!!</h1>
             </Row>
-            <Row>
-              <br></br>
-            </Row>
-            <Row style={{ margin: "30px 0" }}>
-              <p className="hospital-paragraph">
-                We provide the best healthcare services to students and
-                faculties.
-              </p>
-              <p className="hospital-paragraph">
-                Make your appointments online and get the best services
-              </p>
-            </Row>
+            <Row className="hospital-para-container">
+            <Col xs={0} sm={0} md={0} lg={24}>
+            <div className="typewriter-text">
+             
+              <span className="hospital-typewriter">Providing</span>&nbsp;
+              <span>
+                <Typewriter
+                  options={{
+                    strings: ["Quality Care...", "Efficient Treatment...", "Best Medical Support..."],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              </span>
+              
+            </div>
+            </Col>
+          </Row>
 
             <Row>
               <Button
                 type="primary"
                 size="large"
                 style={{
-                  backgroundColor: "crimson ",
+                  backgroundImage: "linear-gradient(130deg, #e62e53, crimson)",
                   borderRadius: "10px",
                   border: "none",
                   width: "50%",
@@ -95,9 +102,10 @@ export class HospitalForm extends Component {
               </Button>
             </Row>
           </Col>
-          <Col span={13}>
+          <Col xs={0} lg={13}>
             <Row justify="center"><img className="patient-image" src={patient} alt="image"></img></Row>
           </Col>
+          <Col xs={4} lg={0}></Col>
         </Row>
 
         <Row style={{ height: "100vh" }}>
