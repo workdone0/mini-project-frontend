@@ -187,7 +187,7 @@ class ConferenceBookingForm extends Component {
             xs={0} sm={0} lg={0} md={0} xl={8}
             className="conference-booking-image"
           >
-            <img src={CalanderImg} style={{ height: "60%", width: "auto" }} />
+            <img src={CalanderImg}  className="confer-img"/>
           </Col>
           <Col
             xs={24} sm={24} lg={24} md={24} xl={16}

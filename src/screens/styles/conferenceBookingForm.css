@@ -1,7 +1,12 @@
 .conference-booking-image{
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: center;
+}
+
+.confer-img{
+    height:400px;
+    width:auto;
 }
 
 @media only screen and (max-width: 1024px) {

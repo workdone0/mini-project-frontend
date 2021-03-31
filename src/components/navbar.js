@@ -213,7 +213,7 @@ class Navbar extends Component {
           closable={true}
           onClose={this.toggelDrawer}
           visible={this.state.drawerVisible}
-          width="50%"
+          width="70%"
         >
           {this.props.currentUser ? (
             <Row className="navbar-drawer">
