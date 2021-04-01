@@ -39,11 +39,52 @@
   margin: 20px 25px;
 }
 
+
 .navbar-drawer-text{
   font-style: italic;
   font-size: 1.1rem;
+  color:white;
 }
 
+.drawer-links{  
+ color:white;
+  font-style: italic;
+  font-size:20px;
+
+}
+
+.drawer-links:hover
+{
+  color:crimson;
+  font-size:30px;
+}
+.ant-drawer-body
+{
+  background-color: black;
+}
+
+.ant-drawer-close ,.ant-drawer-title
+{
+  color:white !important;
+}
+
+.ant-drawer-header
+{
+  background-color: black !important;
+}
+.drawer-image {
+ margin-bottom:4px;
+  height: 25vh;
+  border-radius: 50%;
+  border-width: 5px;
+  border-style: double;
+  border-color: indianred;
+}
+
+.drawer-col
+{
+  margin-top:20px;
+}
 @media only screen and (max-width: 1200px) {
   .brand-container {
     text-align: left;

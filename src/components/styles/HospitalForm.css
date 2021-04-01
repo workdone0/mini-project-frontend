@@ -5,29 +5,37 @@
 }
 
 .content-left {
-  font-size: 40px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin-top: 20%;
+  font-size: 3rem;
   color: white;
-  font-weight: 900;
+  font-weight: 700;
+  margin-top:20%;
 }
 
 .content-left-2 {
-  font-size: 40px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: crimson;
-  line-height: 0%;
-  font-weight: 800;
+  font-size: 2.8rem;
+  color: #ea2c62;
+  line-height: 3%;
+  font-weight: 700;
 }
-.hospital-paragraph {
-  font-size: 1.25rem;
-  font-weight: 300;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color:grey;
+.hospital-para-container{
+  margin: 30px 0px 50px;
 }
 
 .patient-form-image {
   width: 80%;
   margin: 10%;
   margin-top: 18%;
+}
+
+.hospital-typewriter{
+  background-image: linear-gradient(130deg, #e44690, #f07f3e);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@media only screen and (max-width:1100px){
+  .patient-image {
+    height:400px;
+  }
 }

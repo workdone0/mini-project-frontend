@@ -1,10 +1,20 @@
 #home-noticeboard {
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin-top: 1%;
+  margin-bottom: 3%;
 }
 
 .notice-board-heading {
   color: #000000;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 50px 0px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+@media only screen and (max-width:526px){
+  .notice-board-heading {
+    margin: 30px 0px;
+  }
+  #home-noticeboard {
+    margin-bottom: 30px;
+  }
 }

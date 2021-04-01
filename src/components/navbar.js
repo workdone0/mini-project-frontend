@@ -6,6 +6,13 @@ import { withCookies, Cookies } from "react-cookie";
 import { instanceOf } from "prop-types";
 import { MenuOutlined } from "@ant-design/icons";
 
+import {
+  HomeOutlined,
+  UserOutlined,
+  
+} from "@ant-design/icons";
+
+
 import { setCurrentUser } from "../redux/user/user.actions";
 import "./styles/navbar.css";
 
@@ -208,31 +215,75 @@ class Navbar extends Component {
             />
           </Col>
         </Row>
-        <Drawer
+        <Row style={{marginTop:"-1px"}}>
+      <Col sm={24} md={12}>
+          <Drawer
+           title="Welcome !"
           placement="left"
           closable={true}
           onClose={this.toggelDrawer}
           visible={this.state.drawerVisible}
-          width="50%"
+          style={{ background: "#222" }}
         >
+         
           {this.props.currentUser ? (
             <Row className="navbar-drawer">
+              
+            <Row justify="center">
+              <img
+                src={`https://avatars.dicebear.com/api/bottts/${this.props.currentUser.name}.svg`}
+                className="drawer-image"
+                alt="image"
+              ></img>
+            </Row>
               <Col span={24}>
                 <div className="navbar-drawer-text">
-                  Hi, {this.props.currentUser.name}
+                   {this.props.currentUser.name}
                 </div>
               </Col>
+              <Col span={24} className="drawer-col">
+              <Link to="/profile/1" className="drawer-links">Profile</Link>
+              </Col>
+             
+              <Col span={24} className="drawer-col">
+              <Link to="/profile/0"  className="drawer-links">Dashboard</Link>
+              </Col>
+              <Col span={24} className="drawer-col">
+              <Link to="/mainoptions"  className="drawer-links">Services</Link>
+              </Col>
+              <Col span={24}  className="drawer-col">
+              <Link to="/"  className="drawer-links">Logout</Link>
+              </Col>
             </Row>
+           
+              
+           
           ) : (
             <Row className="navbar-drawer">
-              <Col span={24}>
-                <Link to="/login">
-                  <div className="navbar-drawer-text">Login</div>
+              <Col span={2}>
+            <UserOutlined 
+             style={{color:"white",marginTop:"10px"}}/>
+              </Col>
+            <Col span={2}></Col>
+              <Col span={20}> <Link to="/login">
+                 <div className="drawer-links">Login</div>
+                </Link>
+                </Col>
+                <Col span={2}>
+               <HomeOutlined 
+                style={{color:"white",marginTop:"10px"}}/>
+                </Col>
+              <Col span={2}></Col>
+                <Col span-={20}>
+                <Link to="/register">
+                  <div className="drawer-links" >Signup</div>
                 </Link>
               </Col>
             </Row>
           )}
         </Drawer>
+        </Col>
+        </Row>
       </>
     );
   }
