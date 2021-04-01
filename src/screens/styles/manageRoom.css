@@ -1,0 +1,11 @@
+.manage-room-table-title-col {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.manage-room-table-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}

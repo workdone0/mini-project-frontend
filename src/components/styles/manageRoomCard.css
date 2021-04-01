@@ -1,0 +1,11 @@
+.manage-room-card-col {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.manage-room-card-text {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}

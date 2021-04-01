@@ -11,7 +11,7 @@ class AdminConferenceOptions extends Component {
       "Approve or Decline Requests sent by the user",
       "Add or Delete Rooms as per Availability",
     ];
-    const path = ["/bookingrequests", "/"];
+    const path = ["/bookingrequests", "/managerooms"];
     const image = [];
     return (
       <div style={{ minHeight: "69vh" }}>

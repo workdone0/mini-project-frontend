@@ -24,6 +24,7 @@ import HostelComplaint from "./screens/HostelComplaint";
 import AdminHome from "./screens/adminHome";
 import AdminConferenceHomePage from "./screens/adminConferenceHomePage";
 import BookingRequests from "./screens/bookingReqests";
+import ManageRoom from "./screens/manageRoom";
 
 import { verifyLoginToken } from "./api/verify";
 
@@ -83,6 +84,9 @@ class App extends Component {
               </Route>
               <Route exact path="/bookingrequests">
                 <BookingRequests />
+              </Route>
+              <Route exact path="/managerooms">
+                <ManageRoom />
               </Route>
               <Route component={NoMatchPage} />
             </Switch>
