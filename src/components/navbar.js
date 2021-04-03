@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, Menu, Dropdown, Button, Drawer } from "antd";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { withCookies, Cookies } from "react-cookie";
 import { instanceOf } from "prop-types";
 import { MenuOutlined } from "@ant-design/icons";
@@ -24,8 +24,7 @@ class Navbar extends Component {
   componentDidMount() {
     this.setState({
       user: this.props.currentUser,
-      isDashboard: "false",
-      isProfileForm: "false",
+      isLogout: false,
     });
   }
 
@@ -33,6 +32,7 @@ class Navbar extends Component {
     this.props.setCurrentUser(null);
     this.setState({
       user: null,
+      isLogout: true,
     });
     const { cookies } = this.props;
     cookies.remove("token");
@@ -65,6 +65,9 @@ class Navbar extends Component {
     });
   };
   render() {
+    if (this.state.logout) {
+      return <Redirect to="/" />;
+    }
     const user = this.props.currentUser;
     const menu = (
       <Menu>
