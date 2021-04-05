@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Row, Col, Button } from "antd";
 import complaint from "../assets/complaint.png";
-import { Input, DatePicker, TimePicker, Form, Select } from "antd";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { Input, TimePicker, Form, Select } from "antd";
 import "./styles/HostelComplaint.css";
 import BackNavbar from "../components/backNavbar";
+import { complaintBookingApi } from "../api/complaint";
 
 const { Option } = Select;
 
@@ -12,18 +15,65 @@ export class HostelComplaint extends Component {
     super();
     this.state = {
       loading: false,
-
-      buttonDisabled: true,
+      hostelNo: "",
+      roomNo: "",
+      type: "",
+      description: "",
+      preferredTimeTo: "",
+      preferredTimeFrom: "",
+      buttonDisabled: false,
+      submittedSuccessfully: false,
     };
   }
 
+  endSelected = async (time) => {
+    const d = time._d;
+    const endTime = new Date(d);
+    this.setState({
+      preferredTimeTo: Math.floor(endTime / 1000 / 60),
+    });
+  };
+
+  startSelected = async (time) => {
+    const d = time._d;
+    const startTime = new Date(d);
+    this.setState({
+      preferredTimeFrom: Math.floor(startTime / 1000 / 60),
+    });
+  };
+
+  submitClicked = async () => {
+    this.setState({
+      loading: true,
+    });
+    const response = await complaintBookingApi(
+      this.props.currentUser._id,
+      this.state.type,
+      this.state.roomNo,
+      this.state.hostelNo,
+      this.state.description,
+      this.state.preferredTimeFrom,
+      this.state.preferredTimeTo
+    );
+    if (response.status == 201) {
+      this.setState({
+        submittedSuccessfully: true,
+      });
+    }
+    this.setState({
+      loading: false,
+    });
+    console.log(response);
+  };
+
   render() {
+    const format = "HH:mm";
     return (
       <>
         <BackNavbar />
         <Row justify="center">
-        <Col xs={1} sm={1} lg={1} md={0} xl={1}></Col>
-        <Col xs={0} sm={0} lg={8} md={0} xl={8} className="Col-1">
+          <Col xs={1} sm={1} lg={1} md={0} xl={1}></Col>
+          <Col xs={0} sm={0} lg={8} md={0} xl={8} className="Col-1">
             <Row>
               <img src={complaint} className="complaint-image"></img>
             </Row>
@@ -87,44 +137,44 @@ export class HostelComplaint extends Component {
             >
               Hostel Complaints? Take it Easy!
             </h2>
-            <Form layout="vertical" className="hostel-complaint-form" style={{ width: "100%"}}>
-              <Form.Item
-                name="hostel"
-                label=" Hostel No."
-                rules={[{ required: true }]}
-              >
+            <Form
+              layout="vertical"
+              className="hostel-complaint-form"
+              style={{ width: "100%" }}
+            >
+              <Form.Item name="hostel" label=" Hostel No.">
                 <Select
                   placeholder="Select your Hostel no."
                   style={{ border: "1px solid rgb(0,0,0,0.2)" }}
+                  onChange={(value) => {
+                    this.setState({ hostelNo: value });
+                  }}
                 >
-                  <Option value="hostel1">Hostel 1 </Option>
-                  <Option value="hostel2">Hostel 2</Option>
-                  <Option value="hostel3">Hostel 3</Option>
-                  <Option value="hostel4">Hostel 4</Option>
+                  <Option value="Hostel 1">Hostel 1 </Option>
+                  <Option value="Hostel 2">Hostel 2</Option>
+                  <Option value="Hostel 3">Hostel 3</Option>
+                  <Option value="Hostel 4">Hostel 4</Option>
                 </Select>
               </Form.Item>
-              <Form.Item
-                name=" Room no"
-                label="Room No."
-                rules={[{ required: true }]}
-              >
+              <Form.Item name=" Room no" label="Room No.">
                 <Input
-                  onChange={this.titleChanged}
+                  onChange={(event) => {
+                    this.setState({ roomNo: event.target.value });
+                  }}
                   style={{ color: "black" }}
                   placeholder="Enter your Room no."
                 />
               </Form.Item>
 
-              <Form.Item
-                name="complaint"
-                label=" Complaint Type"
-                rules={[{ required: true }]}
-              >
+              <Form.Item name="complaint" label=" Complaint Type">
                 <Select
                   placeholder="Select your Complaint type"
                   style={{ border: "1px solid  rgb(0,0,0,0.2)" }}
+                  onChange={(value) => {
+                    this.setState({ type: value });
+                  }}
                 >
-                  <Option value="carpentry">Carpentery </Option>
+                  <Option value="Carpentry">Carpentery </Option>
                   <Option value="Electricity">Electricity</Option>
                   <Option value="Plumbing">Plumbing</Option>
                   <Option value="Room Cleaning">Room Cleaning</Option>
@@ -132,12 +182,14 @@ export class HostelComplaint extends Component {
                 </Select>
               </Form.Item>
 
-              <Form.Item
-                name="Description"
-                label="Description"
-                rules={[{ required: true }]}
-              >
-                <Input.TextArea />
+              <Form.Item name="Description" label="Description">
+                <Input.TextArea
+                  onChange={(event) => {
+                    this.setState({
+                      description: event.target.value,
+                    });
+                  }}
+                />
               </Form.Item>
 
               <Row>
@@ -145,17 +197,17 @@ export class HostelComplaint extends Component {
                   <Form.Item label="Preferred Time From">
                     <TimePicker
                       style={{ width: "100%" }}
-                      placeholder=""
                       onChange={this.startSelected}
+                      format={format}
                     />
                   </Form.Item>
                 </Col>
                 <Col xs={24} sm={24} lg={12} md={12} xl={12}>
                   <Form.Item label="Preferred Time To :">
                     <TimePicker
-                      style={{ width: "100%"}}
-                      placeholder=""
+                      style={{ width: "100%" }}
                       onChange={this.endSelected}
+                      format={format}
                     />
                   </Form.Item>
                 </Col>
@@ -172,7 +224,7 @@ export class HostelComplaint extends Component {
                       height: "50px",
                       marginTop: "20px",
                       marginLeft: "30%",
-                      marginBottom:"15px",
+                      marginBottom: "15px",
                     }
                   : {
                       width: "40%",
@@ -180,7 +232,7 @@ export class HostelComplaint extends Component {
                       color: "#ffffff",
                       height: "50px",
                       marginTop: "20px",
-                      marginBottom:"15px",
+                      marginBottom: "15px",
                     }
               }
               loading={this.state.loading}
@@ -196,4 +248,8 @@ export class HostelComplaint extends Component {
   }
 }
 
-export default HostelComplaint;
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
+
+export default connect(mapStateToProps, null)(withRouter(HostelComplaint));

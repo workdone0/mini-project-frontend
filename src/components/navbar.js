@@ -254,9 +254,9 @@ class Navbar extends Component {
                     </Link>
                   </Col>
                   <Col span={24} className="drawer-col">
-                    <Link onClick={this.logout} className="drawer-links">
+                    <a onClick={this.logout} className="drawer-links">
                       Logout
-                    </Link>
+                    </a>
                   </Col>
                 </Row>
               ) : (
