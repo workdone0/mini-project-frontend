@@ -14,31 +14,31 @@ class ManageRoomCard extends React.Component {
   render() {
     return (
       <Row style={{ backgroundColor: "#F8F8F8", margin: "10px 0" }}>
-        <Col span={2} />
-        <Col className="manage-room-card-col" span={3}>
+        <Col sm={2} xs={1}/>
+        <Col className="manage-room-card-col" sm={3} xs={5}>
           <p className="manage-room-card-text">{this.props.room.name}</p>
         </Col>
-        <Col className="manage-room-card-col" span={5}>
+        <Col className="manage-room-card-col" sm={5} xs={5}>
           <p className="manage-room-card-text">
             {this.props.room.airConditioned ? "Yes" : "No"}
           </p>
         </Col>
-        <Col className="manage-room-card-col" span={4}>
+        <Col className="manage-room-card-col" sm={4} xs={4}>
           <p className="manage-room-card-text">
             {this.props.room.projector ? "Yes" : "No"}
           </p>
         </Col>
-        <Col className="manage-room-card-col" span={4}>
+        <Col className="manage-room-card-col" sm={4} xs={4}>
           <p className="manage-room-card-text">{this.props.room.capacity}</p>
         </Col>
-        <Col className="manage-room-card-col" span={4}>
+        <Col className="manage-room-card-col" sm={4} xs={4}>
           <DeleteTwoTone
             onClick={this.deleteRoom}
             style={{ fontSize: "15px" }}
             twoToneColor="#eb2f96"
           />
         </Col>
-        <Col span={2} />
+        <Col sm={2} xs={1}/>
       </Row>
     );
   }

@@ -9,3 +9,9 @@
   font-weight: 500;
   margin: 0;
 }
+
+@media only screen and (max-width:526px){
+  .manage-room-table-title{
+    font-size:1rem;
+  }
+}

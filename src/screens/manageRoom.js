@@ -72,6 +72,7 @@ class ManageRoom extends React.Component {
               alignItems: "right",
               justifyContent: "flex-end",
               paddingRight: "2%",
+              marginBottom:"15px",
             }}
             span={24}
           >
@@ -82,14 +83,14 @@ class ManageRoom extends React.Component {
          
           </Row>
           <Row>
-          <Col span={2} />
+          <Col sm={2} xs={1}/>
           <Col className="manage-room-table-title-col" xl={4} lg={4} md={4} sm={4} xs={5}>
             <p className="manage-room-table-title">Room No.</p>
           </Col>
           <Col className="manage-room-table-title-col"  xl={4} lg={4} md={4} sm={4} xs={5}>
             <p className="manage-room-table-title">Air Cond.</p>
           </Col>
-          <Col className="manage-room-table-title-col"  xl={4} lg={4} md={4} sm={4} xs={2}>
+          <Col className="manage-room-table-title-col"  xl={4} lg={4} md={4} sm={4} xs={4}>
             <p className="manage-room-table-title">Proj.</p>
           </Col>
           <Col className="manage-room-table-title-col"  xl={4} lg={4} md={4} sm={4} xs={4}>
@@ -111,11 +112,13 @@ class ManageRoom extends React.Component {
           </Col>
         </Row>
         <Drawer
+          className="manage-room-drawer"
           title="Add a new room"
-          width={"60vw"}
+          height={"50vh"}
+          width={"40vw"}
+          placement={window.screen.width>526?"right":"bottom"}
           onClose={this.onClose}
           visible={this.state.isDrawerVisible}
-          bodyStyle={{ paddingBottom: 100 }}
           footer={
             <div
               style={{
@@ -137,7 +140,7 @@ class ManageRoom extends React.Component {
         >
           <Row>
             <Input
-              style={{ margin: "5%" }}
+              style={{ margin: "0px 2% 2%" }}
               size="large"
               placeholder="Enter Room Name"
               onChange={(event) => {
@@ -145,7 +148,7 @@ class ManageRoom extends React.Component {
               }}
             />
             <Col
-              xl={12} lg={12} md={12} sm={24} xs={24}
+              xl={12} lg={12} md={24} sm={24} xs={24}
               style={{
                 display: "flex",
                 justifyContent: "flex-start",
@@ -164,7 +167,7 @@ class ManageRoom extends React.Component {
               />
             </Col>
             <Col
-                xl={12} lg={12} md={12} sm={24} xs={24}
+                xl={12} lg={12} md={24} sm={24} xs={24}
               style={{
                 display: "flex",
                 justifyContent: "flex-start",
@@ -186,7 +189,7 @@ class ManageRoom extends React.Component {
               onChange={(event) => {
                 this.setState({ capacity: event.target.value });
               }}
-              style={{ margin: "2%" }}
+              style={{ margin: "2% 2% 0px" }}
               size="large"
               placeholder="Enter Capacity"
             />
