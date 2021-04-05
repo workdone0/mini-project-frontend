@@ -62,10 +62,10 @@ class BookingRequests extends React.Component {
     return (
       <>
       <AdminNavbar/>
-      <div style={{ padding: "2%" }}>
+      <>
         <h1 style={{textAlign:"center",marginBottom:"20px"}}>Room Booking Requests</h1>
-        <Row style={{ backgroundColor: "#F8F8F8" }} align="middle">
-          <Col className="booking-requests-table-header" span={4}>
+        <Row style={{ backgroundColor: "#F8F8F8" }}>
+          <Col className="booking-requests-table-header"span={4}>
             <p className="booking-requests-table-header-text">Title</p>
           </Col>
           <Col className="booking-requests-table-header" span={3}>
@@ -98,7 +98,7 @@ class BookingRequests extends React.Component {
               );
             })
           : null}
-      </div>
+      </>
       </>
     );
   }

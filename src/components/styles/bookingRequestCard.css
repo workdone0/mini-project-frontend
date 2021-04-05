@@ -20,3 +20,19 @@
   font-size: 25px;
   margin: 0 10px;
 }
+
+
+@media only screen and (max-width:526px)
+{
+  .booking-request-card-data-text {
+  font-size:0.6rem;
+ 
+  }
+}
+@media only screen and (max-width:780px)
+{
+  .booking-request-card-data-text {
+  font-size:0.8rem;
+ 
+  }
+}
