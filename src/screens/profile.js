@@ -46,10 +46,15 @@ export class Profile extends Component {
           title={`Hi, ${this.props.currentUser.name}`}
           bodyStyle={{ padding: 0, backgroundColor: "#04111f" }}
           headerStyle={{
+            fontFamily: "Dancing Script",
+            backgroundImage: "linear-gradient(130deg, #e44690, #f07f3e)",
+            color: "transparent",
+            backgroundClip: "text",
             backgroundColor: "#04111f",
             border: 0,
             borderRadius: 0,
           }}
+          titleStyle={{}}
         >
           <Menu
             defaultSelectedKeys={[selectedKey]}

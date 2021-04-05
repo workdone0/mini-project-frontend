@@ -85,3 +85,9 @@
 .panel-link {
   font-size: 1rem;
 }
+
+@media only screen and (max-width:1200px){
+  .sidenav-user{
+    font-size: 1.3rem;
+  }
+}

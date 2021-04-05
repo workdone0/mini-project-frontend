@@ -9,8 +9,8 @@ export class ProfileForm extends Component {
   render() {
     console.log(this.props.currentUser);
     const layout = {
-      labelCol: { span: 8 },
-      wrapperCol: { span: 16 },
+      labelCol: { span: 4 },
+      wrapperCol: { span: 20 },
     };
 
     /* eslint-disable no-template-curly-in-string */
@@ -28,11 +28,16 @@ export class ProfileForm extends Component {
 
     return (
       <div className="profile-form-container">
-        <img
+        <Row>
+          <Col xs={0} md={24} style={{textAlign:"center"}}>
+          <img
           src={`https://avatars.dicebear.com/api/bottts/${this.props.currentUser.name}.svg`}
           className="form-image"
           alt="image2"
         ></img>
+          </Col>
+        </Row>
+        
 
         <Form
           {...layout}
@@ -110,15 +115,14 @@ export class ProfileForm extends Component {
           >
             <Input.Password />
           </Form.Item>
-
-          <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-            <Row justify="center">
-              <Button type="danger" htmlType="submit">
+        </Form>
+        <Row justify="center">
+              <Col span={24} style={{textAlign:"center"}}>
+              <Button type="danger" htmlType="submit" className="profileform-button">
                 Submit
               </Button>
-            </Row>
-          </Form.Item>
-        </Form>
+              </Col>
+        </Row>
       </div>
     );
   }

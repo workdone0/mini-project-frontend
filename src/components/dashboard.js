@@ -7,7 +7,7 @@ class Dashboard extends Component {
     return (
       <div>
         <Row>
-          <Col span={6}>
+          <Col xl={6} md={12} xs={24}>
             <div className="site-card-border-less-wrapper">
               <Card
                 title="Services Requested"
@@ -40,7 +40,7 @@ class Dashboard extends Component {
               </Card>
             </div>
           </Col>
-          <Col span={6}>
+          <Col xl={6} md={12} xs={24}>
             <div className="site-card-border-less-wrapper">
               <Card
                 className="dashboard-cards"
@@ -73,7 +73,7 @@ class Dashboard extends Component {
               </Card>
             </div>
           </Col>
-          <Col span={6}>
+          <Col xl={6} md={12} xs={24}>
             <div className="site-card-border-less-wrapper">
               <Card
                 title="Approved"
@@ -106,7 +106,7 @@ class Dashboard extends Component {
               </Card>
             </div>
           </Col>
-          <Col span={6}>
+          <Col xl={6} md={12} xs={24}>
             <div className="site-card-border-less-wrapper">
               <Card
                 title="Declined"
