@@ -61,18 +61,18 @@ class ManageRoom extends React.Component {
   render() {
     return (
       <>
-      <BackNavbar/>
-        
-            <h1 style={{textAlign:"center",margin:"20px"}}>Manage Rooms</h1>
-         
-          <Row>
+        <BackNavbar />
+
+        <h1 style={{ textAlign: "center", margin: "20px" }}>Manage Rooms</h1>
+
+        <Row>
           <Col
             style={{
               display: "flex",
               alignItems: "right",
               justifyContent: "flex-end",
               paddingRight: "2%",
-              marginBottom:"15px",
+              marginBottom: "15px",
             }}
             span={24}
           >
@@ -80,24 +80,58 @@ class ManageRoom extends React.Component {
               Add Room
             </Button>
           </Col>
-         
-          </Row>
-          <Row>
-          <Col sm={2} xs={1}/>
-          <Col className="manage-room-table-title-col" xl={4} lg={4} md={4} sm={4} xs={5}>
+        </Row>
+        <Row>
+          <Col sm={2} xs={1} />
+          <Col
+            className="manage-room-table-title-col"
+            xl={4}
+            lg={4}
+            md={4}
+            sm={8}
+            xs={8}
+          >
             <p className="manage-room-table-title">Room No.</p>
           </Col>
-          <Col className="manage-room-table-title-col"  xl={4} lg={4} md={4} sm={4} xs={5}>
+          <Col
+            className="manage-room-table-title-col"
+            xl={4}
+            lg={4}
+            md={4}
+            sm={0}
+            xs={0}
+          >
             <p className="manage-room-table-title">Air Cond.</p>
           </Col>
-          <Col className="manage-room-table-title-col"  xl={4} lg={4} md={4} sm={4} xs={4}>
+          <Col
+            className="manage-room-table-title-col"
+            xl={4}
+            lg={4}
+            md={4}
+            sm={0}
+            xs={0}
+          >
             <p className="manage-room-table-title">Proj.</p>
           </Col>
-          <Col className="manage-room-table-title-col"  xl={4} lg={4} md={4} sm={4} xs={4}>
+          <Col
+            className="manage-room-table-title-col"
+            xl={4}
+            lg={4}
+            md={4}
+            sm={6}
+            xs={7}
+          >
             <p className="manage-room-table-title">Cap.</p>
           </Col>
-          <Col className="manage-room-table-title-col"  xl={4} lg={4} md={4} sm={4} xs={4} >
-          <p className="manage-room-table-title">Action</p>
+          <Col
+            className="manage-room-table-title-col"
+            xl={4}
+            lg={4}
+            md={4}
+            sm={6}
+            xs={7}
+          >
+            <p className="manage-room-table-title">Action</p>
           </Col>
           <Col style={{ padding: "0 2%" }} span={24}>
             {this.state.rooms.map((room) => {
@@ -116,7 +150,7 @@ class ManageRoom extends React.Component {
           title="Add a new room"
           height={"50vh"}
           width={"40vw"}
-          placement={window.screen.width>526?"right":"bottom"}
+          placement={window.screen.width > 526 ? "right" : "bottom"}
           onClose={this.onClose}
           visible={this.state.isDrawerVisible}
           footer={
@@ -148,7 +182,11 @@ class ManageRoom extends React.Component {
               }}
             />
             <Col
-              xl={12} lg={12} md={24} sm={24} xs={24}
+              xl={12}
+              lg={12}
+              md={24}
+              sm={24}
+              xs={24}
               style={{
                 display: "flex",
                 justifyContent: "flex-start",
@@ -167,7 +205,11 @@ class ManageRoom extends React.Component {
               />
             </Col>
             <Col
-                xl={12} lg={12} md={24} sm={24} xs={24}
+              xl={12}
+              lg={12}
+              md={24}
+              sm={24}
+              xs={24}
               style={{
                 display: "flex",
                 justifyContent: "flex-start",

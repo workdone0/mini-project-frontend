@@ -7,7 +7,7 @@ import { Input, TimePicker, Form, Select } from "antd";
 import "./styles/HostelComplaint.css";
 import BackNavbar from "../components/backNavbar";
 import { complaintBookingApi } from "../api/complaint";
-
+import Success from "./success";
 const { Option } = Select;
 
 export class HostelComplaint extends Component {
@@ -128,119 +128,126 @@ export class HostelComplaint extends Component {
           </Col>
           <Col span={2}></Col>
           <Col xs={22} sm={22} lg={12} md={14} xl={12} className="Col-2">
-            <h2
-              style={{
-                fontSize: "2.5rem",
-                fontWeight: "500",
-                textAlign: "center",
-              }}
-            >
-              Hostel Complaints? Take it Easy!
-            </h2>
-            <Form
-              layout="vertical"
-              className="hostel-complaint-form"
-              style={{ width: "100%" }}
-            >
-              <Form.Item name="hostel" label=" Hostel No.">
-                <Select
-                  placeholder="Select your Hostel no."
-                  style={{ border: "1px solid rgb(0,0,0,0.2)" }}
-                  onChange={(value) => {
-                    this.setState({ hostelNo: value });
+            {this.state.submittedSuccessfully ? (
+              <Success text="Complaint booked successfully" />
+            ) : (
+              <>
+                <h2
+                  style={{
+                    fontSize: "2.5rem",
+                    fontWeight: "500",
+                    textAlign: "center",
                   }}
                 >
-                  <Option value="Hostel 1">Hostel 1 </Option>
-                  <Option value="Hostel 2">Hostel 2</Option>
-                  <Option value="Hostel 3">Hostel 3</Option>
-                  <Option value="Hostel 4">Hostel 4</Option>
-                </Select>
-              </Form.Item>
-              <Form.Item name=" Room no" label="Room No.">
-                <Input
-                  onChange={(event) => {
-                    this.setState({ roomNo: event.target.value });
-                  }}
-                  style={{ color: "black" }}
-                  placeholder="Enter your Room no."
-                />
-              </Form.Item>
-
-              <Form.Item name="complaint" label=" Complaint Type">
-                <Select
-                  placeholder="Select your Complaint type"
-                  style={{ border: "1px solid  rgb(0,0,0,0.2)" }}
-                  onChange={(value) => {
-                    this.setState({ type: value });
-                  }}
+                  Hostel Complaints? Take it Easy!
+                </h2>
+                <Form
+                  layout="vertical"
+                  className="hostel-complaint-form"
+                  style={{ width: "100%" }}
                 >
-                  <Option value="Carpentry">Carpentery </Option>
-                  <Option value="Electricity">Electricity</Option>
-                  <Option value="Plumbing">Plumbing</Option>
-                  <Option value="Room Cleaning">Room Cleaning</Option>
-                  <Option value="others">Others</Option>
-                </Select>
-              </Form.Item>
-
-              <Form.Item name="Description" label="Description">
-                <Input.TextArea
-                  onChange={(event) => {
-                    this.setState({
-                      description: event.target.value,
-                    });
-                  }}
-                />
-              </Form.Item>
-
-              <Row>
-                <Col xs={24} sm={24} lg={12} md={12} xl={12}>
-                  <Form.Item label="Preferred Time From">
-                    <TimePicker
-                      style={{ width: "100%" }}
-                      onChange={this.startSelected}
-                      format={format}
+                  <Form.Item name="hostel" label=" Hostel No.">
+                    <Select
+                      placeholder="Select your Hostel no."
+                      style={{ border: "1px solid rgb(0,0,0,0.2)" }}
+                      onChange={(value) => {
+                        this.setState({ hostelNo: value });
+                      }}
+                    >
+                      <Option value="Hostel 1">Hostel 1 </Option>
+                      <Option value="Hostel 2">Hostel 2</Option>
+                      <Option value="Hostel 3">Hostel 3</Option>
+                      <Option value="Hostel 4">Hostel 4</Option>
+                    </Select>
+                  </Form.Item>
+                  <Form.Item name=" Room no" label="Room No.">
+                    <Input
+                      onChange={(event) => {
+                        this.setState({ roomNo: event.target.value });
+                      }}
+                      style={{ color: "black" }}
+                      placeholder="Enter your Room no."
                     />
                   </Form.Item>
-                </Col>
-                <Col xs={24} sm={24} lg={12} md={12} xl={12}>
-                  <Form.Item label="Preferred Time To :">
-                    <TimePicker
-                      style={{ width: "100%" }}
-                      onChange={this.endSelected}
-                      format={format}
+
+                  <Form.Item name="complaint" label=" Complaint Type">
+                    <Select
+                      placeholder="Select your Complaint type"
+                      style={{ border: "1px solid  rgb(0,0,0,0.2)" }}
+                      onChange={(value) => {
+                        this.setState({ type: value });
+                      }}
+                    >
+                      <Option value="Carpentry">Carpentery </Option>
+                      <Option value="Electricity">Electricity</Option>
+                      <Option value="Plumbing">Plumbing</Option>
+                      <Option value="Room Cleaning">Room Cleaning</Option>
+                      <Option value="others">Others</Option>
+                    </Select>
+                  </Form.Item>
+
+                  <Form.Item name="Description" label="Description">
+                    <Input.TextArea
+                      onChange={(event) => {
+                        this.setState({
+                          description: event.target.value,
+                        });
+                      }}
                     />
                   </Form.Item>
-                </Col>
-              </Row>
-            </Form>
 
-            <Button
-              shape="round"
-              onClick={this.submitClicked}
-              style={
-                this.state.buttonDisabled
-                  ? {
-                      width: "40%",
-                      height: "50px",
-                      marginTop: "20px",
-                      marginLeft: "30%",
-                      marginBottom: "15px",
-                    }
-                  : {
-                      width: "40%",
-                      backgroundColor: "#ea2c62",
-                      color: "#ffffff",
-                      height: "50px",
-                      marginTop: "20px",
-                      marginBottom: "15px",
-                    }
-              }
-              loading={this.state.loading}
-              disabled={this.state.buttonDisabled}
-            >
-              Submit
-            </Button>
+                  <Row>
+                    <Col xs={24} sm={24} lg={12} md={12} xl={12}>
+                      <Form.Item label="Preferred Time From">
+                        <TimePicker
+                          style={{ width: "100%" }}
+                          onChange={this.startSelected}
+                          format={format}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col xs={24} sm={24} lg={12} md={12} xl={12}>
+                      <Form.Item label="Preferred Time To :">
+                        <TimePicker
+                          style={{ width: "100%" }}
+                          onChange={this.endSelected}
+                          format={format}
+                        />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                </Form>
+
+                <Button
+                  shape="round"
+                  onClick={this.submitClicked}
+                  style={
+                    this.state.buttonDisabled
+                      ? {
+                          width: "40%",
+                          height: "50px",
+                          marginTop: "20px",
+                          marginLeft: "30%",
+                          marginBottom: "15px",
+                        }
+                      : {
+                          width: "40%",
+                          backgroundColor: "#ea2c62",
+                          color: "#ffffff",
+                          height: "50px",
+                          marginTop: "20px",
+                          marginBottom: "15px",
+                        }
+                  }
+                  loading={this.state.loading}
+                  disabled={this.state.buttonDisabled}
+                >
+                  Submit
+                </Button>
+              </>
+            )}
           </Col>
+
           <Col span={1}></Col>
         </Row>
       </>

@@ -6,11 +6,28 @@ import { MenuOutlined } from "@ant-design/icons";
 
 import "./styles/sidenav.css";
 
-export class BackNavbar extends Component {
+export class BackNavbarProfile extends Component {
   render() {
     return (
       <Row className="main-container-sidenav">
-        <Col xl={2} lg={2} md={2} sm={2} xs={2} />
+        {this.props.needHam ? (
+          <Col
+            xl={0}
+            lg={0}
+            md={2}
+            sm={2}
+            xs={2}
+            style={{ textAlign: "center", paddingTop: "15px" }}
+          >
+            <MenuOutlined
+              onClick={this.props.toggleDrawer}
+              style={{ color: "#ffffff", fontSize: "20px" }}
+            />
+          </Col>
+        ) : (
+          <Col xl={0} lg={0} md={2} sm={2} xs={2} />
+        )}
+        <Col xl={2} lg={2} md={0} sm={0} xs={0} />
         <Col
           xl={16}
           lg={16}
@@ -47,4 +64,4 @@ export class BackNavbar extends Component {
   }
 }
 
-export default withRouter(BackNavbar);
+export default withRouter(BackNavbarProfile);

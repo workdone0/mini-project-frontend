@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Row, Col, Collapse, Menu } from "antd";
+import { Row, Col, Menu } from "antd";
 import "./styles/sidenav.css";
 import ProfileForm from "./profileForm";
 import Dashboard from "./dashboard";
@@ -21,7 +21,7 @@ export class Sidenav extends Component {
     return (
       <div>
         <Row className="sidenav-container">
-          <Col span={5} className="sidenav-navbar">
+          <Col xl={5} lg={5} md={0} sm={0} xs={0} className="sidenav-navbar">
             <Row justify="center">
               <img
                 src={`https://avatars.dicebear.com/api/bottts/${this.props.currentUser.name}.svg`}
@@ -66,7 +66,7 @@ export class Sidenav extends Component {
               </SubMenu>
             </Menu>
           </Col>
-          <Col span={19}>
+          <Col xl={19} lg={19} md={24} sm={24} xs={24}>
             {this.props.type == 0 ? (
               <Dashboard />
             ) : this.props.type == 1 ? (
