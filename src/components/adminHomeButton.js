@@ -8,7 +8,7 @@ class AdminHomeButton extends Component {
     const titles = [
       "Conference Room Booking",
       "Hospital Appointments",
-      "Event Utilities Booking",
+      " Utilities Booking",
       "Check Hostel Complaints",
     ];
     const path = ["/conferencepage", "/", "/", "/"];

@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "antd";
 
 import { getRoomBookingsApi } from "../api/roomBooking";
-
+import AdminNavbar from "../components/adminNavbar";
 import "./styles/bookingRequests.css";
 import BookingRequestCard from "../components/bookingRequestCard";
 
@@ -42,6 +42,8 @@ class BookingRequests extends React.Component {
     });
     if (toDisplayRequest.length == 0) {
       return (
+        <>
+        <AdminNavbar/>
         <Row style={{ height: "100vh" }}>
           <Col
             span={24}
@@ -54,11 +56,14 @@ class BookingRequests extends React.Component {
             <h1>Nothing to Display</h1>
           </Col>
         </Row>
+        </>
       );
     }
     return (
+      <>
+      <AdminNavbar/>
       <div style={{ padding: "2%" }}>
-        <h1>Room Booking Requests</h1>
+        <h1 style={{textAlign:"center",marginBottom:"20px"}}>Room Booking Requests</h1>
         <Row style={{ backgroundColor: "#F8F8F8" }} align="middle">
           <Col className="booking-requests-table-header" span={4}>
             <p className="booking-requests-table-header-text">Title</p>
@@ -94,6 +99,7 @@ class BookingRequests extends React.Component {
             })
           : null}
       </div>
+      </>
     );
   }
 }

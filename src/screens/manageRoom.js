@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Button, Drawer, Input, Switch } from "antd";
 import { addRoomApi, getRoomsApi } from "../api/room";
-
+import BackNavbar from "../components/backNavbar";
 import "./styles/manageRoom.css";
 import ManageRoomCard from "../components/manageRoomCard";
 
@@ -61,46 +61,43 @@ class ManageRoom extends React.Component {
   render() {
     return (
       <>
-        <Row>
+      <BackNavbar/>
+        
+            <h1 style={{textAlign:"center",margin:"20px"}}>Manage Rooms</h1>
+         
+          <Row>
           <Col
             style={{
               display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
-              paddingLeft: "2%",
-            }}
-            span={12}
-          >
-            <h1>Manage Rooms</h1>
-          </Col>
-          <Col
-            style={{
-              display: "flex",
-              alignItems: "center",
+              alignItems: "right",
               justifyContent: "flex-end",
               paddingRight: "2%",
             }}
-            span={12}
+            span={24}
           >
             <Button onClick={() => this.setState({ isDrawerVisible: true })}>
               Add Room
             </Button>
           </Col>
+         
+          </Row>
+          <Row>
           <Col span={2} />
-          <Col className="manage-room-table-title-col" span={4}>
-            <p className="manage-room-table-title">Room Number</p>
+          <Col className="manage-room-table-title-col" xl={4} lg={4} md={4} sm={4} xs={5}>
+            <p className="manage-room-table-title">Room No.</p>
           </Col>
-          <Col className="manage-room-table-title-col" span={4}>
-            <p className="manage-room-table-title">Air Conditioned</p>
+          <Col className="manage-room-table-title-col"  xl={4} lg={4} md={4} sm={4} xs={5}>
+            <p className="manage-room-table-title">Air Cond.</p>
           </Col>
-          <Col className="manage-room-table-title-col" span={4}>
-            <p className="manage-room-table-title">Projector</p>
+          <Col className="manage-room-table-title-col"  xl={4} lg={4} md={4} sm={4} xs={2}>
+            <p className="manage-room-table-title">Proj.</p>
           </Col>
-          <Col className="manage-room-table-title-col" span={4}>
-            <p className="manage-room-table-title">Capacity</p>
+          <Col className="manage-room-table-title-col"  xl={4} lg={4} md={4} sm={4} xs={4}>
+            <p className="manage-room-table-title">Cap.</p>
           </Col>
-          <Col className="manage-room-table-title-col" span={2} />
-
+          <Col className="manage-room-table-title-col"  xl={4} lg={4} md={4} sm={4} xs={4} >
+          <p className="manage-room-table-title">Action</p>
+          </Col>
           <Col style={{ padding: "0 2%" }} span={24}>
             {this.state.rooms.map((room) => {
               return (
@@ -115,10 +112,10 @@ class ManageRoom extends React.Component {
         </Row>
         <Drawer
           title="Add a new room"
-          width={720}
+          width={"60vw"}
           onClose={this.onClose}
           visible={this.state.isDrawerVisible}
-          bodyStyle={{ paddingBottom: 80 }}
+          bodyStyle={{ paddingBottom: 100 }}
           footer={
             <div
               style={{
@@ -140,15 +137,15 @@ class ManageRoom extends React.Component {
         >
           <Row>
             <Input
-              style={{ margin: "2%" }}
+              style={{ margin: "5%" }}
               size="large"
-              placeholder="Enter Room Number"
+              placeholder="Enter Room Name"
               onChange={(event) => {
                 this.setState({ name: event.target.value });
               }}
             />
             <Col
-              span={12}
+              xl={12} lg={12} md={12} sm={24} xs={24}
               style={{
                 display: "flex",
                 justifyContent: "flex-start",
@@ -167,10 +164,10 @@ class ManageRoom extends React.Component {
               />
             </Col>
             <Col
-              span={12}
+                xl={12} lg={12} md={12} sm={24} xs={24}
               style={{
                 display: "flex",
-                justifyContent: "flex-end",
+                justifyContent: "flex-start",
                 alignItems: "center",
                 padding: "2%",
               }}

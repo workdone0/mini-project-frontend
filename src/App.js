@@ -27,6 +27,7 @@ import BookingRequests from "./screens/bookingReqests";
 import ManageRoom from "./screens/manageRoom";
 
 import { verifyLoginToken } from "./api/verify";
+import AdminHomeButton from "./components/adminHomeButton";
 
 const NoMatchPage = () => {
   return <h3>404 - Not found</h3>;
@@ -87,6 +88,9 @@ class App extends Component {
               </Route>
               <Route exact path="/managerooms">
                 <ManageRoom />
+              </Route>
+              <Route exact path="/AdminHome">
+                <AdminHome />
               </Route>
               <Route component={NoMatchPage} />
             </Switch>

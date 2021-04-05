@@ -15,10 +15,10 @@ class ManageRoomCard extends React.Component {
     return (
       <Row style={{ backgroundColor: "#F8F8F8", margin: "10px 0" }}>
         <Col span={2} />
-        <Col className="manage-room-card-col" span={4}>
+        <Col className="manage-room-card-col" span={3}>
           <p className="manage-room-card-text">{this.props.room.name}</p>
         </Col>
-        <Col className="manage-room-card-col" span={4}>
+        <Col className="manage-room-card-col" span={5}>
           <p className="manage-room-card-text">
             {this.props.room.airConditioned ? "Yes" : "No"}
           </p>

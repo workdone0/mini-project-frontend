@@ -18,3 +18,24 @@
     transform:scale(1.1);
     transition: 0.5s;
 }
+
+
+@media only screen and (max-width: 780px)
+{
+    .admin-button{
+        width:640px;
+        height:70px !important;
+        margin:15px 0px;
+      
+    }   
+}
+
+@media only screen and (max-width: 526px)
+{
+    .admin-button{
+        width:340px;
+        height:70px !important;
+        margin:15px 0px;
+      
+    }   
+}

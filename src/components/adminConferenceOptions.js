@@ -23,7 +23,7 @@ class AdminConferenceOptions extends Component {
         <Row>
           {titles.map((title, index) => {
             return (
-              <Col span={12} key={index}>
+              <Col xl={12} lg={12} md={12} sm={24} xs={24} key={index}>
                 <AdminConferenceOptionCard
                   title={title}
                   description={description[index]}

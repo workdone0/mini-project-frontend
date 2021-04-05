@@ -49,24 +49,25 @@ class Navbar extends Component {
         <Row className="main-container-nav" justify="center" align="middle">
           <Col
             xl={6}
-            lg={18}
-            md={18}
-            sm={18}
-            xs={18}
+            lg={8}
+            md={6}
+            sm={10}
+            xs={3}
             className="brand-container"
           >
             <div className="brand-name">
               Take<span>Easy</span>
             </div>
           </Col>
-          <Col xl={18} lg={0} md={0} sm={0} xs={0}>
-            <Row align="middle">
+          <Col xl={18} lg={16} md={18} sm={14} xs={21}>
+            <Row >
                   <Col span={4} />
                   <Col span={4} />
                   <Col span={4} />
+                  <Col span={2} />
                   <Col span={4} className="nav-link">
                     <div className="nav-link-text">
-                      <Link className="linkStyleNavbar" to="/AdminHome">
+                    <Link className="linkStyleNavbar" to="/AdminHome">
                         Home
                       </Link>
                     </div>
@@ -78,7 +79,7 @@ class Navbar extends Component {
                       </Dropdown>
                     </div>
                   </Col>
-                  <Col span={4} />
+                 
             </Row>
           </Col>
         </Row>
