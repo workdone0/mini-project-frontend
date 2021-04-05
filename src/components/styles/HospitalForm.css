@@ -9,12 +9,13 @@
   color: white;
   font-weight: 700;
   margin-top:20%;
+  margin-bottom: 0px;
 }
 
 .content-left-2 {
   font-size: 2.8rem;
   color: #ea2c62;
-  line-height: 3%;
+  line-height: 4rem;
   font-weight: 700;
 }
 .hospital-para-container{
@@ -33,9 +34,24 @@
   -webkit-background-clip: text;
   background-clip: text;
 }
+.hospital-form{
+  width:80%;
+}
 
 @media only screen and (max-width:1100px){
   .patient-image {
     height:400px;
+  }
+}
+@media only screen and (max-width:900px){
+  .hospital-heading {
+    text-align: center;
+    margin: auto;
+  }
+  .content-left{
+    margin-top: 20%;
+  }
+  .hospital-button, .hospital-form{
+    margin:auto;
   }
 }

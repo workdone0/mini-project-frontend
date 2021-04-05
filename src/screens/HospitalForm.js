@@ -62,13 +62,13 @@ export class HospitalForm extends Component {
           <Col xs={4} lg={2}></Col>
           <Col xs={16} lg={9}>
             <Row>
-              <h1 className="content-left">Health and Medical </h1>
+              <h1 className="content-left hospital-heading">Health and Medical </h1>
             </Row>
             <Row>
-              <h1 className="content-left-2"> Services for you!!</h1>
+              <h1 className="content-left-2 hospital-heading"> Services for you!!</h1>
             </Row>
             <Row className="hospital-para-container">
-            <Col xs={0} sm={0} md={0} lg={24}>
+            <Col xs={0} sm={0} md={0} xl={24}>
             <div className="typewriter-text">
              
               <span className="hospital-typewriter">Providing</span>&nbsp;
@@ -88,17 +88,19 @@ export class HospitalForm extends Component {
 
             <Row>
               <Button
+                className="hospital-button"
                 type="primary"
                 size="large"
                 style={{
                   backgroundImage: "linear-gradient(130deg, #e62e53, crimson)",
                   borderRadius: "10px",
                   border: "none",
-                  width: "50%",
+                  width: "200px",
                   height: "50px",
+                  fontWeight:"500",
                 }}
               >
-                Make an Appointment.
+                Make an Appointment
               </Button>
             </Row>
           </Col>
@@ -109,11 +111,13 @@ export class HospitalForm extends Component {
         </Row>
 
         <Row style={{ height: "100vh" }}>
-          <Col span={9}>
+          <Col lg={0} xs={1}></Col>
+          <Col lg={9} xs={0}>
             <img src={patientForm} className="patient-form-image"></img>
           </Col>
-          <Col span={15}>
+          <Col lg={15} xs={22}>
             <h1
+              className="hospital-heading"
               style={{
                 marginTop: "12%",
                 marginBottom: "5%",
@@ -124,6 +128,7 @@ export class HospitalForm extends Component {
               Schedule your appointment with Doctor!
             </h1>
             <Row>
+              <div className="hospital-form">
               <Form layout="vertical" style={{ width: "100%" }}>
                 <Form.Item
                   name="date"
@@ -132,7 +137,7 @@ export class HospitalForm extends Component {
                 >
                   <DatePicker
                     onChange={this.dateSelected}
-                    style={{ width: "80%" }}
+                    style={{ width: "100%" }}
                   />
                 </Form.Item>
                 <Form.Item
@@ -142,7 +147,7 @@ export class HospitalForm extends Component {
                 >
                   <Select
                     placeholder="Select a option and change input text above"
-                    style={{ width: "80%", border: "1px solid gray" }}
+                    style={{ width: "100%", border: "1px solid gray" }}
                   >
                     <Option value="Morning">Morning Slot </Option>
                     <Option value="Noon">Noon Slot</Option>
@@ -150,6 +155,7 @@ export class HospitalForm extends Component {
                   </Select>
                 </Form.Item>
               </Form>
+              </div>
 
               <Button
                 shape="round"
@@ -177,6 +183,7 @@ export class HospitalForm extends Component {
               </Button>
             </Row>
           </Col>
+          <Col lg={0} xs={1}></Col>
         </Row>
 
         <div

@@ -7,7 +7,7 @@ class HospitalCard extends Component {
   render() {
     return (
       <Col span={20}>
-        <div className="card-about">
+        <div className="card-about" style={{minWidth:"150px"}}>
           <div className="card-body-about">
             <img
               className="about-card-image"
