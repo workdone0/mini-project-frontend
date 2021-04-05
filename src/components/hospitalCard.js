@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
 
-import "./styles/aboutCard.css";
+import "./styles/hospitalCard.css";
 
 class HospitalCard extends Component {
   render() {
     return (
       <Col span={20}>
-        <div className="card-about" style={{minWidth:"150px"}}>
+        <div className="card-about" >
           <div className="card-body-about">
             <img
               className="about-card-image"
