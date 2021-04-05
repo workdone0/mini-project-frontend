@@ -8,6 +8,7 @@
 .booking-requests-table-header-text {
   font-size: 20px;
   margin: 0%;
+  font-style: italic;
 }
 
 
@@ -24,5 +25,6 @@
   .booking-requests-table-header-text {
   font-size:1rem;
   font-style: italic;
+  font-weight: 500;
   }
 }
