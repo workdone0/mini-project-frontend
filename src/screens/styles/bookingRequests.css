@@ -1,8 +1,5 @@
 .booking-requests-table-header {
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .booking-requests-table-header-text {
@@ -11,20 +8,16 @@
   font-style: italic;
 }
 
-
-@media only screen and (max-width:526px)
-{
+@media only screen and (max-width: 526px) {
   .booking-request-card-data-text {
-  font-size:0.8rem;
- 
+    font-size: 0.8rem;
   }
 }
 
-@media only screen and (max-width:780px)
-{
+@media only screen and (max-width: 780px) {
   .booking-requests-table-header-text {
-  font-size:1rem;
-  font-style: italic;
-  font-weight: 500;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 500;
   }
 }

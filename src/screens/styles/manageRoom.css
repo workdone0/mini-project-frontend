@@ -1,7 +1,5 @@
 .manage-room-table-title-col {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .manage-room-table-title {
@@ -10,8 +8,8 @@
   margin: 0;
 }
 
-@media only screen and (max-width:526px){
-  .manage-room-table-title{
-    font-size:1rem;
+@media only screen and (max-width: 526px) {
+  .manage-room-table-title {
+    font-size: 1rem;
   }
 }

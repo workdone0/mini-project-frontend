@@ -1,7 +1,5 @@
 .booking-request-card-data-col {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .booking-request-card-data-text {
@@ -21,18 +19,13 @@
   margin: 0 10px;
 }
 
-
-@media only screen and (max-width:526px)
-{
+@media only screen and (max-width: 526px) {
   .booking-request-card-data-text {
-  font-size:0.6rem;
- 
+    font-size: 0.6rem;
   }
 }
-@media only screen and (max-width:780px)
-{
+@media only screen and (max-width: 780px) {
   .booking-request-card-data-text {
-  font-size:0.8rem;
- 
+    font-size: 0.8rem;
   }
 }

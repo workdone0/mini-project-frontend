@@ -33,39 +33,87 @@ class BookingRequestCard extends React.Component {
     const startTime = this.state.request.startTime * 60 * 1000;
     const endTime = this.state.request.endTime * 60 * 1000;
     return (
-      <Row
-        style={{ backgroundColor: "#F8F8F8", margin: "10px 0" }}
-        align="middle"
-      >
-        <Col className="booking-request-card-data-col" span={4}>
-          <p className="booking-request-card-data-text">{request.title}</p>
+      <Row style={{ backgroundColor: "#F8F8F8", margin: "0 0" }} align="middle">
+        <Col
+          className="booking-request-card-data-col"
+          xl={4}
+          lg={4}
+          md={4}
+          sm={6}
+          xs={6}
+        >
+          <p className="booking-request-card-data-text">
+            {request.title.toUpperCase()}
+          </p>
         </Col>
-        <Col className="booking-request-card-data-col" span={3}>
+        <Col
+          className="booking-request-card-data-col"
+          xl={3}
+          lg={3}
+          md={3}
+          sm={5}
+          xs={5}
+        >
           <p className="booking-request-card-data-text">
             {request.roomId.name}
           </p>
         </Col>
-        <Col className="booking-request-card-data-col" span={3}>
+        <Col
+          className="booking-request-card-data-col"
+          xl={3}
+          lg={3}
+          md={3}
+          sm={5}
+          xs={5}
+        >
           <p className="booking-request-card-data-text">
             {moment(startTime).format("Do MMMM, YYYY")}
           </p>
         </Col>
-        <Col className="booking-request-card-data-col" span={3}>
+        <Col
+          className="booking-request-card-data-col"
+          xl={3}
+          lg={3}
+          md={3}
+          sm={0}
+          xs={0}
+        >
           <p className="booking-request-card-data-text">
             {moment(startTime).format("hh:mm a").toUpperCase()}
           </p>
         </Col>
-        <Col className="booking-request-card-data-col" span={3}>
+        <Col
+          className="booking-request-card-data-col"
+          xl={3}
+          lg={3}
+          md={3}
+          sm={0}
+          xs={0}
+        >
           <p className="booking-request-card-data-text">
             {moment(endTime).format("hh:mm a").toUpperCase()}
           </p>
         </Col>
-        <Col className="booking-request-card-data-col" span={3}>
+        <Col
+          className="booking-request-card-data-col"
+          xl={3}
+          lg={3}
+          md={3}
+          sm={0}
+          xs={0}
+        >
           <p className="booking-request-card-data-text">
             {request.userId.name}
           </p>
         </Col>
-        <Col className="booking-request-card-data-col-actions" span={5}>
+        <Col
+          className="booking-request-card-data-col-actions"
+          xl={5}
+          lg={5}
+          md={5}
+          sm={5}
+          xs={5}
+        >
           <Tooltip title="Confirm">
             <CheckCircleTwoTone
               onClick={this.confirmClicked}

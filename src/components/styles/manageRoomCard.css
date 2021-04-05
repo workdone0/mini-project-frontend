@@ -1,7 +1,5 @@
 .manage-room-card-col {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .manage-room-card-text {

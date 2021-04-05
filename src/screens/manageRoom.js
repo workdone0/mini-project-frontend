@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Button, Drawer, Input, Switch } from "antd";
+import { Row, Col, Button, Drawer, Input, Switch, message } from "antd";
 import { addRoomApi, getRoomsApi } from "../api/room";
 import BackNavbar from "../components/backNavbar";
 import "./styles/manageRoom.css";
@@ -19,10 +19,16 @@ class ManageRoom extends React.Component {
     };
   }
   componentDidMount = async () => {
+    if (window.innerWidth <= 720) {
+      this.info();
+    }
     const response = await getRoomsApi();
     this.setState({
       rooms: await response.data.data,
     });
+  };
+  info = () => {
+    message.info("Best viewed on larger screens.");
   };
   onClose = () => {
     this.setState({
@@ -82,16 +88,26 @@ class ManageRoom extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col sm={2} xs={1} />
+          <Col xl={2} lg={2} md={1} sm={2} xs={2} />
           <Col
             className="manage-room-table-title-col"
             xl={4}
             lg={4}
-            md={4}
+            md={5}
             sm={8}
             xs={8}
           >
-            <p className="manage-room-table-title">Room No.</p>
+            <p className="manage-room-table-title">Room Number</p>
+          </Col>
+          <Col
+            className="manage-room-table-title-col"
+            xl={4}
+            lg={4}
+            md={5}
+            sm={0}
+            xs={0}
+          >
+            <p className="manage-room-table-title">Air Conditioned</p>
           </Col>
           <Col
             className="manage-room-table-title-col"
@@ -101,17 +117,7 @@ class ManageRoom extends React.Component {
             sm={0}
             xs={0}
           >
-            <p className="manage-room-table-title">Air Cond.</p>
-          </Col>
-          <Col
-            className="manage-room-table-title-col"
-            xl={4}
-            lg={4}
-            md={4}
-            sm={0}
-            xs={0}
-          >
-            <p className="manage-room-table-title">Proj.</p>
+            <p className="manage-room-table-title">Projector</p>
           </Col>
           <Col
             className="manage-room-table-title-col"
@@ -119,9 +125,9 @@ class ManageRoom extends React.Component {
             lg={4}
             md={4}
             sm={6}
-            xs={7}
+            xs={6}
           >
-            <p className="manage-room-table-title">Cap.</p>
+            <p className="manage-room-table-title">Capacity</p>
           </Col>
           <Col
             className="manage-room-table-title-col"
@@ -129,10 +135,11 @@ class ManageRoom extends React.Component {
             lg={4}
             md={4}
             sm={6}
-            xs={7}
+            xs={6}
           >
-            <p className="manage-room-table-title">Action</p>
+            <p className="manage-room-table-title">Actions</p>
           </Col>
+          <Col xl={2} lg={2} md={1} sm={2} xs={2} />
           <Col style={{ padding: "0 2%" }} span={24}>
             {this.state.rooms.map((room) => {
               return (
