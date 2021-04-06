@@ -28,6 +28,11 @@ export class HospitalForm extends Component {
       buttonDisabled: true,
     };
   }
+  buttonClicked = () => {
+    const anchor = document.getElementById("appointment-button");
+    anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   render() {
     const names = ["Dr.Ashish Sharma", "Dr.Anita Pateshwari"];
     const description = ["MBBS, DFM ,CCH", "MBBS"];
@@ -89,6 +94,7 @@ export class HospitalForm extends Component {
             <Row>
               <Button
                 className="hospital-button"
+               
                 type="primary"
                 size="large"
                 style={{
@@ -99,8 +105,11 @@ export class HospitalForm extends Component {
                   height: "50px",
                   fontWeight:"500",
                 }}
+              
               >
+                <a onClick={this.buttonClicked}>
                 Make an Appointment
+                </a>
               </Button>
             </Row>
           </Col>
@@ -128,7 +137,7 @@ export class HospitalForm extends Component {
               Schedule your appointment with Doctor!
             </h1>
             <Row>
-              <div className="hospital-form">
+              <div className="hospital-form"  id="appointment-button">
               <Form layout="vertical" style={{ width: "100%" }}>
                 <Form.Item
                   name="date"
