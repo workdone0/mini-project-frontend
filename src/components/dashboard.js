@@ -1,9 +1,35 @@
 import React, { Component } from "react";
 import { Row, Col, Card } from "antd";
+import { connect } from "react-redux";
+import { getRoomBookingsApi } from "../api/roomBooking";
 import "./styles/dashboard.css";
 
 class Dashboard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      events: [],
+    };
+  }
+  async componentDidMount() {
+    const response = await getRoomBookingsApi();
+    this.setState({
+      events: await response.data.data,
+    });
+  }
   render() {
+    const toDisplayEvents = this.state.events.filter((event) => {
+      return event.userId._id === this.props.currentUser._id;
+    });
+    const toDisplayPending = toDisplayEvents.filter((event) => {
+      return event.status === 0;
+    });
+    const toDisplayApproved = toDisplayEvents.filter((event) => {
+      return event.status === 1;
+    });
+    const toDisplayDeclined = toDisplayEvents.filter((event) => {
+      return event.status === 2;
+    });
     return (
       <div>
         <Row>
@@ -22,7 +48,7 @@ class Dashboard extends Component {
               >
                 <Row>
                   <Col span={12}>
-                    <h1> 75 </h1>
+                    <h1>{toDisplayEvents.length}</h1>
                   </Col>
                   <Col span={10}>
                     <svg
@@ -55,7 +81,7 @@ class Dashboard extends Component {
               >
                 <Row>
                   <Col span={12}>
-                    <h1> 20 </h1>
+                    <h1>{toDisplayPending.length}</h1>
                   </Col>
                   <Col span={10}>
                     <svg
@@ -88,7 +114,7 @@ class Dashboard extends Component {
               >
                 <Row>
                   <Col span={12}>
-                    <h1> 35</h1>
+                    <h1>{toDisplayApproved.length}</h1>
                   </Col>
                   <Col span={10}>
                     <svg
@@ -121,7 +147,7 @@ class Dashboard extends Component {
               >
                 <Row>
                   <Col span={12}>
-                    <h1> 20</h1>
+                    <h1>{toDisplayDeclined.length}</h1>
                   </Col>
                   <Col span={10}>
                     <svg
@@ -145,4 +171,8 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
+
+export default connect(mapStateToProps, null)(Dashboard);

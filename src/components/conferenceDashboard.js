@@ -42,8 +42,8 @@ class ConferenceDashboard extends Component {
           <Col className="conference-table-heading-column"    xl={4}
             lg={5}
             md={6}
-            sm={6}
-            xs={6}>
+            sm={10}
+            xs={10}>
             <h2 className="conference-heading">Title</h2>
           </Col>
           <Col className="conference-table-heading-column"   xl={4}
@@ -56,8 +56,8 @@ class ConferenceDashboard extends Component {
           <Col className="conference-table-heading-column"  xl={4}
             lg={4}
             md={5}
-            sm={7}
-            xs={7}>
+            sm={5}
+            xs={5}>
             <h2 className="conference-heading">Date</h2>
           </Col>
           <Col className="conference-table-heading-column"  xl={4}
@@ -70,8 +70,8 @@ class ConferenceDashboard extends Component {
           <Col className="conference-table-heading-column"    xl={4}
             lg={4}
             md={4}
-            sm={7}
-            xs={7}>
+            sm={5}
+            xs={5}>
             <h2 className="conference-heading">Status</h2>
           </Col>
         </Row>

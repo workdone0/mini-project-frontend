@@ -22,6 +22,12 @@ text-align: center;
 font-size: 1.1rem;
 }
 
+@media only screen and (max-width:1100px){
+  .dashboard-card-heading{
+    font-size: 0.9rem;
+  }
+}
+
 @media only screen and (max-width:720px)
 {
   .dashboard-card-heading {

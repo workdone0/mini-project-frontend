@@ -17,8 +17,8 @@ class ConferenceDashboardCard extends Component {
           <Col className="dashboard-card-column"  xl={4}
             lg={5}
             md={6}
-            sm={6}
-            xs={6}>
+            sm={10}
+            xs={10}>
             <h2 className="dashboard-card-heading">{this.props.event.title.toUpperCase()}</h2>
           </Col>
           <Col className="dashboard-card-column"  xl={4}
@@ -33,8 +33,8 @@ class ConferenceDashboardCard extends Component {
           <Col className="dashboard-card-column" xl={4}
             lg={4}
             md={5}
-            sm={7}
-            xs={7}>
+            sm={5}
+            xs={5}>
             <h2 className="dashboard-card-heading">
               {moment(startTime).format(" DD-MM-YY")}
             </h2>
@@ -53,13 +53,13 @@ class ConferenceDashboardCard extends Component {
           <Col className="dashboard-card-column"   xl={4}
             lg={4}
             md={4}
-            sm={7}
-            xs={7}>
+            sm={5}
+            xs={5}>
             {this.props.event.status == 0
-              ? < img src={pending} style={{width:"15%"}}></img>
+              ? < img src={pending} style={{width:"20px"}}></img>
               : this.props.event.status == 1
-              ? < img src={check} style={{width:"15%"}}></img>
-              : < img src={remove} style={{width:"15%"}}></img>}
+              ? < img src={check} style={{width:"20px"}}></img>
+              : < img src={remove} style={{width:"20px"}}></img>}
           </Col>
         </Row>
       </div>
