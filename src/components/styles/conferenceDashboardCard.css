@@ -1,5 +1,5 @@
 .main-container-dashboard-card {
-  width: 84%;
+  width: 90%;
   border-bottom: 2.5px solid white;
   margin: 0px auto;
 }
@@ -8,6 +8,7 @@
   font-weight: 400;
   margin: 0px;
   padding: 4.5px 0px;
+  text-align:center;
 }
 .color1 {
   background-image: linear-gradient(to right, #bad9e3, #94bed4);
@@ -17,7 +18,14 @@
 }
 
 .dashboard-card-column {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
+text-align: center;
+font-size: 1.1rem;
+}
+
+@media only screen and (max-width:720px)
+{
+  .dashboard-card-heading {
+    text-align: center;
+    font-size: 0.9rem;
+    }
 }

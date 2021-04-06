@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
 import moment from "moment";
-
+import pending from "../assets/pending.png";
+import remove from "../assets/remove.png";
+import check from "../assets/check.png";
 import "./styles/conferenceDashboardCard.css";
 
 class ConferenceDashboardCard extends Component {
@@ -11,32 +13,53 @@ class ConferenceDashboardCard extends Component {
     return (
       <div className={this.props.color}>
         <Row justify="center">
-          <Col className="dashboard-card-column" span={6}>
-            <h2 className="dashboard-card-heading">{this.props.event.title}</h2>
+       
+          <Col className="dashboard-card-column"  xl={4}
+            lg={5}
+            md={6}
+            sm={6}
+            xs={6}>
+            <h2 className="dashboard-card-heading">{this.props.event.title.toUpperCase()}</h2>
           </Col>
-          <Col className="dashboard-card-column" span={3}>
+          <Col className="dashboard-card-column"  xl={4}
+            lg={4}
+            md={4}
+            sm={4}
+            xs={4}>
             <h2 className="dashboard-card-heading">
               {this.props.event.roomId.name}
             </h2>
           </Col>
-          <Col className="dashboard-card-column" span={6}>
+          <Col className="dashboard-card-column" xl={4}
+            lg={4}
+            md={5}
+            sm={7}
+            xs={7}>
             <h2 className="dashboard-card-heading">
-              {moment(startTime).format("MMMM Do YYYY")}
+              {moment(startTime).format(" DD-MM-YY")}
             </h2>
           </Col>
-          <Col className="dashboard-card-column" span={6}>
+          <Col className="dashboard-card-column"  xl={4}
+            lg={4}
+            md={5}
+            sm={0}
+            xs={0}>
             <h2 className="dashboard-card-heading">{`${moment(startTime)
-              .format("hh:mm a")
-              .toUpperCase()} to ${moment(endTime)
-              .format("hh:mm a")
+              .format("HH:MM ")
+              .toUpperCase()} - ${moment(endTime)
+              .format("HH:MM ")
               .toUpperCase()}`}</h2>
           </Col>
-          <Col className="dashboard-card-column" span={3}>
+          <Col className="dashboard-card-column"   xl={4}
+            lg={4}
+            md={4}
+            sm={7}
+            xs={7}>
             {this.props.event.status == 0
-              ? "PENDING"
+              ? < img src={pending} style={{width:"15%"}}></img>
               : this.props.event.status == 1
-              ? "APPROVED"
-              : "DECLINED"}
+              ? < img src={check} style={{width:"15%"}}></img>
+              : < img src={remove} style={{width:"15%"}}></img>}
           </Col>
         </Row>
       </div>

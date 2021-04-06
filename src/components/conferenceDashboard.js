@@ -38,19 +38,40 @@ class ConferenceDashboard extends Component {
           <h1 style={{ margin: "20px 0px" }}>Conference Requests</h1>
         </Row>
         <Row justify="center" className="conference-table-heading">
-          <Col className="conference-table-heading-column" span={6}>
+  
+          <Col className="conference-table-heading-column"    xl={4}
+            lg={5}
+            md={6}
+            sm={6}
+            xs={6}>
             <h2 className="conference-heading">Title</h2>
           </Col>
-          <Col className="conference-table-heading-column" span={3}>
+          <Col className="conference-table-heading-column"   xl={4}
+            lg={4}
+            md={4}
+            sm={4}
+            xs={4}>
             <h2 className="conference-heading">Venue</h2>
           </Col>
-          <Col className="conference-table-heading-column" span={6}>
+          <Col className="conference-table-heading-column"  xl={4}
+            lg={4}
+            md={5}
+            sm={7}
+            xs={7}>
             <h2 className="conference-heading">Date</h2>
           </Col>
-          <Col className="conference-table-heading-column" span={6}>
+          <Col className="conference-table-heading-column"  xl={4}
+            lg={4}
+            md={5}
+            sm={0}
+            xs={0}>
             <h2 className="conference-heading">Time</h2>
           </Col>
-          <Col className="conference-table-heading-column" span={3}>
+          <Col className="conference-table-heading-column"    xl={4}
+            lg={4}
+            md={4}
+            sm={7}
+            xs={7}>
             <h2 className="conference-heading">Status</h2>
           </Col>
         </Row>
