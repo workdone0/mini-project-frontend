@@ -25,6 +25,7 @@ import AdminHome from "./screens/adminHome";
 import AdminConferenceHomePage from "./screens/adminConferenceHomePage";
 import BookingRequests from "./screens/bookingReqests";
 import ManageRoom from "./screens/manageRoom";
+import TwoFactorAuth from "./screens/twoFactorAuth";
 
 import { verifyLoginToken } from "./api/verify";
 import AdminHomeButton from "./components/adminHomeButton";
@@ -57,8 +58,6 @@ class App extends Component {
         });
         this.props.setCurrentUser(response.data.user);
       }
-    } else {
-      console.log("Not Found");
     }
     this.setState({
       loading: false,
@@ -70,6 +69,23 @@ class App extends Component {
       return <LoadingAnimation />;
     }
     if (this.props.currentUser) {
+      if (this.props.currentUser.verified == 0) {
+        return (
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <Redirect to="/twofactorauth" />
+              </Route>
+              <Route exact path="/twofactorauth">
+                <TwoFactorAuth />
+              </Route>
+              <Route>
+                <Redirect to="/twofactorauth" />
+              </Route>
+            </Switch>
+          </Router>
+        );
+      }
       if (this.props.currentUser.type > 2) {
         return (
           <Router>
@@ -92,7 +108,9 @@ class App extends Component {
               <Route exact path="/AdminHome">
                 <AdminHome />
               </Route>
-              <Route component={NoMatchPage} />
+              <Route>
+                <Redirect to="/" />
+              </Route>
             </Switch>
           </Router>
         );
@@ -130,7 +148,9 @@ class App extends Component {
                 <HostelComplaint />
               </Route>
 
-              <Route component={NoMatchPage} />
+              <Route>
+                <Redirect to="/" />
+              </Route>
             </Switch>
           </Router>
         );
@@ -148,7 +168,9 @@ class App extends Component {
             <Route exact path="/register">
               <Register />
             </Route>
-            <Route component={NoMatchPage} />
+            <Route>
+              <Redirect to="/" />
+            </Route>
           </Switch>
         </Router>
       );
