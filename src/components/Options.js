@@ -21,7 +21,7 @@ class Options extends Component {
       "Have an event to Organise? Take no worries as everything you need is here!",
       "Gone are the days of old Complaint Folders!",
     ];
-    const path = ["/conference", "/HospitalForm", "/", "/HostelComplaint"];
+    const path = ["/conference", "/HospitalForm", "/EventUtility", "/HostelComplaint"];
     const image = [conference, hospital, event, complaint];
     return (
       <div style={{backgroundColor:"black"}}>

@@ -3,6 +3,7 @@ import { Row, Col } from "antd";
 import ComplaintsAdminCard from "../components/complaintsAdminCard";
 
 import { getComplaintsApi } from "../api/complaint";
+import { BackNavbar } from "../components/backNavbar";
 class AdminResolvedComplaints extends React.Component {
   constructor() {
     super();
@@ -22,6 +23,7 @@ class AdminResolvedComplaints extends React.Component {
   render() {
     return (
       <>
+        <BackNavbar/>
         <Row>
           <Col span={24} style={{ textAlign: "center" }}>
             <h1  style={{ textAlign: "center", margin: "20px 0 20px 0" }}>Resolved Complaints</h1>

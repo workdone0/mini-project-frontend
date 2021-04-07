@@ -70,7 +70,6 @@ export class ProfileForm extends Component {
           <Form.Item
             name="phone"
             label="Phone Number"
-            rules={[{ type: "tel", required: true }]}
           >
             <Input placeholder={this.props.currentUser.phone} />
           </Form.Item>
