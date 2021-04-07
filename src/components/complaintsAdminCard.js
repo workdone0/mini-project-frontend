@@ -5,7 +5,7 @@ import moment from "moment";
 class ComplaintsAdminCard extends React.Component {
   render() {
     return (
-      <Row>
+      <Row style={{ backgroundColor: "#F8F8F8", margin: "5 0 5 0" }}>
         <Col xs={6} sm={6} md={6} lg={4} xl={4} style={{ textAlign: "center" }}>
           <p>{this.props.complaint.description}</p>
         </Col>

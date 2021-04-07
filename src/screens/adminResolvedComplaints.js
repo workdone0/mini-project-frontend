@@ -24,10 +24,10 @@ class AdminResolvedComplaints extends React.Component {
       <>
         <Row>
           <Col span={24} style={{ textAlign: "center" }}>
-            <h1>Resolved Complaints</h1>
+            <h1  style={{ textAlign: "center", margin: "20px 0 20px 0" }}>Resolved Complaints</h1>
           </Col>
         </Row>
-        <Row>
+        <Row style={{ backgroundColor: "#F1F2F5", fontWeight:"500" }}>
           <Col
             xs={6}
             sm={6}

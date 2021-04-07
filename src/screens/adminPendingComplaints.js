@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col } from "antd";
 import ComplaintsAdminCard from "../components/complaintsAdminCard";
+import BackNavbar from"../components/backNavbar";
 
 import { getComplaintsApi } from "../api/complaint";
 
@@ -23,12 +24,13 @@ class AdminPendingComplaints extends React.Component {
   render() {
     return (
       <>
-        <Row>
+      <BackNavbar/>
+        <Row >
           <Col span={24} style={{ textAlign: "center" }}>
-            <h1>Pending Complaints</h1>
+            <h1  style={{ textAlign: "center", margin: "20px 0 20px 0" }}>Pending Complaints</h1>
           </Col>
         </Row>
-        <Row>
+        <Row style={{ backgroundColor: "#F1F2F5", fontWeight:"500" }}>
           <Col
             xs={6}
             sm={6}
