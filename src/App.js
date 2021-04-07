@@ -26,6 +26,9 @@ import AdminConferenceHomePage from "./screens/adminConferenceHomePage";
 import BookingRequests from "./screens/bookingReqests";
 import ManageRoom from "./screens/manageRoom";
 import TwoFactorAuth from "./screens/twoFactorAuth";
+import AdminHostelComplaintOptions from "./screens/adminHostelComplaintOptions";
+import AdminPendingComplaints from "./screens/adminPendingComplaints";
+import AdminResolvedComplaints from "./screens/adminResolvedComplaints";
 
 import { verifyLoginToken } from "./api/verify";
 import AdminHomeButton from "./components/adminHomeButton";
@@ -95,6 +98,15 @@ class App extends Component {
               </Route>
               <Route exact path="/login">
                 <Redirect to="/" />
+              </Route>
+              <Route exact path="/complaintoptions">
+                <AdminHostelComplaintOptions />
+              </Route>
+              <Route exact path="/resolvedcomplaints">
+                <AdminResolvedComplaints />
+              </Route>
+              <Route exact path="/pendingcomplaints">
+                <AdminPendingComplaints />
               </Route>
               <Route exact path="/conferencepage">
                 <AdminConferenceHomePage />

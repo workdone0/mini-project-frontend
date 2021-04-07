@@ -1,4 +1,4 @@
-import axois from "axios";
+import axios from "axios";
 import { baseURL } from "../baseUrl";
 
 export const complaintBookingApi = async (
@@ -11,7 +11,7 @@ export const complaintBookingApi = async (
   timeTo
 ) => {
   try {
-    const response = await axois.post(`${baseURL}/complaint/new`, {
+    const response = await axios.post(`${baseURL}/complaint/new`, {
       userId: userId,
       type: type,
       roomNo: roomNo,
@@ -23,6 +23,15 @@ export const complaintBookingApi = async (
     return response;
   } catch (error) {
     console.log(error);
+    return error;
+  }
+};
+
+export const getComplaintsApi = async () => {
+  try {
+    const response = await axios.get(`${baseURL}/complaint/all`);
+    return response;
+  } catch (error) {
     return error;
   }
 };
