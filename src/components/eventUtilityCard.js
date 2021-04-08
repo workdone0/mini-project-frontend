@@ -19,7 +19,7 @@ class EventUtilityCard extends Component {
           </Col>
           
           
-          <Col span={4}><Button>Add</Button></Col>
+          <Col span={4}><Button  style={{height:"4.5vh"}}>Add</Button></Col>
           </Row>
           
       
