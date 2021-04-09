@@ -34,6 +34,9 @@ import { verifyLoginToken } from "./api/verify";
 import AdminHomeButton from "./components/adminHomeButton";
 import EventUtility from "./screens/eventUtility";
 import EventUtilityList from "./screens/eventUtilityList";
+import AdminUtilityHomePage from "./screens/adminUtilityHomePage";
+import UtilityRequests from "./screens/utilityRequests";
+import ManageUtilities from "./screens/manageUtilities";
 
 const NoMatchPage = () => {
   return <h3>404 - Not found</h3>;
@@ -100,6 +103,15 @@ class App extends Component {
               </Route>
               <Route exact path="/login">
                 <Redirect to="/" />
+              </Route>
+              <Route exact path="/utilitypage">
+                <AdminUtilityHomePage />
+              </Route>
+              <Route exact path="/utilityrequests">
+                <UtilityRequests />
+              </Route>
+              <Route exact path="/manageutilities">
+                <ManageUtilities />
               </Route>
               <Route exact path="/complaintoptions">
                 <AdminHostelComplaintOptions />
