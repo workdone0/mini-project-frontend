@@ -13,6 +13,8 @@ import {
   CustomerServiceOutlined,
 } from "@ant-design/icons";
 
+import UserHostelComplaint from "./userHostelComplaint";
+
 const { SubMenu } = Menu;
 export class Sidenav extends Component {
   render() {
@@ -71,8 +73,10 @@ export class Sidenav extends Component {
               <Dashboard />
             ) : this.props.type == 1 ? (
               <ProfileForm />
-            ) : (
+            ) : this.props.type == 2 ? (
               <ConferenceDashboard />
+            ) : (
+              <UserHostelComplaint />
             )}
           </Col>
         </Row>

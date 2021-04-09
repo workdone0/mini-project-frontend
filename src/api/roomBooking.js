@@ -1,5 +1,4 @@
 import axios from "axios";
-import axois from "axios";
 import { baseURL } from "../baseUrl";
 
 export const roomBookingApi = async (
@@ -10,7 +9,7 @@ export const roomBookingApi = async (
   title
 ) => {
   try {
-    const response = await axois.post(`${baseURL}/roombooking/new`, {
+    const response = await axios.post(`${baseURL}/roombooking/new`, {
       userId: userId,
       roomId: roomId,
       startTime: startTime,

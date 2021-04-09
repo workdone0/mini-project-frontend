@@ -35,3 +35,14 @@ export const getComplaintsApi = async () => {
     return error;
   }
 };
+
+export const resolveComplaintApi = async (complaintId) => {
+  try {
+    const response = await axios.patch(
+      `${baseURL}/complaint/resolve/${complaintId}`
+    );
+    return response;
+  } catch (error) {
+    return error;
+  }
+};

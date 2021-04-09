@@ -6,8 +6,10 @@ import "../components/styles/HospitalForm.css";
 import patientForm from "../assets/patientForm.png";
 import { Input, DatePicker, TimePicker, Form, Select } from "antd";
 import Carousel from "react-elastic-carousel";
-
+import { connect } from "react-redux";
 import HospitalCard from "../components/hospitalCard";
+import { hospitalBookingApi } from "../api/hospitalBooking";
+import Success from "./success";
 
 import "../components/styles/about.css";
 
@@ -23,8 +25,12 @@ export class HospitalForm extends Component {
   constructor() {
     super();
     this.state = {
-      loading: false,
-
+      success: false,
+      day: "",
+      month: "",
+      year: "",
+      hour: "",
+      minute: "",
       buttonDisabled: true,
     };
   }
@@ -33,6 +39,40 @@ export class HospitalForm extends Component {
     anchor.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
+  dateSelected = async (e) => {
+    if (!e) {
+      return null;
+    }
+    const d = e._d;
+    this.setState({
+      day: await d.getDate(),
+      month: await d.getMonth(),
+      year: await d.getFullYear(),
+    });
+  };
+
+  timeSelected = async (time) => {
+    const d = time._d;
+    this.setState({
+      hour: await d.getHours(),
+      minute: await d.getMinutes(),
+    });
+  };
+
+  submitClicked = async () => {
+    const { year, month, day, hour, minute } = this.state;
+    var time = new Date(year, month, day, hour, minute);
+    const timeEpoch = time / 1000 / 60;
+    const response = await hospitalBookingApi(
+      this.props.currentUser._id,
+      timeEpoch
+    );
+    if (response.status == 201) {
+      this.setState({
+        success: true,
+      });
+    }
+  };
   render() {
     const names = ["Dr.Ashish Sharma", "Dr.Anita Pateshwari"];
     const description = ["MBBS, DFM ,CCH", "MBBS"];
@@ -67,34 +107,40 @@ export class HospitalForm extends Component {
           <Col xs={4} lg={2}></Col>
           <Col xs={16} lg={9}>
             <Row>
-              <h1 className="content-left hospital-heading">Health and Medical </h1>
+              <h1 className="content-left hospital-heading">
+                Health and Medical{" "}
+              </h1>
             </Row>
             <Row>
-              <h1 className="content-left-2 hospital-heading"> Services for you!!</h1>
+              <h1 className="content-left-2 hospital-heading">
+                {" "}
+                Services for you!!
+              </h1>
             </Row>
             <Row className="hospital-para-container">
-            <Col xs={0} sm={0} md={0} xl={24}>
-            <div className="typewriter-text">
-             
-              <span className="hospital-typewriter">Providing</span>&nbsp;
-              <span>
-                <Typewriter
-                  options={{
-                    strings: ["Quality Care...", "Efficient Treatment...", "Best Medical Support..."],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
-              </span>
-              
-            </div>
-            </Col>
-          </Row>
+              <Col xs={0} sm={0} md={0} xl={24}>
+                <div className="typewriter-text">
+                  <span className="hospital-typewriter">Providing</span>&nbsp;
+                  <span>
+                    <Typewriter
+                      options={{
+                        strings: [
+                          "Quality Care...",
+                          "Efficient Treatment...",
+                          "Best Medical Support...",
+                        ],
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                  </span>
+                </div>
+              </Col>
+            </Row>
 
             <Row>
               <Button
                 className="hospital-button"
-               
                 type="primary"
                 size="large"
                 style={{
@@ -103,18 +149,17 @@ export class HospitalForm extends Component {
                   border: "none",
                   width: "200px",
                   height: "50px",
-                  fontWeight:"500",
+                  fontWeight: "500",
                 }}
-              
               >
-                <a onClick={this.buttonClicked}>
-                Make an Appointment
-                </a>
+                <a onClick={this.buttonClicked}>Make an Appointment</a>
               </Button>
             </Row>
           </Col>
           <Col xs={0} lg={13}>
-            <Row justify="center"><img className="patient-image" src={patient} alt="image"></img></Row>
+            <Row justify="center">
+              <img className="patient-image" src={patient} alt="image"></img>
+            </Row>
           </Col>
           <Col xs={4} lg={0}></Col>
         </Row>
@@ -125,72 +170,66 @@ export class HospitalForm extends Component {
             <img src={patientForm} className="patient-form-image"></img>
           </Col>
           <Col lg={15} xs={22}>
-            <h1
-              className="hospital-heading"
-              style={{
-                marginTop: "12%",
-                marginBottom: "5%",
-                fontSize: "40px",
-                fontWeight: "500",
-              }}
-            >
-              Schedule your appointment with Doctor!
-            </h1>
-            <Row>
-              <div className="hospital-form"  id="appointment-button">
-              <Form layout="vertical" style={{ width: "100%" }}>
-                <Form.Item
-                  name="date"
-                  label="Select Date"
-                  rules={[{ required: true }]}
+            {this.state.success ? (
+              <Success text="Booking Successful" />
+            ) : (
+              <>
+                <h1
+                  className="hospital-heading"
+                  style={{
+                    marginTop: "12%",
+                    marginBottom: "5%",
+                    fontSize: "40px",
+                    fontWeight: "500",
+                  }}
                 >
-                  <DatePicker
-                    onChange={this.dateSelected}
-                    style={{ width: "100%" }}
-                  />
-                </Form.Item>
-                <Form.Item
-                  name="slot"
-                  label=" Select Slot"
-                  rules={[{ required: true }]}
-                >
-                  <Select
-                    placeholder="Select a option and change input text above"
-                    style={{ width: "100%", border: "1px solid gray" }}
-                  >
-                    <Option value="Morning">Morning Slot </Option>
-                    <Option value="Noon">Noon Slot</Option>
-                    <Option value="Evening">Evening Slot</Option>
-                  </Select>
-                </Form.Item>
-              </Form>
-              </div>
+                  Schedule your appointment with Doctor!
+                </h1>
+                <Row>
+                  <div className="hospital-form" id="appointment-button">
+                    <Form layout="vertical" style={{ width: "100%" }}>
+                      <Form.Item name="date" label="Select Date">
+                        <DatePicker
+                          onChange={this.dateSelected}
+                          style={{ width: "100%" }}
+                        />
+                      </Form.Item>
+                      <Form.Item name="slot" label=" Select Preferred Time">
+                        <TimePicker
+                          onChange={this.timeSelected}
+                          style={{ width: "100%" }}
+                          format="HH:mm"
+                        />
+                      </Form.Item>
+                    </Form>
+                  </div>
 
-              <Button
-                shape="round"
-                onClick={this.submitClicked}
-                style={
-                  this.state.buttonDisabled
-                    ? {
-                        width: "40%",
-                        height: "50px",
-                        marginTop: "30px",
-                        marginLeft: "30%",
-                      }
-                    : {
-                        width: "40%",
-                        backgroundColor: "crimson",
-                        color: "#ffffff",
-                        height: "50px",
-                        marginTop: "30px",
-                      }
-                }
-                loading={this.state.loading}
-                disabled={this.state.buttonDisabled}
-              >
-                Book Now
-              </Button>
-            </Row>
+                  <Button
+                    shape="round"
+                    onClick={this.submitClicked}
+                    style={
+                      this.state.buttonDisabled
+                        ? {
+                            width: "40%",
+                            height: "50px",
+                            marginTop: "30px",
+                            marginLeft: "30%",
+                          }
+                        : {
+                            width: "40%",
+                            backgroundColor: "crimson",
+                            color: "#ffffff",
+                            height: "50px",
+                            marginTop: "30px",
+                          }
+                    }
+                    onClick={this.submitClicked}
+                  >
+                    Book Now
+                  </Button>
+                </Row>
+              </>
+            )}
           </Col>
           <Col lg={0} xs={1}></Col>
         </Row>
@@ -234,4 +273,8 @@ export class HospitalForm extends Component {
   }
 }
 
-export default HospitalForm;
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
+
+export default connect(mapStateToProps, null)(HospitalForm);
