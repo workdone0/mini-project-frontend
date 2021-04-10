@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, message } from "antd";
 
 import { getRoomBookingsApi } from "../api/roomBooking";
-import BackNavbar from "../components/backNavbar";
+import AdminNavbar from "../components/adminNavbar";
 import "./styles/bookingRequests.css";
 import BookingRequestCard from "../components/bookingRequestCard";
 
@@ -50,7 +50,7 @@ class BookingRequests extends React.Component {
     if (toDisplayRequest.length == 0) {
       return (
         <>
-          <BackNavbar />
+          <AdminNavbar />
           <Row style={{ height: "100vh" }}>
             <Col
               span={24}
@@ -68,7 +68,7 @@ class BookingRequests extends React.Component {
     }
     return (
       <>
-        <BackNavbar />
+        <AdminNavbar />
         <>
           <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
             Room Booking Requests

@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col } from "antd";
 import AppointmentAdminCard from "../components/appointmentAdminCard";
-import BackNavbar from "../components/backNavbar";
+import AdminNavbar from "../components/adminNavbar";
 
 import { getAppointmentsApi } from "../api/hospitalBooking";
 
@@ -43,7 +43,7 @@ class UpcomingAppointments extends React.Component {
   render() {
     return (
       <>
-        <BackNavbar />
+        <AdminNavbar />
         <Row>
           <Col span={24} style={{ textAlign: "center" }}>
             <h1 style={{ textAlign: "center", margin: "20px 0 20px 0" }}>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Button, Drawer, Input, Switch, message } from "antd";
 import { addRoomApi, getRoomsApi } from "../api/room";
-import BackNavbar from "../components/backNavbar";
+import AdminNavbar from "../components/adminNavbar";
 import "./styles/manageRoom.css";
 import ManageRoomCard from "../components/manageRoomCard";
 
@@ -67,7 +67,7 @@ class ManageRoom extends React.Component {
   render() {
     return (
       <>
-        <BackNavbar />
+        <AdminNavbar />
 
         <h1 style={{ textAlign: "center", margin: "20px" }}>Manage Rooms</h1>
 

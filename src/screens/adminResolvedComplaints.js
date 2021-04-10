@@ -3,7 +3,7 @@ import { Row, Col } from "antd";
 import ComplaintsAdminCard from "../components/complaintsAdminCard";
 
 import { getComplaintsApi } from "../api/complaint";
-import { BackNavbar } from "../components/backNavbar";
+import AdminNavbar from "../components/adminNavbar";
 class AdminResolvedComplaints extends React.Component {
   constructor() {
     super();
@@ -23,13 +23,15 @@ class AdminResolvedComplaints extends React.Component {
   render() {
     return (
       <>
-        <BackNavbar/>
+        <AdminNavbar />
         <Row>
           <Col span={24} style={{ textAlign: "center" }}>
-            <h1  style={{ textAlign: "center", margin: "20px 0 20px 0" }}>Resolved Complaints</h1>
+            <h1 style={{ textAlign: "center", margin: "20px 0 20px 0" }}>
+              Resolved Complaints
+            </h1>
           </Col>
         </Row>
-        <Row style={{ backgroundColor: "#F1F2F5", fontWeight:"500" }}>
+        <Row style={{ backgroundColor: "#F1F2F5", fontWeight: "500" }}>
           <Col
             xs={6}
             sm={6}
