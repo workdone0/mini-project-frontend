@@ -29,6 +29,9 @@ import TwoFactorAuth from "./screens/twoFactorAuth";
 import AdminHostelComplaintOptions from "./screens/adminHostelComplaintOptions";
 import AdminPendingComplaints from "./screens/adminPendingComplaints";
 import AdminResolvedComplaints from "./screens/adminResolvedComplaints";
+import AdminHospitalOptions from "./screens/adminHospitalOptions";
+import AllAppointments from "./screens/allAppointments";
+import UpcomingAppointments from "./screens/upcomingAppointments";
 
 import { verifyLoginToken } from "./api/verify";
 import AdminHomeButton from "./components/adminHomeButton";
@@ -104,11 +107,20 @@ class App extends Component {
               <Route exact path="/complaintoptions">
                 <AdminHostelComplaintOptions />
               </Route>
+              <Route exact path="/appointmentoptions">
+                <AdminHospitalOptions />
+              </Route>
               <Route exact path="/resolvedcomplaints">
                 <AdminResolvedComplaints />
               </Route>
               <Route exact path="/pendingcomplaints">
                 <AdminPendingComplaints />
+              </Route>
+              <Route exact path="/allappointments">
+                <AllAppointments />
+              </Route>
+              <Route exact path="/upcomingappointments">
+                <UpcomingAppointments />
               </Route>
               <Route exact path="/conferencepage">
                 <AdminConferenceHomePage />
@@ -162,10 +174,10 @@ class App extends Component {
                 <HostelComplaint />
               </Route>
               <Route exact path="/EventUtility">
-                <EventUtility/>
+                <EventUtility />
               </Route>
               <Route exact path="/EventUtilityList">
-                <EventUtilityList/>
+                <EventUtilityList />
               </Route>
               <Route>
                 <Redirect to="/" />

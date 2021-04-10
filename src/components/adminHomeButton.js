@@ -8,10 +8,15 @@ class AdminHomeButton extends Component {
     const titles = [
       "Conference Room Booking",
       "Hospital Appointments",
-      " Utilities Booking",
+      "Utilities Booking",
       "Check Hostel Complaints",
     ];
-    const path = ["/conferencepage", "/", "/", "/complaintoptions"];
+    const path = [
+      "/conferencepage",
+      "/appointmentoptions",
+      "/",
+      "/complaintoptions",
+    ];
     const svgs = [
       <svg
         xmlns="http://www.w3.org/2000/svg"
