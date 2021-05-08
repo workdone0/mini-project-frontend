@@ -1,4 +1,4 @@
-import axois from "axios";
+import axios from "axios";
 import { baseURL } from "../baseUrl";
 
 export const registerApi = async (
@@ -10,13 +10,25 @@ export const registerApi = async (
   type
 ) => {
   try {
-    const response = await axois.post(`${baseURL}/user/register`, {
+    const response = await axios.post(`${baseURL}/user/register`, {
       name: name,
       phone: phone,
       email: email,
       password: password,
       clg_id: clg_id,
       type: type,
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const updatePwd = async (token, password) => {
+  try {
+    const response = await axios.patch(`${baseURL}/user/updatepwd`, {
+      token: token,
+      password: password,
     });
     return response;
   } catch (error) {

@@ -126,7 +126,7 @@ class Login extends React.Component {
                 style={{ textAlign: "center" }}
               >
                 <p className="bottom-link-login">
-                  <a>Forgot Password?</a>
+                  <Link to="/forgotpassword">Forgot Password</Link>
                 </p>
               </Col>
             </Row>

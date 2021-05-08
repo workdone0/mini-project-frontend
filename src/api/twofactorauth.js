@@ -19,3 +19,12 @@ export const verifyOtp = async (userId) => {
     return error;
   }
 };
+
+export const forgotPwd = async (email) => {
+  try {
+    const response = await axios.post(`${baseURL}/mailer/forgot/${email}`);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};

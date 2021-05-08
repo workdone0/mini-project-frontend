@@ -11,3 +11,14 @@ export const verifyLoginToken = async (token) => {
     return error;
   }
 };
+
+export const verifyForgotLink = async (token) => {
+  try {
+    const response = await axois.post(`${baseURL}/verify/forgotlink`, {
+      token: token,
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
