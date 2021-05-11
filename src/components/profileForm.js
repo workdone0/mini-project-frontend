@@ -1,13 +1,38 @@
 import React, { Component } from "react";
-import { Form, Input, InputNumber, Button } from "antd";
+import { Form, Input, Button, notification } from "antd";
 import "./styles/profileForm.css";
-import ayushi from "../assets/ayushi.jpg";
 import { connect } from "react-redux";
 import { Row, Col } from "antd";
 
+import { updateProfile } from "../api/register";
+
 export class ProfileForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      cPwd: "",
+      uPwd: "",
+    };
+  }
+  onSubmit = async () => {
+    const response = await updateProfile(
+      this.props.currentUser.email,
+      this.state.uPwd,
+      this.state.cPwd
+    );
+    if (response.status == 200) {
+      notification.open({
+        message: "Successful",
+        description: "We have successfully updated your current password.",
+      });
+    } else {
+      notification.open({
+        message: "Unsuccessful",
+        description: "Something went wrong. Please try again later",
+      });
+    }
+  };
   render() {
-    console.log(this.props.currentUser);
     const layout = {
       labelCol: { span: 4 },
       wrapperCol: { span: 20 },
@@ -29,15 +54,14 @@ export class ProfileForm extends Component {
     return (
       <div className="profile-form-container">
         <Row>
-          <Col xs={0} md={24} style={{textAlign:"center"}}>
-          <img
-          src={`https://avatars.dicebear.com/api/bottts/${this.props.currentUser.name}.svg`}
-          className="form-image"
-          alt="image2"
-        ></img>
+          <Col xs={0} md={24} style={{ textAlign: "center" }}>
+            <img
+              src={`https://avatars.dicebear.com/api/bottts/${this.props.currentUser.name}.svg`}
+              className="form-image"
+              alt="image2"
+            ></img>
           </Col>
         </Row>
-        
 
         <Form
           {...layout}
@@ -67,60 +91,40 @@ export class ProfileForm extends Component {
             />
           </Form.Item>
 
-          <Form.Item
-            name="phone"
-            label="Phone Number"
-          >
+          <Form.Item name="phone" label="Phone Number">
             <Input placeholder={this.props.currentUser.phone} />
           </Form.Item>
 
-          <Form.Item
-            name="password"
-            label=" Current Password"
-            rules={[
-              {
-                required: true,
-                message: "Please input your password!",
-              },
-            ]}
-            hasFeedback
-          >
-            <Input.Password />
+          <Form.Item name="password" label=" Current Password">
+            <Input.Password
+              onChange={(event) => {
+                this.setState({ cPwd: event.target.value });
+              }}
+            />
           </Form.Item>
 
-          <Form.Item
-            name="confirm"
-            label="Update Password"
-            dependencies={["password"]}
-            hasFeedback
-            rules={[
-              {
-                required: true,
-                message: "Please confirm your password!",
-              },
-              ({ getFieldValue }) => ({
-                validator(_, value) {
-                  if (!value || getFieldValue("password") === value) {
-                    return Promise.resolve();
-                  }
-                  return Promise.reject(
-                    new Error(
-                     
-                    )
-                  );
-                },
-              }),
-            ]}
-          >
-            <Input.Password />
+          <Form.Item name="confirm" label="Update Password">
+            <Input.Password
+              onChange={(event) => {
+                this.setState({ uPwd: event.target.value });
+              }}
+            />
           </Form.Item>
         </Form>
         <Row justify="center">
-              <Col span={24} style={{textAlign:"center"}}>
-              <Button type="danger" htmlType="submit" className="profileform-button">
-                Submit
-              </Button>
-              </Col>
+          <Col span={24} style={{ textAlign: "center" }}>
+            <Button
+              type="danger"
+              htmlType="submit"
+              className="profileform-button"
+              onClick={this.onSubmit}
+              disabled={
+                this.state.cPwd != "" && this.state.uPwd != "" ? false : true
+              }
+            >
+              Submit
+            </Button>
+          </Col>
         </Row>
       </div>
     );

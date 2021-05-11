@@ -35,3 +35,16 @@ export const updatePwd = async (token, password) => {
     return error;
   }
 };
+
+export const updateProfile = async (email, uPwd, cPwd) => {
+  try {
+    const response = await axios.patch(`${baseURL}/user/updateProfile`, {
+      email: email,
+      uPwd: uPwd,
+      cPwd: cPwd,
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
