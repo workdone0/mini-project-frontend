@@ -14,7 +14,7 @@ class AdminHomeButton extends Component {
     const path = [
       "/conferencepage",
       "/appointmentoptions",
-      "/",
+      "/utilitypage",
       "/complaintoptions",
     ];
     const svgs = [
