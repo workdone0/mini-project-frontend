@@ -10,11 +10,36 @@ export const getUtilityApi = async () => {
   }
 };
 
-export const addUtilityApi = async (name, quantity) => {
+export const getOrderLineApi = async () => {
   try {
-    const response = await axios.post(`${baseURL}/utility/new`, {
+    const response = await axios.get(`${baseURL}/utility/orderlines`);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const addUtilityApi = async (name, inStock, description) => {
+  try {
+    const response = await axios.post(`${baseURL}/utility/add`, {
       name: name,
-      quantity: quantity,
+      inStock: inStock,
+      description: description,
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const addOrderApi = async (data) => {
+  try {
+    const response = await axios.post(`${baseURL}/utility/addOrder`, {
+      to: data.to,
+      from: data.from,
+      items: data.items,
+      userId: data.userId,
+      description: data.description,
     });
     return response;
   } catch (error) {
