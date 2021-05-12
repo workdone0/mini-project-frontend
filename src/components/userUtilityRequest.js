@@ -14,7 +14,6 @@ class UserUtilityRequest extends React.Component {
   componentDidMount = async () => {
     const response = await getOrders();
     const allComplaints = response.data.data;
-    console.log(allComplaints);
     const complaints = allComplaints.filter((complaint) => {
       return complaint.userId._id === this.props.currentUser._id;
     });

@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Row, Col, Card } from "antd";
 import { connect } from "react-redux";
 import { getRoomBookingsApi } from "../api/roomBooking";
+import { getAppointmentsApi } from "../api/hospitalBooking";
+import { getComplaintsApi } from "../api/complaint";
+import { getOrders } from "../api/utility";
+
 import "./styles/dashboard.css";
 
 class Dashboard extends Component {
@@ -9,16 +13,34 @@ class Dashboard extends Component {
     super();
     this.state = {
       events: [],
+      appointments: [],
+      complaints: [],
+      utility: [],
     };
   }
   async componentDidMount() {
     const response = await getRoomBookingsApi();
+    const aRes = await getAppointmentsApi();
+    const cRes = await getComplaintsApi();
+    const uRes = await getOrders();
     this.setState({
       events: await response.data.data,
+      appointments: await aRes.data.data,
+      complaints: await cRes.data.data,
+      utility: await uRes.data.data,
     });
   }
   render() {
     const toDisplayEvents = this.state.events.filter((event) => {
+      return event.userId._id === this.props.currentUser._id;
+    });
+    const toDisplayAppointments = this.state.appointments.filter((event) => {
+      return event.userId._id === this.props.currentUser._id;
+    });
+    const toDisplayComplaints = this.state.complaints.filter((event) => {
+      return event.userId._id === this.props.currentUser._id;
+    });
+    const toDisplayUtility = this.state.utility.filter((event) => {
       return event.userId._id === this.props.currentUser._id;
     });
     const toDisplayPending = toDisplayEvents.filter((event) => {
@@ -29,6 +51,12 @@ class Dashboard extends Component {
     });
     const toDisplayDeclined = toDisplayEvents.filter((event) => {
       return event.status === 2;
+    });
+    const toDisplayPendingComplaints = toDisplayComplaints.filter((event) => {
+      return event.status === 0;
+    });
+    const toDisplayApprovedComplaints = toDisplayComplaints.filter((event) => {
+      return event.status === 1;
     });
     return (
       <div>
@@ -48,7 +76,12 @@ class Dashboard extends Component {
               >
                 <Row>
                   <Col span={12}>
-                    <h1>{toDisplayEvents.length}</h1>
+                    <h1>
+                      {toDisplayEvents.length +
+                        toDisplayAppointments.length +
+                        toDisplayComplaints.length +
+                        toDisplayUtility.length}
+                    </h1>
                   </Col>
                   <Col span={10}>
                     <svg
@@ -81,7 +114,10 @@ class Dashboard extends Component {
               >
                 <Row>
                   <Col span={12}>
-                    <h1>{toDisplayPending.length}</h1>
+                    <h1>
+                      {toDisplayPending.length +
+                        toDisplayPendingComplaints.length}
+                    </h1>
                   </Col>
                   <Col span={10}>
                     <svg
@@ -114,7 +150,12 @@ class Dashboard extends Component {
               >
                 <Row>
                   <Col span={12}>
-                    <h1>{toDisplayApproved.length}</h1>
+                    <h1>
+                      {toDisplayApproved.length +
+                        toDisplayAppointments.length +
+                        toDisplayUtility.length +
+                        toDisplayApprovedComplaints.length}
+                    </h1>
                   </Col>
                   <Col span={10}>
                     <svg
