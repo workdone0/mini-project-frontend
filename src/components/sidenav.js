@@ -7,7 +7,7 @@ import ProfileForm from "./profileForm";
 import Dashboard from "./dashboard";
 import ConferenceDashboard from "./conferenceDashboard";
 import UserHospitalComplaint from "./userHospitalComplaint";
-
+import UserUtilityRequest from "./userUtilityRequest";
 import {
   PieChartOutlined,
   UserOutlined,
@@ -78,6 +78,8 @@ export class Sidenav extends Component {
               <ConferenceDashboard />
             ) : this.props.type == 3 ? (
               <UserHospitalComplaint />
+            ) : this.props.type == 4 ? (
+              <UserUtilityRequest />
             ) : (
               <UserHostelComplaint />
             )}

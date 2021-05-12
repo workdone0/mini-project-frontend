@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Input, Button, Select } from "antd";
+import { Row, Col, Input, Button, Select, notification } from "antd";
 import { Link } from "react-router-dom";
 import { registerApi } from "../api/register";
 import "./styles/register.css";
@@ -23,27 +23,37 @@ class Register extends React.Component {
     };
   }
   onRegisterPressed = async () => {
-    this.setState({
-      loading: true,
-    });
-    const response = await registerApi(
-      this.state.name,
-      this.state.phone,
-      this.state.email,
-      this.state.password,
-      this.state.clg_id,
-      this.state.type.toUpperCase()
-    );
-    if (response.status == 201) {
-      this.setState({
-        registerSuccessful: true,
-      });
+    var splitEmail = this.state.email.split("@");
+    if (splitEmail[1] != "smit.smu.edu.in" || this.state.phone.length != 10) {
+      if (splitEmail[1] != "smit.smu.edu.in") {
+        notification.open({ message: "Invalid Email" });
+      }
+      if (this.state.phone.length != 10) {
+        notification.open({ message: "Invalid Phone" });
+      }
     } else {
-      console.log("Registration Failed");
+      this.setState({
+        loading: true,
+      });
+      const response = await registerApi(
+        this.state.name,
+        this.state.phone,
+        this.state.email,
+        this.state.password,
+        this.state.clg_id,
+        this.state.type.toUpperCase()
+      );
+      if (response.status == 201) {
+        this.setState({
+          registerSuccessful: true,
+        });
+      } else {
+        console.log("Registration Failed");
+      }
+      this.setState({
+        loading: false,
+      });
     }
-    this.setState({
-      loading: false,
-    });
   };
   render() {
     return (
@@ -155,8 +165,8 @@ class Register extends React.Component {
                 </Row>
                 <Row style={{ marginTop: "8%" }}>
                   <Col
-                    xl={15}
-                    lg={15}
+                    xl={24}
+                    lg={24}
                     md={24}
                     sm={24}
                     xs={24}
@@ -164,18 +174,6 @@ class Register extends React.Component {
                   >
                     <p className="bottom-link-register">
                       Already a User? <Link to="/login">Login</Link>
-                    </p>
-                  </Col>
-                  <Col
-                    xl={9}
-                    lg={9}
-                    md={24}
-                    sm={24}
-                    xs={24}
-                    style={{ textAlign: "center" }}
-                  >
-                    <p className="bottom-link-register">
-                      <a>Forgot Password?</a>
                     </p>
                   </Col>
                 </Row>

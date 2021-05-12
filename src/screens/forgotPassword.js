@@ -4,6 +4,8 @@ import { UserOutlined } from "@ant-design/icons";
 
 import { forgotPwd } from "../api/twofactorauth";
 
+import BackNavbar from "../components/backNavbar";
+
 import forgot from "../assets/forgotP.png";
 
 class ForgotPassword extends Component {
@@ -32,6 +34,9 @@ class ForgotPassword extends Component {
   render() {
     return (
       <Row style={{ height: "100vh" }}>
+        <Col span={24}>
+          <BackNavbar />
+        </Col>
         <Col span={12}>
           <div
             style={{

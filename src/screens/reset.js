@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import { Row, Col, Input, Button, notification } from "antd";
 import { updatePwd } from "../api/register";
 
@@ -10,6 +10,7 @@ class Reset extends React.Component {
       password: "",
       confirmPassword: "",
       disable: true,
+      redirect: false,
     };
   }
   updatePwd = async (event) => {
@@ -59,6 +60,7 @@ class Reset extends React.Component {
       this.setState({
         password: "",
         confirmPassword: "",
+        redirect: true,
       });
     } else {
       notification.open({
@@ -68,7 +70,9 @@ class Reset extends React.Component {
     }
   };
   render() {
-    console.log(this.props);
+    if (this.state.redirect) {
+      return <Redirect to="/login" />;
+    }
     if (!this.props.location.state.value) {
       return (
         <Row>
