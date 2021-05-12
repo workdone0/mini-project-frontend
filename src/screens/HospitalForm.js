@@ -18,6 +18,7 @@ import complaint from "../assets/complaint.png";
 import FooterIcon from "../components/footerIcons";
 import Footer from "../components/footer";
 import Typewriter from "typewriter-effect";
+import moment from "moment";
 
 const { Option } = Select;
 
@@ -99,6 +100,10 @@ export class HospitalForm extends Component {
       { width: 992, itemsToShow: 3, pagination: false, showArrows: false },
       { width: 1200, itemsToShow: 3, pagination: false, showArrows: false },
     ];
+    function disabledDate(current) {
+      // Can not select days before today and today
+      return current && current < moment().startOf('day');
+    }
 
     return (
       <>
@@ -192,6 +197,7 @@ export class HospitalForm extends Component {
                         <DatePicker
                           onChange={this.dateSelected}
                           style={{ width: "100%" }}
+                          disabledDate={disabledDate}
                         />
                       </Form.Item>
                       <Form.Item name="slot" label=" Select Preferred Time">

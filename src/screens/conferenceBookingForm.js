@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import BackNavbar from "../components/backNavbar";
 import Success from "./success";
+import moment from 'moment';
+
 
 import CalanderImg from "../assets/calander.png";
 import { roomBookingApi, getRoomBookingsApi } from "../api/roomBooking";
@@ -177,8 +179,13 @@ class ConferenceBookingForm extends Component {
       title: await event.target.value,
     });
   };
+
   render() {
     const format = "HH:mm";
+    function disabledDate(current) {
+      // Can not select days before today and today
+      return current && current < moment().startOf('day');
+    }
     return (
       <>
         <BackNavbar />
@@ -222,6 +229,7 @@ class ConferenceBookingForm extends Component {
                     <DatePicker
                       onChange={this.dateSelected}
                       style={{ width: "100%" }}
+                      disabledDate={disabledDate}
                     />
                   </Form.Item>
                   <Row>

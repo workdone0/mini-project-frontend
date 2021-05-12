@@ -6,6 +6,7 @@ import Footers from "../components/footer";
 import FooterIcon from "../components/footerIcons";
 import eventutility from "../assets/eventutility.png";
 import "./styles/eventUtility.css";
+import moment from "moment";
 
 class EventUtility extends Component {
   constructor() {
@@ -180,6 +181,10 @@ class EventUtility extends Component {
       );
     }
     const format = "HH:mm";
+    function disabledDate(current) {
+      // Can not select days before today and today
+      return current && current < moment().startOf('day');
+    }
     return (
       <div>
         <>
@@ -213,6 +218,7 @@ class EventUtility extends Component {
                     <DatePicker
                       onChange={this.dateSelected}
                       style={{ width: "100%" }}
+                      disabledDate={disabledDate}
                     />
                   </Form.Item>
                   <Row>
