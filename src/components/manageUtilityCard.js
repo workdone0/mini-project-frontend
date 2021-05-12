@@ -9,28 +9,20 @@ import "./styles/manageRoomCard.css";
 class ManageUtilityCard extends React.Component {
   deleteUtility = async () => {
     const response = await deleteUtilityApi(this.props.utility._id);
+    console.log(response);
     this.props.updateUtilityData();
   };
   render() {
     return (
       <Row style={{ backgroundColor: "#F8F8F8", margin: "10px 0" }}>
         <Col xl={2} lg={2} md={1} sm={2} xs={2} />
-        <Col
-          className="manage-room-card-col"
-          span={6}
-        >
+        <Col className="manage-room-card-col" span={6}>
           <p className="manage-room-card-text">{this.props.utility.name}</p>
         </Col>
-        <Col
-          className="manage-room-card-col"
-          span={6}
-        >
-          <p className="manage-room-card-text">{this.props.utility.capacity}</p>
+        <Col className="manage-room-card-col" span={6}>
+          <p className="manage-room-card-text">{this.props.utility.inStock}</p>
         </Col>
-        <Col
-          className="manage-room-card-col"
-          span={6}
-        >
+        <Col className="manage-room-card-col" span={6}>
           <DeleteTwoTone
             onClick={this.deleteUtility}
             style={{ fontSize: "15px" }}

@@ -10,6 +10,15 @@ export const getUtilityApi = async () => {
   }
 };
 
+export const getOrders = async () => {
+  try {
+    const response = await axios.get(`${baseURL}/utility/getorder`);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
 export const getOrderLineApi = async () => {
   try {
     const response = await axios.get(`${baseURL}/utility/orderlines`);
