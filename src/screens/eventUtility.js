@@ -190,12 +190,12 @@ class EventUtility extends Component {
         <>
           <Navbar />
           <Row>
-            <Col span={10}>
+            <Col lg={10} xs={0}>
               <Row justify="center" align="middle">
                 <img className="eventutility-img" src={eventutility} />
               </Row>
             </Col>
-            <Col span={14}>
+            <Col lg={14} xs={24}>
               <Row justify="center">
                 <h1 className="eventutility-heading">
                   To Proceed We Need Some Info!
@@ -262,7 +262,7 @@ class EventUtility extends Component {
                     color: "#ffffff",
                     height: "50px",
                     marginTop: "30px",
-                    marginBottom: "10%",
+                    marginBottom: "400px",
                   }}
                 >
                   Book Now

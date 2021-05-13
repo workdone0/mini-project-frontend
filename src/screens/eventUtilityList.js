@@ -8,6 +8,7 @@ import FooterIcon from "../components/footerIcons";
 import BackNavbar from "../components/backNavbar";
 import EventUtilityCard from "../components/eventUtilityCard";
 import Success from "./success";
+import "./styles/eventUtilityList.css";
 
 import { getUtilityApi, getOrderLineApi, addOrderApi } from "../api/utility";
 
@@ -90,23 +91,24 @@ class EventUtilityList extends Component {
           justify="center"
           style={{
             backgroundImage: "linear-gradient(270deg, #e44690, #f07f3e)",
-            margin: "0px 20px 0px 20px",
+            marginLeft:"1vw",
+            width:"98vw",
             padding: "3px",
             fontStyle: "italic",
           }}
         >
           <Col xl={2} lg={2} md={2} sm={0} xs={0} />
-          <Col span={6}>
-            <h2>Item Name</h2>
+          <Col md={6} xs={6}>
+            <h2 className="utility-list-heading">Item Name</h2>
           </Col>
-          <Col span={6}>
-            <h2>Availability</h2>
+          <Col md={6} xs={6}>
+            <h2 className="utility-list-heading">Availability</h2>
           </Col>
-          <Col span={6}>
-            <h2>Requirement</h2>
+          <Col md={6} xs={6}>
+            <h2 className="utility-list-heading">Requirement</h2>
           </Col>
-          <Col span={4}>
-            <h2>Action</h2>
+          <Col md={4} xs={5}>
+            <h2 className="utility-list-heading">Action</h2>
           </Col>
         </Row>
         <Row justify="center">
@@ -140,6 +142,7 @@ class EventUtilityList extends Component {
               height: "50px",
               fontWeight: "500",
               marginTop: "40px",
+              marginBottom: "15%"
             }}
           >
             Place Order
