@@ -6,6 +6,8 @@ import { getAppointmentsApi } from "../api/hospitalBooking";
 import { getComplaintsApi } from "../api/complaint";
 import { getOrders } from "../api/utility";
 
+import Chart from "./chart";
+
 import "./styles/dashboard.css";
 
 class Dashboard extends Component {
@@ -205,6 +207,20 @@ class Dashboard extends Component {
                 </Row>
               </Card>
             </div>
+          </Col>
+          <Col span={24}>
+            <Chart
+              approved={
+                toDisplayApproved.length +
+                toDisplayAppointments.length +
+                toDisplayUtility.length +
+                toDisplayApprovedComplaints.length
+              }
+              declined={toDisplayDeclined.length}
+              pending={
+                toDisplayPending.length + toDisplayPendingComplaints.length
+              }
+            />
           </Col>
         </Row>
       </div>
