@@ -25,11 +25,11 @@ class EventUtilityCard extends Component {
           backgroundImage: "linear-gradient(270deg,#a39593,#f2f1f2f3)",
         }}
       >
-        <Col span={2} />
-        <Col span={6}>{this.props.utility.name.toUpperCase()}</Col>
+        <Col md={2} xs={0} />
+        <Col md={6} xs={7}>{this.props.utility.name.toUpperCase()}</Col>
 
-        <Col span={6}>{this.props.utility.inStock}</Col>
-        <Col span={5}>
+        <Col md={6} xs={4}>{this.props.utility.inStock}</Col>
+        <Col md={5} xs={6}>
           <Form>
             <Form.Item>
               <InputNumber
@@ -45,7 +45,7 @@ class EventUtilityCard extends Component {
           </Form>
         </Col>
 
-        <Col span={4}>
+        <Col md={4} xs={5}>
           <Button style={{ height: "4.5vh" }} onClick={this.addClicked}>
             Add
           </Button>
