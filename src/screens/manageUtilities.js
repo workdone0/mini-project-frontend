@@ -156,6 +156,7 @@ class ManageUtilities extends Component {
               style={{ margin: "0px 2% 2%", width: "100%" }}
               size="large"
               defaultValue={0}
+              min={0}
               onChange={(value) => {
                 this.setState({ inStock: value });
               }}
