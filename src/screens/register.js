@@ -48,7 +48,9 @@ class Register extends React.Component {
           registerSuccessful: true,
         });
       } else {
-        console.log("Registration Failed");
+        notification.open({
+          message: "User already exists.",
+        });
       }
       this.setState({
         loading: false,

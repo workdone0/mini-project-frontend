@@ -23,6 +23,11 @@ class About extends Component {
       "Computer Science and Engineering Department",
       "Computer Science and Engineering Department",
     ];
+    const anchor = [
+      "https://github.com/workdone0",
+      "https://www.linkedin.com/in/aditi-bansal-02a265178/",
+      "https://www.linkedin.com/in/ayushi-sinha-2509",
+    ];
     const images = [conference, complaint, hospital];
     const breakPoints = [
       {
@@ -41,8 +46,18 @@ class About extends Component {
         enableAutoPlay: true,
         autoPlaySpeed: 3000,
       },
-      { width: 992, itemsToShow: 3, pagination: false, showArrows: false },
-      { width: 1200, itemsToShow: 3, pagination: false, showArrows: false },
+      {
+        width: 992,
+        itemsToShow: 3,
+        pagination: false,
+        showArrows: false,
+      },
+      {
+        width: 1200,
+        itemsToShow: 3,
+        pagination: false,
+        showArrows: false,
+      },
     ];
     return (
       <div className="main-container-about" id="home-about-us">
@@ -67,6 +82,7 @@ class About extends Component {
                     fields={fields[index]}
                     year={year[index]}
                     dept={dept[index]}
+                    link={anchor[index]}
                   />
                 </Col>
               );

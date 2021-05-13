@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Input, Button, Card } from "antd";
+import { Row, Col, Input, Button, notification } from "antd";
 import { Redirect } from "react-router-dom";
 import { withCookies, Cookies } from "react-cookie";
 import { instanceOf } from "prop-types";
@@ -37,14 +37,15 @@ class Login extends React.Component {
         secure: true,
         maxAge: 7 * 24 * 60 * 60,
       });
-      console.log(this.props);
       this.props.setCurrentUser(response.data.user);
       this.setState({
         loading: false,
         loginStatus: true, //later to be made true to redirect properly
       });
     } else {
-      console.log("Login Failed");
+      notification.info({
+        message: "Login failed, Check your email and password.",
+      });
       this.setState({
         loading: false,
       });

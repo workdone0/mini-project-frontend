@@ -13,7 +13,7 @@ class Contact extends Component {
 
         <Row justify="center">
           <Col xs={0} sm={0} md={12} lg={12} xl={12}>
-            <img src={contact} style={{ maxWidth: "100%", height: "auto" }} />
+            <img src={contact} style={{ maxWidth: "80%", height: "auto" }} />
           </Col>
           <Col className="contact-left" xs={24} sm={24} md={12} lg={12} xl={12}>
             <h2>Get in Touch</h2>
