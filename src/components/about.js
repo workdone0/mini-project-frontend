@@ -5,9 +5,9 @@ import AboutCard from "./aboutCard";
 
 import "./styles/about.css";
 
-import conference from "../assets/conference.png";
-import complaint from "../assets/complaint.png";
-import hospital from "../assets/hospital.png";
+import conference from "../assets/shubham.jpeg";
+import complaint from "../assets/aditi.jpeg";
+import hospital from "../assets/ayushi.jpg";
 
 class About extends Component {
   render() {
