@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Row, Col, Input, Divider, Button } from "antd";
+import { Row, Col } from "antd";
+import contact from "../assets/contact.png";
 
 import "./styles/contact.css";
 class Contact extends Component {
@@ -11,7 +12,10 @@ class Contact extends Component {
         </Row>
 
         <Row justify="center">
-          <Col className="contact-left" xs={0} sm={0} md={0} lg={12} xl={12}>
+          <Col xs={0} sm={0} md={12} lg={12} xl={12}>
+            <img src={contact} style={{ maxWidth: "100%", height: "auto" }} />
+          </Col>
+          <Col className="contact-left" xs={24} sm={24} md={12} lg={12} xl={12}>
             <h2>Get in Touch</h2>
             <p>
               For every problem that you are facing, you can either contact us
@@ -34,7 +38,7 @@ class Contact extends Component {
                 </Col>
                 <Col>
                   <h3>Email-Id</h3>
-                  <p>takeeasy@gmail.com</p>
+                  <p>takeeasymini@gmail.com</p>
                 </Col>
               </Row>
               <Row>
@@ -59,43 +63,6 @@ class Contact extends Component {
                 </Col>
               </Row>
             </div>
-          </Col>
-          <Col
-            className="contact-right"
-            xs={24}
-            sm={24}
-            md={24}
-            lg={12}
-            xl={12}
-          >
-            <h2 style={{ padding: "0rem 1rem" }}>Your Query Here</h2>
-            <Row className="contact-form">
-              <Col className="contact-input" span={12}>
-                <Input size="large" placeholder="Name" />
-              </Col>
-              <Col className="contact-input" span={12}>
-                <Input size="large" placeholder="Email" />
-              </Col>
-              <Col className="contact-input" span={24}>
-                <Input size="large" placeholder="Subject" />
-              </Col>
-              <Col className="contact-input" span={24}>
-                <Input size="large" placeholder="Message" />
-              </Col>
-            </Row>
-            <Row justify="center" className="contact-input">
-              <Button
-                type="primary"
-                size="large"
-                style={{
-                  backgroundColor: "crimson ",
-                  borderRadius: "10px",
-                  border: "none",
-                }}
-              >
-                Send Message
-              </Button>
-            </Row>
           </Col>
         </Row>
       </>
